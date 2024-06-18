@@ -1,1 +1,1 @@
-[Preview](https://pedroaloonso.github.io/Digital-College/Praticas-do-Digital-College-FullStack/index.html)
+[Preview](https://pedroaloonso.github.io/Digital-College/Digital-College-FullStack/index.html)
