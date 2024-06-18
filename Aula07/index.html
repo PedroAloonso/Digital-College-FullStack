@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 7</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Formulário de melhor comida</h1>
+    <form action="https://api-send-email-m9xz.onrender.com/pedro.alonsopa@hotmail.com" method="post"> 
+        <label class="form-label" for="name">Nome:
+            <input class="form-input" type="text" name="name" id="">
+        </label>
+        <label class="form-label" for="email">Email:
+            <input class="form-input" type="email" name="email" id="">
+        </label>
+        <label class="form-label" for="food">Comida:
+            <select class="form-input" name="food" id="">
+                <option value="" disabled selected>Selecione a comida</option>
+                <option value="pao">Pão</option>
+                <option value="pizza">Pizza</option>
+                <option value="lasanha">Lasanha</option>
+            </select>
+        </label>
+        <label class="form-label" class="form-label" for="message">Mensagem:
+            <textarea class="form-input" name="message" id="" rows="3"></textarea>
+        </label>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

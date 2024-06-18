@@ -1,0 +1,19 @@
+html {
+    background-color: rgb(23, 23, 23);
+}
+
+main p {
+    color: red;
+}
+
+.section p {
+    color: green;
+}
+
+section p {
+    color: blue;
+}
+
+.segunda_div p {
+    color: chartreuse;
+}

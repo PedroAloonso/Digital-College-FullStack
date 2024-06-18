@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+}
+
+html {
+    background-color: rgb(23, 23, 23);
+}
+
+header {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header > div {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header > div >nav > ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+main > section {
+
+    display: flex;
+    background-color: coral;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+}
+
+main > section > div {
+    width: 120px;
+    height: 120px;
+    background-color: bisque;
+}
