@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* 
+html, body {
+    background-color: rgb(23, 23, 23) !important;
+    color: white;
+} */
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
