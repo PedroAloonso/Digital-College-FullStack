@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ 
+html, body {
+    background-color: rgb(23, 23, 23) !important;
+    color: white;
+}
+body {
+    height: 100vh;
+}
+p {
+    padding: 0;
+}
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+#arouselExampleSlidesOnly {
+    width: 500px;
+    height: 500px  !important;
+}
