@@ -53,6 +53,7 @@ function vogalOuConsoante(a) {
 
 
 function main() {
+    let a,b,c
     let escolha = prompt('\
         1 - Para saber se um número é positivo ou negativo \n \
         2 - Para saber maior entre 2 números \n \
@@ -63,27 +64,36 @@ function main() {
         ')
     switch (escolha) {
         case 1:
-            let a = prompt('Valor de A: ')
+            a = prompt('Valor de A: ')
+            positivoNegativo(a)
             break;
 
         case 2:
-            let a = prompt('Valor de A: ')
+            a = prompt('Valor de A: ')
+            b = prompt('Valor de B: ')
+            maiorQue(a, b)
             break;
 
         case 3:
-            let a = prompt('Valor de A: ')
+            a = prompt('Valor de A: ')
+            entre1e50(a)
             break;
 
         case 4:
-            let a = prompt('Valor de A: ')
+            a = prompt('Valor de A: ')
+            verificarNota(a)
             break;
 
         case 5:
-            let a = prompt('Valor de A: ')
+            a = prompt('Valor de A: ')
+            b = prompt('Valor de B: ')
+            c = prompt('Valor de C: ')
+            comparar3num(a, b, c)
             break;
             
         case 6:
-            let a = prompt('Valor de A: ')
+            a = prompt('Valor de A: ')
+            verificarCategoria(a)
             break;
     
         default:
