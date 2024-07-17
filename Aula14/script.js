@@ -61,39 +61,44 @@ function main() {
         4 - Para a verificar a nota \n \
         5 - Para saber o maior entre 3 números \n \
         6 - Para saber a categoria de idade \n \
+        7 - Para saber se é vogal ou consoante \n \
         ')
     switch (escolha) {
         case 1:
             a = prompt('Valor de A: ')
-            positivoNegativo(a)
+            return positivoNegativo(a)
             break;
 
         case 2:
             a = prompt('Valor de A: ')
             b = prompt('Valor de B: ')
-            maiorQue(a, b)
+            return maiorQue(a, b)
             break;
 
         case 3:
             a = prompt('Valor de A: ')
-            entre1e50(a)
+            return entre1e50(a)
             break;
 
         case 4:
             a = prompt('Valor de A: ')
-            verificarNota(a)
+            return verificarNota(a)
             break;
 
         case 5:
             a = prompt('Valor de A: ')
             b = prompt('Valor de B: ')
             c = prompt('Valor de C: ')
-            comparar3num(a, b, c)
+            return comparar3num(a, b, c)
             break;
             
         case 6:
             a = prompt('Valor de A: ')
-            verificarCategoria(a)
+            return verificarCategoria(a)
+            break;
+        case 7:
+            a = prompt('Qual letra: ')
+            return vogalOuConsoante(a)
             break;
     
         default:

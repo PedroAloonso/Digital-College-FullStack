@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "Poppins", sans-serif
+}
+
+html {
+    background-color: black;
+}
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('./img/splash-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin-top: 61px;
+}
+
+header nav ul li {
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+#logo {
+    width: 30px;
+    height: 44px;
+    margin-top: 45px;
+}
+
+#eye {
+    width: 64px;
+    height: 36px;
+    margin-top: 50px;
+}
+
+main {
+    text-align: center;
+    margin: auto;
+}
+
+main h1 {
+    font-size: 193px;
+    font-weight: 800;
+    line-height: 166px;
+}
+
+#intro-phone {
+    width: 300px;
+    height: auto;
+    position: absolute;
+    bottom: 25%;
+    right: 39%;
+    z-index: 1;
+}
+
+#app-text {
+    position: relative;
+    z-index: 2;
+}
+
+.images-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.images-container * {
+    position: absolute;
+}
+
+#intro-cube {
+    width: 74px;
+    height: 74px;
+    top: 48px;
+    left: 228px;
+}
+#intro-cubes {
+    width: 188px;
+    height: 176.48px;
+    top: 447.29px;
+    left: 208px;
+}
+#intro-pilar {
+    width: 280px;
+    height: 329.88px;
+    top: 447.29px;
+    left: 828px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    z-index: -1;
+}
+#intro-stairs {
+    width: 200px;
+    height: 260.9px;
+    top: 48.14px;
+    left: 1022px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 20px;
+}
+
+.buttons-container button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 170px;
+    height: 50px;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 7px;
+    padding: 25px;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+}
+
+.policy-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    height: 87px;
+    font-family: "Mulish", sans-serif;
+    color: #B6B6B6;
+    font-size: 10px;
+    line-height: 13px;
+}
+
+.policy-container p {
+    width: 363px;
+    height: 87px;
+    font-family: "Mulish", sans-serif;
+    color: #B6B6B6;
+    font-size: 10px;
+    line-height: 13px;
+    text-align: left;
+}
+
+.social-container {
+    display: flex;
+    gap: 30px;
+}
+
+.social-container *{
+    width: 24px;
+}
