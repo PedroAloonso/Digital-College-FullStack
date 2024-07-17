@@ -121,7 +121,14 @@ main h1 {
 
 footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 0 60px;
+}
+
+#down-arrow {
+    position: absolute;
+    width: 18px;
+    left: 50%;
 }
 
 .buttons-container {
