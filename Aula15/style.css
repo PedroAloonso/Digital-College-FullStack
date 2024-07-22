@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ 
+html, body {
+    background-color: rgb(23, 23, 23) !important;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+body {
+    height: 100vh;
+}
+p {
+    padding: 0;
+}
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    margin: 0 auto;
+}
