@@ -29,3 +29,5 @@ var pc = {
     mudarRAM: Gb => this.ram = Gb
 }
 
+console.log(Object.keys(pc))
+console.log(Object.values(pc))
