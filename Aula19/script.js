@@ -56,7 +56,6 @@ function removePrimeiroItem() {
     const ulChilds = myUL.children
     if (ulChilds.length > 0) {
         myUL.removeChild(ulChilds[0])
-        console.log()
     } else {
         alert("Não tem oque retirar")
     }
