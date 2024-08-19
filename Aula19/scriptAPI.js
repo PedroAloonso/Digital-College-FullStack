@@ -1,8 +1,6 @@
 const url =
   "https://servicodados.ibge.gov.br/api/v1/localidades/estados/ce/municipios";
 
-const cidades = document.getElementById("cidadesSelect");
-
 function criarEAddElemento(cidade) {
   const cidadeOption = document.createElement("option");
   var cidadeNome = document.createTextNode(cidade.nome);
