@@ -1,17 +1,17 @@
 
-// CatAPI = "https://api.thecatapi.com/v1/images/search"
-// async function fetchCatImage() {
-//     try {
-//         response = await fetch(CatAPI)
-//         data = await response.json()
-//         console.log(data[0].url)
-//         Cats.src = data[0].url
-//     } catch (err) {
-//         console.log(err)
-//     }
+CatAPI = "https://api.thecatapi.com/v1/images/search"
+async function fetchCatImage() {
+    try {
+        response = await fetch(CatAPI)
+        data = await response.json()
+        console.log(data[0].url)
+        Cats.src = data[0].url
+    } catch (err) {
+        console.log(err)
+    }
     
-// }
-// fetchCatImage()
+}
+fetchCatImage()
 
 
 function pegarValor() {
