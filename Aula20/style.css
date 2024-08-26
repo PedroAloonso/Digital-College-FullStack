@@ -49,8 +49,3 @@ li::before {
     width: 10px;
     display: inline-block;
 }
-
-select {
-    width: 200px;
-    padding: 4px;
-}
