@@ -49,3 +49,33 @@ li::before {
     width: 10px;
     display: inline-block;
 }
+
+a {
+    color: white;
+    font-weight: 700;
+}
+
+br {
+    margin: 12px 0;
+}
+
+#Cats { 
+    max-width: 350px;
+    max-height: 350px;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+select{
+    margin-left: 8px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid white;
+    width: 200px;
+}
