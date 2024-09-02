@@ -21,7 +21,7 @@
 // const [aluno1, aluno2, aluno3] = alunos; // Faz a alocação nas variaveis pela posição dos elementos do array
 
 
-const buscarCep = async (cep= 60150161) => {
+const buscarCep = async (cep= '60150161') => {
     const result = await (
         await fetch(`https://viacep.com.br/ws/${cep}/json/`)
     ).json();
@@ -40,7 +40,7 @@ const handleBuscarButtonClick = async () => {
         }
     } else {
         try {
-            endereco = await buscarCep()
+            endereco = await buscarCep(cep)
             resultadoDiv.innerHTML = `
                 <h2>Dados do Endereço</h2>
                 <p><strong>CEP:</strong> ${endereco.cep}</p>
