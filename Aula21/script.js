@@ -1,8 +1,8 @@
-let aluno = {
-    nome: "Matheus",
-    idade: 23,
-    email: "matheus@email.com",
-};
+// let aluno = {
+//     nome: "Matheus",
+//     idade: 23,
+//     email: "matheus@email.com",
+// };
 
 // const {nome, idade, email} = aluno
 
@@ -16,9 +16,9 @@ let aluno = {
 // console.log(aluno.idade)
 // console.log(aluno.email)
 
-const alunos = ["Pedro", "Berg", "Gisele"];
+// const alunos = ["Pedro", "Berg", "Gisele"];
 
-const [aluno1, aluno2, aluno3] = alunos; // Faz a alocação nas variaveis pela posição dos elementos do array
+// const [aluno1, aluno2, aluno3] = alunos; // Faz a alocação nas variaveis pela posição dos elementos do array
 
 
 const buscarCep = async (cep= 60150161) => {
@@ -55,5 +55,4 @@ const handleBuscarButtonClick = async () => {
     }
 }
 
-console.log(buscarCep())
 buscaButton.addEventListener('click', handleBuscarButtonClick)
