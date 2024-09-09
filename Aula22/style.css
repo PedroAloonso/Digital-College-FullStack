@@ -5,7 +5,7 @@
 }
  
 html, body {
-    background-color: rgb(23, 23, 23) !important;
+    background-color: rgb(23, 23, 23);
     color: white;
     display: flex;
     align-items: center;
@@ -50,7 +50,30 @@ li::before {
     display: inline-block;
 }
 
+strong {
+    color: rgb(200, 200, 200);
+}
 
-#resultadoDiv p *{
-    max-width: 250px;
+#usersDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 50%;
+    margin: 12px 0 20px 0;
+}
+#usersDiv::after {
+    content: '';
+}
+
+.userCard {
+    width: 100%;
+    background-color: rgb(35, 35, 35);
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.userCard a {
+    color: rgb(100, 100, 100)
 }

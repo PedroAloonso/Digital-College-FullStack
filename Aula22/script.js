@@ -1,58 +1,24 @@
-// let aluno = {
-//     nome: "Matheus",
-//     idade: 23,
-//     email: "matheus@email.com",
-// };
+import { fetchUsers } from "./promise.js";
+import { somarDoisValores } from "./util.js";
 
-// const {nome, idade, email} = aluno
+btnSomar.onclick = (() => resultado.innerText = somarDoisValores())
+loadUsersBtn.onclick = (() => colocarUsers())
 
-// console.log(nome)
-// console.log(idade)
-// console.log(email)
-
-// ou
-
-// console.log(aluno.nome)
-// console.log(aluno.idade)
-// console.log(aluno.email)
-
-// const alunos = ["Pedro", "Berg", "Gisele"];
-
-// const [aluno1, aluno2, aluno3] = alunos; // Faz a alocação nas variaveis pela posição dos elementos do array
+const colocarUsers = () => fetchUsers()
+    .then(users => {
+        usersDiv.innerHTML = ''
+        console.log(users);
+        users.forEach(user => criarUserCard(user))})
+    .catch(error => console.error('Error:', error))
 
 
-const buscarCep = async (cep= '60150161') => {
-    const result = await (
-        await fetch(`https://viacep.com.br/ws/${cep}/json/`)
-    ).json();
-    return result
+
+function criarUserCard(user) {
+    usersDiv.innerHTML += `<div class= 'userCard'>
+        <h3>${user.name}</h3>
+        <p><strong>Email:</strong> ${user.email}</p>
+        <p><strong>Telefone:</strong> ${user.phone}</p>
+        <p><strong>Website:</strong> <a href="http://${user.website}">${user.website}</a></p>
+        <p><strong>Empresa:</strong> ${user.company.name}</p>
+    </div>`
 }
-
-const handleBuscarButtonClick = async () => {
-    const cep = cepId.value.replace(/-/g, '').trim()
-    if (!cep) {
-        try {
-            endereco = await buscarCep()
-            resultadoDiv.innerHTML = '<p style="color: red;">CEP não Colocado.CEP padrão colocado</p>'
-            resultadoDiv.innerHTML += `<p>${JSON.stringify(endereco)}</p>`
-        } finally {
-            return
-        }
-    } else {
-        try {
-            endereco = await buscarCep(cep)
-            resultadoDiv.innerHTML = `
-                <h2>Dados do Endereço</h2>
-                <p><strong>CEP:</strong> ${endereco.cep}</p>
-                <p><strong>Logradouro:</strong> ${endereco.logradouro}</p>
-                <p><strong>Bairro:</strong> ${endereco.bairro}</p>
-                <p><strong>Cidade:</strong> ${endereco.localidade}</p>
-                <p><strong>Estado:</strong> ${endereco.uf}</p>
-            `
-        } finally {
-            return
-        }
-    }
-}
-
-buscaButton.addEventListener('click', handleBuscarButtonClick)
