@@ -61,6 +61,7 @@ strong {
     flex-wrap: wrap;
     gap: 8px;
     max-width: 50%;
+    min-width: 500px;
     margin: 12px 0 20px 0;
 }
 #usersDiv::after {
