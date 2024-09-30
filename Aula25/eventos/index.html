@@ -8,10 +8,34 @@
 </head>
 <body>
 	<h1>JavaScript</h1>
-	<h2>React</h2>
+	<h2>Eventos</h2>
+
+	<button>Muda cor</button>
+
+	<form action="" method="" autocomplete="off">
+		<h1>Formulário de Contato</h1>
+
+		<div class="form-item">
+			<label for="name">Nome:</label>
+			<input type="text" id="name" placeholder="Digite seu nome">
+			<small id="errorName" class="disable error"> O nome deve ter pelo menos 3 caracteres</small>
+		</div>
+
+		<div class="form-item">
+			<label for="email">Email:</label>
+			<input type="email" name="" id="email">
+			<small id="errorEmail" class="disable error">Por favor, insira um email válido</small>
+		</div>
 
 
+		<div class="form-item">
+			<label for="message">Mensagem:</label>
+			<textarea name="" id="message" cols="30" rows="5" placeholder="Escreva sua mensagem"></textarea>
+			<small id="errorMessage" class="disable error">A mensagem não pode estar vazia</small>
+		</div>
 
+		<button type="submit" id="submitBtn">Enviar</button>
+	</form>
 	<script type="module" src="script.js"></script>
 </body>
 </html>

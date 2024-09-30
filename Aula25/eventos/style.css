@@ -10,6 +10,9 @@ html, body {
 }
 body {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1, h2, h3, p {
@@ -17,30 +20,42 @@ h1, h2, h3, p {
 }
 
 input {
+    min-width: 300px;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    min-width: 300px;
+    max-width: 800px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 form {
+    max-width: 600px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
     margin-bottom: 20px;
 }
 
 button {
+    max-width: 100px ;
     padding: 10px;
-    background-color: #28a745;
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    
 }
 
-button:hover {
-    background-color: #218838;
-}
+/* button:hover {
+    
+} */
 
 ol {
     word-break: break-all;
@@ -80,36 +95,23 @@ footer, footer a{
     color: #ddd;
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 8px;
-    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); */
-}
-
-#post-list {
+.form-item {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    gap: 15px;
+    align-items: center;
+    gap: 5px;
 }
 
-.post {
-    background-color: rgb(35, 35, 35);
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid rgb(0, 0, 0);
-    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.5);
+.error {
+    color: rgb(230, 0, 0);
 }
 
-.post h2 {
-    margin: 0;
-    font-size: 1.5rem;
+.disable {
+    display: none;
 }
 
-.post p {
-    margin: 5px 0 0;
-    font-size: 1rem;
-    color: rgb(152, 152, 152);
+#submitBtn {
+    background-color: rgb(0, 0, 200);
+    color: white;
+
 }
