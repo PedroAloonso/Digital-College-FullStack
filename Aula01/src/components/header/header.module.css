@@ -1,10 +1,11 @@
-header {
+
+
+.headerTop {
     display: flex;
     justify-content: space-between;
     gap: 40px;
     align-items: center;
     padding: 1rem 2rem;
-    /* background-color: rgb(40, 40, 40); */
 }
 
 .logo {

@@ -1,0 +1,101 @@
+footer {
+    background-color: var(--dark-gray);
+
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+}
+
+.footerTop {
+    padding: 2rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerOrganizationAbout {
+    max-width: 307px;
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.footerLogo {
+    width: 212px;
+}
+.footerOrganizationAboutLinks {
+    display: flex;
+    gap: 18px;
+}
+
+.footerAboutAndCategories {
+    display: flex;
+    gap: 24px;
+}
+
+.footerAboutAndCategories > * {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footerAbout > ul {
+    list-style: none;
+}
+
+.footerAbout > ul > li > a {
+    text-decoration: none;
+    color: var(--white);
+    line-height: 38px;
+}
+
+.footerCategories > ul {
+    list-style: none;
+}
+
+.footerCategories > ul > li > a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.footerContact {
+    max-width: 233px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footerContactBotton {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footerBotton {
+    padding: 1rem 2rem;
+
+    text-align: center;
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+
+    color: var(--gray);
+}
+
+.footerBotton span::after {
+    display: block;
+    content: " ";
+    height: 1px;
+    width: 100%;
+    opacity: 30%;
+    margin: 18px 0;
+    background-color: var(--white);
+}
