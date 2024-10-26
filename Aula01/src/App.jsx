@@ -1,8 +1,8 @@
 import Header from "./components/header/Header";
 import Body from "./components/body/Body";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/Footer/Footer";
 import "./App.css";
-import "./variables.css";
+import "./assets/styles/variables.css";
 
 export default function App() {
     return (
