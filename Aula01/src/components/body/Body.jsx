@@ -1,3 +1,7 @@
+import Home from "./Home";
+
 export default function Body() {
-    return <></>;
+    return <>
+        <Home></Home>
+    </>;
 }

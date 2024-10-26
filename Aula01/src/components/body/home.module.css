@@ -1,0 +1,14 @@
+.homeHeader {
+    background-color: #F5F5F5;
+}
+
+.homeHeader  h3 {
+    color: var(--warning);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.homeHeader h1 {
+    color: var();
+}
