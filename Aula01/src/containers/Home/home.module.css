@@ -67,7 +67,8 @@ section {
 
 .firstSectionOrnament {
     position: absolute;
+    width: 100px;
 
-    right: 5%;
-    top: 20%;
+    right: 2%;
+    top: 10%;
 }
