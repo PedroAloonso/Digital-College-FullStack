@@ -1,18 +1,20 @@
 import Logo from "/src/assets/img/header/logo.png";
 import Cart from "/src/assets/img/header/Buy.png";
 import Search from "/src/assets/img/header/Search.png";
-import style from "./header.module.css";
+import style from "./Header.module.css";
+import propTypes from "prop-types"
 
-export default function Header({ setCurrentPage }) {
+
+export default function Header({ setCurrentPage, currentPage }) {
     return (
         <>
             <header>
                 <div className={style.headerTop}>
-                    {/* DIV LOGO */}
+                    {/* DIV HEADER LOGO */}
                     <div className={style.logo}>
                         <img src={Logo} alt="" />
                     </div>
-                    {/* DIV SEARCH */}
+                    {/* DIV HEADER SEARCH */}
                     <div className={style.search}>
                         <input
                             className={style.searchInput}
@@ -25,15 +27,15 @@ export default function Header({ setCurrentPage }) {
                             <img src={Search} alt="" />
                         </i>
                     </div>
-                    {/* DIV LINKS */}
+                    {/* DIV HEADER LINKS */}
                     <div className={style.storeLinks}>
                         <div className={style.signupLinks}>
                             <a href="" className={style.signup}>
                                 Cadastre-se
                             </a>
-                            <a href="" className={style.btnLogin}>
+                            <button href="" className={style.btnLogin}>
                                 Entrar
-                            </a>
+                            </button>
                         </div>
                         <div href="" className={style.cart}>
                             <img src={Cart} alt="" className={style.cartIcon} />
@@ -48,7 +50,7 @@ export default function Header({ setCurrentPage }) {
                             onClick={() => {
                                 setCurrentPage("home");
                             }}
-                            className={style.selected}
+                            className={currentPage === "home" ? style.selected : 0}
                         >
                             Home
                         </a>
@@ -56,6 +58,7 @@ export default function Header({ setCurrentPage }) {
                             onClick={() => {
                                 setCurrentPage("produtos");
                             }}
+                            className={currentPage === "produtos"? style.selected : 0}
                         >
                             Produtos
                         </a>
@@ -63,6 +66,7 @@ export default function Header({ setCurrentPage }) {
                             onClick={() => {
                                 setCurrentPage("categorias");
                             }}
+                            className={currentPage === "categorias"? style.selected : 0}
                         >
                             Categorias
                         </a>
@@ -70,6 +74,7 @@ export default function Header({ setCurrentPage }) {
                             onClick={() => {
                                 setCurrentPage("meusPedidos");
                             }}
+                            className={currentPage === "meusPedidos"? style.selected : 0}
                         >
                             Meus Pedidos
                         </a>
@@ -78,4 +83,9 @@ export default function Header({ setCurrentPage }) {
             </header>
         </>
     );
+}
+
+Header.propTypes = {
+    setCurrentPage: propTypes.func.isRequired,
+    currentPage: propTypes.string.isRequired,
 }

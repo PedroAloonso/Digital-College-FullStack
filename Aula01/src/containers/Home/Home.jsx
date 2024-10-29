@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function Home() {
     const [activeIndex, setActiveIndex] = useState(0);
-    const [length, setlength] = useState(4);
+    const [length] = useState(4);
 
     return (
         <>

@@ -25,7 +25,10 @@ export default function App() {
 
     return (
         <>
-            <Header setCurrentPage={setCurrentPage}></Header>
+            <Header
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+            ></Header>
             <main>{renderPage()}</main>
             <Footer></Footer>
         </>

@@ -1,6 +1,7 @@
 import style from "./Carousel.module.css"
 import Snearks from '/src/assets/img/carousel/White-Sneakers-PNG-Clipart 1.png'
 import { useEffect } from "react";
+import propTypes from "prop-types"
 
 export default function Carousel({ setActiveIndex, activeIndex, length }) {
     useEffect(() => {
@@ -26,12 +27,15 @@ export default function Carousel({ setActiveIndex, activeIndex, length }) {
                             onClick={() => setActiveIndex(index)}
                         ></span>
                     ))}
-                    {/* <span className={`${style.dots}  ${style.active}`}></span>
-                    <span className={style.dots}></span>
-                    <span className={style.dots}></span>
-                    <span className={style.dots}></span> */}
+
                 </div>
             </div>
         </>
     );
 }
+
+Carousel.propTypes = {
+    setActiveIndex: propTypes.func.isRequired,
+    activeIndex: propTypes.number.isRequired,
+    length: propTypes.number.isRequired,
+};
