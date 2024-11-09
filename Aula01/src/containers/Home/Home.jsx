@@ -1,5 +1,6 @@
 import style from "./home.module.css";
 import Carousel from "../../components/Carousel/Carousel";
+import FeaturedCollections from "../../components/FeaturedCollections/FeaturedCollections";
 import Ornament from "/src/assets/img/carousel/ornament1.png";
 import { useState } from "react";
 
@@ -27,6 +28,9 @@ export default function Home() {
                     activeIndex={activeIndex}
                 />
                 <img src={Ornament} className={style.firstSectionOrnament} />
+            </section>
+            <section className={style.secondSection}>
+                <FeaturedCollections />
             </section>
         </>
     );

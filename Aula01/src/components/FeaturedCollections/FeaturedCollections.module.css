@@ -1,0 +1,13 @@
+.featuredCollectionsTop {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.featuredCollectionsTop > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+}
