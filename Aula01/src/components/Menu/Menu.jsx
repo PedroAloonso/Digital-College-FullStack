@@ -1,14 +1,15 @@
 import style from "./Menu.module.css"
 
-export default function Menu({setCurrentPage, currentPage}) {
+export default function Menu({ setCurrentPage, currentPage }) {
+  // REFAZER USANDO O map em array
   return (
     <>
       <ul className={style.menu}>
         <li
           onClick={() => {
-            setCurrentPage("home");
+            setCurrentPage(0);
           }}
-          className={currentPage === "home" ? style.selected : 0}
+          className={currentPage === 0 ? style.selected : 0}
         >
           Home
         </li>

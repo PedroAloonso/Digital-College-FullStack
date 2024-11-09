@@ -65,4 +65,14 @@ text-align: left;
 .imgContainer {
     width: 50%;
     height: 251px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgContainer > img {
+    width: 200%;
+    
+    transform: rotate(-20deg)
 }
