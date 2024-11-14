@@ -6,10 +6,10 @@
     background-color: rgba(216, 227, 242, 1);
 
     border-radius: 8px;
+    overflow: hidden;
 }
 
 .infoContainer {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,8 +39,7 @@
     font-weight: 700;
     line-height: 36px;
     letter-spacing: 1px;
-text-align: left;
-
+    text-align: left;
 
     color: var(--dark-gray);
 }
@@ -60,19 +59,22 @@ text-align: left;
     line-height: 24px;
     letter-spacing: 0.75px;
     text-align: center;
+
+    z-index: 2;
 }
 
 .imgContainer {
     width: 50%;
     height: 251px;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .imgContainer > img {
-    width: 200%;
-    
-    transform: rotate(-20deg)
+    width: 100%;
+    position: absolute;
+    z-index: 1;
 }
