@@ -6,7 +6,7 @@ import tenis from "/src/assets/img/featuredCollections/tenis.png";
 
 export default function FeaturedCollections() {
     return (
-        <>
+        <section className={style.container}>
             <div className={style.featuredCollectionsTop}>
                 <h1>Coleções em destaque</h1>
                 <div>
@@ -58,6 +58,6 @@ export default function FeaturedCollections() {
                 </div>
             </div>
             <div className={style.featuredCollectionsBotton}></div>
-        </>
+        </section>
     );
 }

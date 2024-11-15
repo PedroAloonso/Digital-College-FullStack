@@ -10,13 +10,10 @@ export default function Header({ setCurrentPage, currentPage }) {
     <>
       <header>
         <div className={style.headerTop}>
-          {/* DIV HEADER LOGO */}
           <div className={style.logo}>
             <img src={Logo} alt="" />
           </div>
-          {/* DIV HEADER SEARCH */}
           <InputSearchHeader></InputSearchHeader>
-          {/* DIV HEADER LINKS */}
           <SignInAndOutBtnHeader></SignInAndOutBtnHeader>
         </div>
         <div className="headerBotton">
@@ -32,5 +29,5 @@ export default function Header({ setCurrentPage, currentPage }) {
 
 Header.propTypes = {
   setCurrentPage: propTypes.func,
-  currentPage: propTypes.string,
+  currentPage: propTypes.number,
 };
