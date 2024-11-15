@@ -1,4 +1,4 @@
-import style from "./Carousel.module.css"
+import style from "./carousel.module.css"
 import Snearks from '/src/assets/img/carousel/White-Sneakers-PNG-Clipart 1.png'
 import { useEffect } from "react";
 import propTypes from "prop-types"

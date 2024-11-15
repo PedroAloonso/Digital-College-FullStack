@@ -1,4 +1,4 @@
-import style from "./FeaturedCollectionsCard.module.css";
+import style from "./featuredCollectionsCard.module.css";
 
 export default function FeaturedCollectionsCard({
     title,

@@ -1,5 +1,5 @@
-import style from "./FeaturedCollections.module.css";
-import FeaturedCollectionsCard from "../FeaturedCollectionsBanner/FeaturedCollectionsCard";
+import style from "./featuredCollections.module.css";
+import FeaturedCollectionsCard from "./FeaturedCollectionsCard/FeaturedCollectionsCard";
 import t_shirt from "/src/assets/img/featuredCollections/t-shirt.png";
 import headphone from "/src/assets/img/featuredCollections/headphone.png";
 import tenis from "/src/assets/img/featuredCollections/tenis.png";

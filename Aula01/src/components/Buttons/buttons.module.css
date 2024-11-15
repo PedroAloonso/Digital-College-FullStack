@@ -1,0 +1,24 @@
+.primaryButton {
+    height: 40px;
+    border-radius: 8px;
+    border: 0;
+    background-color: var(--primary);
+
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.75px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: var(--light-gray-3);
+
+    &:hover {
+        background-color: var(--tertiary);
+    }
+    &:disabled {
+        background-color: var(--light-gray-2);
+    }
+}
+

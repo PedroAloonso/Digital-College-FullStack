@@ -1,8 +1,8 @@
+import style from "./header.module.css";
 import Logo from "/src/assets/img/header/logo.png";
 import InputSearchHeader from "./inputSearchHeader/InputSearchHeader";
 import SignInAndOutBtnHeader from "./SignInAndOutBtnHeader/SignInAndOutBtnHeader"
 import Menu from "/src/components/Menu/Menu";
-import style from "./Header.module.css";
 import propTypes from "prop-types";
 
 export default function Header({ setCurrentPage, currentPage }) {
@@ -31,6 +31,6 @@ export default function Header({ setCurrentPage, currentPage }) {
 }
 
 Header.propTypes = {
-  setCurrentPage: propTypes.func.isRequired,
-  currentPage: propTypes.string.isRequired,
+  setCurrentPage: propTypes.func,
+  currentPage: propTypes.string,
 };

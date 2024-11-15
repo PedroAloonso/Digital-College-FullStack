@@ -25,23 +25,8 @@
 }
 
 .btnLogin {
-    color: white;
-    background-color: var(--primary);
-    border-radius: 8px;
-    border: 0;
     min-width: 100px;
-    max-height: 40px;
-    padding: 10px 20px;
-    text-decoration: none;
-    text-align: center;
-
-    cursor: pointer;
-
-    outline-offset: none;
-
-    &:hover {
-        background-color: var(--tertiary);
-    }
+    width: 114px;
 }
 
 .cart {

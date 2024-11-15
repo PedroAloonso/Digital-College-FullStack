@@ -6,7 +6,7 @@ import "./assets/styles/variables.css";
 import { useState } from "react";
 
 export default function App() {
-    const [currentPage, setCurrentPage] = useState("home");
+    const [currentPage, setCurrentPage] = useState(0);
 
     const renderPage = () => {
         switch (currentPage) {

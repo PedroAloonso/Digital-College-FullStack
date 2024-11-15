@@ -1,4 +1,4 @@
-import style from "./InputSearchHeader.module.css";
+import style from "./inputSearchHeader.module.css";
 import Search from "/src/assets/img/header/Search.png";
 
 export default function InputSearchHeader() {

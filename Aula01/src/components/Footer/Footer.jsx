@@ -1,4 +1,4 @@
-import style from "./Footer.module.css";
+import style from "./footer.module.css";
 import Logo from "/src/assets/img/footer/logo.png";
 import FacebookIcon from "/src/assets/img/footer/facebook-icon.png";
 import InstagramIcon from "/src/assets/img/footer/instagram-icon.png";
