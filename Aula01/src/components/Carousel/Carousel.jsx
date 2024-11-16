@@ -3,6 +3,7 @@ import Snearks from '/src/assets/img/carousel/White-Sneakers-PNG-Clipart 1.png'
 import { useEffect } from "react";
 import propTypes from "prop-types"
 
+// Refatorar para usar swiper
 export default function Carousel({ setActiveIndex, activeIndex, length }) {
     useEffect(() => {
         const interval = setInterval(() => {
