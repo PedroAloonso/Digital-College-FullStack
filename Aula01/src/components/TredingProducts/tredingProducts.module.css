@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 1rem;
+    background-color: rgb(249, 248, 254);
+}
+
+.tredingProductsTop {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tredingProductBotton {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}

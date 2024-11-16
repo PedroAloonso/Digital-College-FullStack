@@ -39,6 +39,11 @@
     color: var(--dark-gray-2);
 }
 
+.offersBtn {
+    width: 220px;
+    height: 48px;
+}
+
 .firstSectionSeeOffers {
     max-width: 220px;
     height: 48px;

@@ -28,3 +28,7 @@
     align-items: center;
     justify-content: center;
 }
+
+.container > img {
+    cursor: pointer;
+}

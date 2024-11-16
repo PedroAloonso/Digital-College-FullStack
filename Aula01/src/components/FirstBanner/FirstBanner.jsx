@@ -1,6 +1,7 @@
 import style from "./firstBanner.module.css";
 import Ornament from "/src/assets/img/carousel/ornament1.png";
 import Carousel from "../Carousel/Carousel";
+import PrimaryButton from "../Buttons/PrimaryButton"
 import { useState } from "react";
 
 export default function FirstBanner() {
@@ -16,6 +17,7 @@ export default function FirstBanner() {
                     Consequat culpa exercitation mollit nisi excepteur do do
                     tempor laboris eiusmod irure consectetur.
                 </p>
+                <PrimaryButton className={style.offersBtn}>Ver Ofertas</PrimaryButton>
             </div>
             <Carousel
                 setActiveIndex={setActiveIndex}
