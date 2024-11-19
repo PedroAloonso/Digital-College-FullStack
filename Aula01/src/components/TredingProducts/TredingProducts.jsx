@@ -14,6 +14,7 @@ export default function TredingProducts() {
             category={"Tênis"}
             title={"K-Swiss V8 - Masculino"}
             value={200}
+            newValue={100}
           ></ProductCard>
           <ProductCard
             category={"Tênis"}
