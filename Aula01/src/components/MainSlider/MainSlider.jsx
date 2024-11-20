@@ -36,16 +36,16 @@ export default function MainSlider() {
         },
     ];
     return (
-        <section className={style.externalContainer}>
+        <section className={style.container}>
             <Swiper
                 pagination={true}
                 modules={[Pagination]}
-                className="mySwiper"
+                className={`mySwiper ${style.customSwiper}`}
             >
                 {sliderContent.map((value, index) => {
                     return (
                         <SwiperSlide key={index}>
-                            <div className={style.container}>
+                            <div className={style.slideContainer}>
                                 <div className={style.info}>
                                     <h3>{value.subtitle}</h3>
                                     <h1>{value.title}</h1>

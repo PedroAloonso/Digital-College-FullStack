@@ -3,13 +3,11 @@
     margin: 0 auto;
 }
 
-#root > * {
-    padding: 1rem 2rem;
+
+#root > * > * {
+    padding: 2rem 4rem;
 }
 
-main {
-    padding: 0 !important;
-}
 
 
 

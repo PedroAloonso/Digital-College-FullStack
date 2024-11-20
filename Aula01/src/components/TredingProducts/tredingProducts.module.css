@@ -3,11 +3,11 @@
     flex-direction: column;
     gap: 24px;
     padding-top: 1rem;
+    padding-bottom: 5rem !important;
     background-color: rgb(249, 248, 254);
 }
 
 .tredingProductsTop {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

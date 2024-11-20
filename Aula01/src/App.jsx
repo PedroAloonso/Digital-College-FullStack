@@ -1,37 +1,34 @@
-import Header from "./components/Header/Header"
+import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./containers/Home/Home";
+import Products from "./containers/Products/Products";
+import Categories from "./containers/Categories/Categories";
+import MyOrders from "./containers/MyOrders/MyOrders";
 import "./App.css";
 import "./assets/styles/variables.css";
-import { useState } from "react";
+import { Route, Routes, Outlet } from "react-router-dom";
 
 export default function App() {
-    const [currentPage, setCurrentPage] = useState(0);
-
-    const renderPage = () => {
-        switch (currentPage) {
-            case 0:
-                return <Home />;
-            // case "produtos":
-            //     return <Produtos />;
-            // case "categorias":
-            //     return <Categorias />;
-            // case "meusPedidos":
-            //     return <MeusPedidos />;
-            default:
-                return <Home />;
-        }
-    };
-
     return (
         <>
-            <Header
-                setCurrentPage={setCurrentPage}
-                currentPage={currentPage}
-            ></Header>
-            <main>{renderPage()}</main>
-            <Footer></Footer>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <>
+                            <Header />
+                            <Outlet />
+                            <Footer />
+                        </>
+                    }
+                >
+                    <Route index element={<Home />} />
+                    <Route path="products" element={<Products />} />
+                    <Route path="categories" element={<Categories />} />
+                    <Route path="my-orders" element={<MyOrders />} />
+                    <Route path="*" element={<Home />} />
+                </Route>
+            </Routes>
         </>
     );
 }
-// DPS Consertar o padding 

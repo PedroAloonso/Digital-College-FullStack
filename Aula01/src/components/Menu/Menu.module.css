@@ -1,17 +1,16 @@
 .menu {
-    padding: 1rem 2rem;
     display: flex;
     align-items: center;
     list-style: none;
     gap: 18px;
 }
 
-.menu > * {
+.menu > * > a {
     font-family: Inter;
     font-size: 16px;
     line-height: 28px;
     font-weight: 400;
-    color: #474747;
+    color: var(--dark-gray-2);
     text-decoration: none;
 
     cursor: pointer;
@@ -20,8 +19,8 @@
 
 
 .selected {
-    font-weight: 700;
-    color: var(--primary);
+    font-weight: 700 !important;
+    color: var(--primary) !important;
 }
 
 .selected::after {

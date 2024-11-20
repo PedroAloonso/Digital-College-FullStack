@@ -1,6 +1,9 @@
 .container {
     display: flex;
     gap: 48px;
+
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
 }
 
 .container > div {

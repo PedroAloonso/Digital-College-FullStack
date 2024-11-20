@@ -13,7 +13,7 @@ footer {
 }
 
 .footerTop {
-    padding: 2rem;
+
 
     display: flex;
     justify-content: space-between;
@@ -79,7 +79,6 @@ footer {
 }
 
 .footerBotton {
-    padding: 1rem 2rem;
 
     text-align: center;
     font-family: Inter;
