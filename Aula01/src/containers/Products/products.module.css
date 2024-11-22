@@ -1,0 +1,22 @@
+.topSection {
+    background-color: #F9F8FE;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottomSection {
+    background-color: #F9F8FE;
+    display: flex;
+    
+}
+
+.filterContainer {
+    width: 10%;
+}
+
+.productContainer {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
