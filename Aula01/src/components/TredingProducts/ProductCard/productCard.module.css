@@ -11,6 +11,11 @@
     background-color: var(--white);
 }
 
+.label {
+    top: 11%;
+    left: 5%;
+}
+
 .category {
     font-family: Inter;
     font-size: 12px;

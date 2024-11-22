@@ -1,4 +1,7 @@
 import style from "./featuredCollectionsCard.module.css";
+import DiscountLabel from "../../Label/DiscountLabel";
+import SecondaryButton from "../../Buttons/SecondaryButton";
+import propTypes from "prop-types";
 
 export default function FeaturedCollectionsCard({
     title,
@@ -11,7 +14,7 @@ export default function FeaturedCollectionsCard({
         width: imageSize.width,
         height: imageSize.height,
 
-        position: 'absolute',
+        position: "absolute",
         top: imagePosition.top,
         right: imagePosition.right,
         bottom: imagePosition.bottom,
@@ -22,9 +25,11 @@ export default function FeaturedCollectionsCard({
     return (
         <div className={style.container}>
             <div className={style.infoContainer}>
-                <p className={style.discount}>30 % OFF</p>
+                <DiscountLabel>30</DiscountLabel>
                 <h2 className={style.title}>{title}</h2>
-                <button className={style.buyBtn}>Comprar</button>
+                <SecondaryButton className={style.buyBtn}>
+                    Comprar
+                </SecondaryButton>
             </div>
             <div className={style.imgContainer}>
                 <img src={image} style={customStyle} alt="" />
@@ -32,3 +37,11 @@ export default function FeaturedCollectionsCard({
         </div>
     );
 }
+
+FeaturedCollectionsCard.propTypes = {
+    title: propTypes.string,
+    image: propTypes.string,
+    imagePosition: propTypes.string,
+    imageSize: propTypes.string,
+    imageRotation: propTypes.string,
+};

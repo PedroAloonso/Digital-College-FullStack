@@ -22,3 +22,28 @@
     }
 }
 
+.secondaryButton {
+    height: 40px;
+    border-radius: 8px;
+    border: 0;
+    background-color: var(--light-gray-3);
+
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.75px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: var(--primary);
+
+    &:hover {
+        background-color: var(--secondary);
+        color: #F7F7FC;
+    }
+    &:disabled {
+        opacity: 50%;
+    }
+}
+
