@@ -17,6 +17,7 @@ export default function Products() {
                 </div>
                 <div className={style.productContainer}>
                     <ProductCard
+                        className = {style.customProductCard}
                         category={"Tênis"}
                         title={"K-Swiss V8 - Masculino"}
                         value={200}
@@ -28,21 +29,18 @@ export default function Products() {
                         title={"K-Swiss V8 - Masculino"}
                         value={200}
                         newValue={100}
-                        discount={30}
                     />
                     <ProductCard
                         category={"Tênis"}
                         title={"K-Swiss V8 - Masculino"}
                         value={200}
                         newValue={100}
-                        discount={30}
                     />
                     <ProductCard
                         category={"Tênis"}
                         title={"K-Swiss V8 - Masculino"}
                         value={200}
                         newValue={100}
-                        discount={30}
                     />
                 </div>
             </section>
