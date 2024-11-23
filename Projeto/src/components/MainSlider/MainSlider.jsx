@@ -12,25 +12,25 @@ export default function MainSlider() {
     const sliderContent = [
         {
             subtitle: "Melhores ofertas personalizadas",
-            title: "Queima de stoque Nike 🔥",
+            title: "Queima de estoque Nike 🔥",
             about: "Consequat conta exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             image: Tennis,
         },
         {
             subtitle: "Melhores ofertas que você ja viu ",
-            title: "Queima de stoque olympikus 🔥",
+            title: "Queima de estoque olympikus 🔥",
             about: "Consequat até exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             image: Tennis,
         },
         {
             subtitle: "Melhores ofertas personalizadas",
-            title: "Queima de stoque Adidas ",
+            title: "Queima de estoque Adidas ",
             about: "Consequat o pegar exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             image: Tennis,
         },
         {
             subtitle: "Melhores ofertas personalizadas",
-            title: "Queima de stoque Lacoste 🐊",
+            title: "Queima de estoque Lacoste 🐊",
             about: "Consequat dez exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             image: Tennis,
         },

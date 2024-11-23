@@ -9,8 +9,17 @@
   display: flex;
 }
 
-.filterContainer {
-  width: 10%;
+.filtersContainer {
+  padding: 12px 8px;
+}
+
+.categoriesContainer {
+  display: flex;
+  flex-direction: column;
+}
+.categorieContainer {
+    display: flex;
+    flex-direction: column;
 }
 
 .productContainer {
