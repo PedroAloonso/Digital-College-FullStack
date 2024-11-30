@@ -32,6 +32,11 @@
         "vite": "^5.4.8"
     },
     "lint-staged": {
-        "**/*": "prettier --write --ignore-unknown"
+        "*.js": "prettier --write",
+        "*.ts": "prettier --write",
+        "*.jsx": "prettier --write",
+        "*.tsx": "prettier --write",
+        "*.json": "prettier --write",
+        "*.css": "prettier --write"
     }
 }
