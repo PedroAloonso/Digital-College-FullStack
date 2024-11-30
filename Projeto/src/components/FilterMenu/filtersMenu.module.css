@@ -48,3 +48,24 @@
 
     padding-bottom: 4px;
 }
+
+.filterItem {
+	display: flex;
+	gap: 8px;
+
+	color: var(--dark-gray-2);
+}
+
+.filterItem label {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.25px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+	text-transform: capitalize;
+}
+	
