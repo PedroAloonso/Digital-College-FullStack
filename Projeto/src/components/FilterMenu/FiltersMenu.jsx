@@ -21,7 +21,9 @@ export default function FiltersMenu() {
                                     className={style.filterGroup}
                                     key={filterIndex}
                                 >
-                                    <h5 className={style.filterGroupTitle}>{value.title}</h5>
+                                    <h5 className={style.filterGroupTitle}>
+                                        {value.title}
+                                    </h5>
                                     {value.items.map((value, itemIndex) => {
                                         return (
                                             <div

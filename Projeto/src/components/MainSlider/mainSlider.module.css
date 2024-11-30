@@ -2,14 +2,11 @@
     background-color: var(--light-gray-3);
     display: flex;
     padding: 4rem 4rem;
-
-    
 }
 
 .customSwiper {
     padding: 0 !important;
 }
-
 
 .slideContainer {
     display: flex;
@@ -72,8 +69,6 @@
 
     transform: rotate(-20deg);
 }
-
-
 
 .ornament {
     position: absolute;

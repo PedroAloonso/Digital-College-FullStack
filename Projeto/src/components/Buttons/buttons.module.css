@@ -40,10 +40,9 @@
 
     &:hover {
         background-color: var(--secondary);
-        color: #F7F7FC;
+        color: #f7f7fc;
     }
     &:disabled {
         opacity: 50%;
     }
 }
-

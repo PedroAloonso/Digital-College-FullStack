@@ -1,6 +1,6 @@
 import style from "./specialOffers.module.css";
 import PrimaryButton from "../Buttons/PrimaryButton";
-import Tennis from "/src/assets/img/specialOffers/Laye.png"
+import Tennis from "/src/assets/img/specialOffers/Laye.png";
 
 export default function SpecialOffers() {
     return (
@@ -16,10 +16,10 @@ export default function SpecialOffers() {
                             Air Jordan edição de colecionador
                         </h1>
                         <p className={style.about}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
                         </p>
                     </div>
                     <PrimaryButton className={style.btnOffers}>

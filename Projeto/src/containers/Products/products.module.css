@@ -26,12 +26,11 @@
     gap: 12px;
 }
 
-
 .customProductCard {
     position: relative;
 }
 
 .customProductCard > p {
     position: absolute;
-    top: 5%;
+top: 5%;
 }

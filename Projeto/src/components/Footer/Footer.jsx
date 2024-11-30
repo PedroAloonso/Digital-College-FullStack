@@ -10,7 +10,11 @@ export default function Footer() {
             <footer>
                 <div className={style.footerTop}>
                     <div className={style.footerOrganizationAbout}>
-                        <img src={Logo} alt="Digital Store logo" className={style.footerLogo}/>
+                        <img
+                            src={Logo}
+                            alt="Digital Store logo"
+                            className={style.footerLogo}
+                        />
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod tempor incididunt ut labore et

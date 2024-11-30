@@ -13,9 +13,14 @@ export default function Products() {
         if (["calça", "short", "bermuda"].includes(firstWord)) {
             return calça;
         } else if (
-            ["camiseta", "jaqueta", "moletom", "regata", "camisa", "blusa"].includes(
-                firstWord
-            )
+            [
+                "camiseta",
+                "jaqueta",
+                "moletom",
+                "regata",
+                "camisa",
+                "blusa",
+            ].includes(firstWord)
         ) {
             return camisa;
         } else if (["tênis", "bota"].includes(firstWord)) {
