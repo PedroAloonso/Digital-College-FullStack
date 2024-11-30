@@ -1,5 +1,5 @@
 .container {
-    width: 274px;
+    width: 250px;
 }
 
 .imgContainer {
@@ -35,6 +35,11 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     color: var(--light-gray);
+
+}
+
+.category::first-letter {
+    text-transform: capitalize;
 }
 
 .title {

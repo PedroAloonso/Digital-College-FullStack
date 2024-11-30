@@ -46,13 +46,13 @@ export default function FiltersMenu() {
                         );
                     })}
                     <div className={style.categorieContainer}>
-                        <h5>Estado</h5>
+                        <h5 className={style.filterGroupTitle}>Estado</h5>
                         <div className={style.filterItem}>
-                            <input type="radio" name="usado" id="" />
+                            <input type="radio" name="estado" id="" />
                             <label htmlFor="">usado</label>
                         </div>
                         <div className={style.filterItem}>
-                            <input type="radio" name="novo" id="" />
+                            <input type="radio" name="estado" id="" />
                             <label htmlFor="">novo</label>
                         </div>
                     </div>

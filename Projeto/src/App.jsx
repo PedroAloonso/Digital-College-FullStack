@@ -6,6 +6,7 @@ import Categories from "./containers/Categories/Categories";
 import MyOrders from "./containers/MyOrders/MyOrders";
 import "./App.css";
 import "./assets/styles/variables.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes, Outlet } from "react-router-dom";
 
 export default function App() {
