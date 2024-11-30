@@ -28,7 +28,9 @@
         "globals": "^15.9.0",
         "husky": "^9.1.7",
         "lint-staged": "^15.2.10",
+        "postcss": "^8.4.49",
         "prettier": "^3.4.1",
+        "prettier-plugin-css-order": "^2.1.2",
         "vite": "^5.4.8"
     },
     "lint-staged": {
