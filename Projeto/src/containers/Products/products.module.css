@@ -27,10 +27,10 @@
 }
 
 .customProductCard {
-position: relative;
+    position: relative;
 }
 
 .customProductCard > p {
     position: absolute;
-top: 5%;
+    top: 5%;
 }
