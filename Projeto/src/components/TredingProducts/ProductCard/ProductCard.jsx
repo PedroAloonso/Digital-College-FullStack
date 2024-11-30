@@ -11,7 +11,7 @@ export default function ProductCard({
   title,
   value,
   newValue,
-  className,
+  className='',
 }) {
   return (
     <>
@@ -41,7 +41,7 @@ export default function ProductCard({
 
 ProductCard.propTypes = {
   discount: propTypes.number,
-  img: propTypes.object,
+  img: propTypes.string,
   category: propTypes.string,
   title: propTypes.string,
   value: propTypes.number,
