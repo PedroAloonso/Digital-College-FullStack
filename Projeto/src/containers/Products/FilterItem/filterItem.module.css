@@ -1,0 +1,23 @@
+.container label {
+    color: var(--dark-gray-2);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: Inter;
+    letter-spacing: 0.25px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+.container label::first-letter {
+    text-transform: uppercase;
+}
+
+.container input {
+    border-color: var(--dark-gray-3);
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    accent-color: var(--primary);
+}

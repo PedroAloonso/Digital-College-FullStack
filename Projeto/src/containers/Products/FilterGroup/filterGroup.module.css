@@ -1,0 +1,17 @@
+.title {
+    color: var(--dark-gray-2);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: Inter;
+    letter-spacing: 0.75px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

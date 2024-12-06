@@ -1,5 +1,5 @@
 import ProductCard from "../../components/TredingProducts/ProductCard/ProductCard";
-import FiltersMenu from "../../components/FilterMenu/FiltersMenu";
+import FiltersMenu from "./FilterMenu/FiltersMenu";
 import { Dropdown } from "react-bootstrap";
 import style from "./products.module.css";
 import products from "../../assets/data/products.json";
@@ -55,7 +55,6 @@ export default function Products() {
                             </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-                    <p>Ordenar por...</p>
                 </div>
             </section>
             <section className={style.bottomSection}>
