@@ -9,7 +9,7 @@ export default function FilterGroup({ title, children }) {
     return (
         <div className={style.container}>
             <h5 className={style.title}>{title}</h5>
-            {children}
+            <div className={style.itemsContainer}>{children}</div>
         </div>
     );
 }

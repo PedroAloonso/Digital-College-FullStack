@@ -1,7 +1,11 @@
 import ProductCard from "../../components/TredingProducts/ProductCard/ProductCard";
 import FiltersMenu from "./FilterMenu/FiltersMenu";
+
 import { Dropdown } from "react-bootstrap";
+import { useState } from "react";
+
 import style from "./products.module.css";
+
 import products from "../../assets/data/products.json";
 import calça from "../../assets/img/products/calças.jpg";
 import camisa from "../../assets/img/products/camiseta.jpg";
@@ -30,29 +34,43 @@ export default function Products() {
 
         return null; 
     };
+
+    const [selectedItem, setSelectedItem] = useState(" ");
+
+    // Função para atualizar o estado quando um item for selecionado
+    const handleSelect = (item) => {
+        setSelectedItem(item); // Atualiza o item selecionado
+    };
+
+    const DropdownItems = ["Mais relevante", "Menos relevante", "Menor preço", "Maior preço", "Ordem alfabetica"]
     return (
-        // DEPOIS COMPONETIZAR
-        // Renomear as classes
-        // Customizar o dropdown com classes
         <>
             <section className={style.topSection}>
                 <p>Resultados para “...”</p>
                 <div>
                     <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
-                            Ordenar Por: mais relevante
+                        <Dropdown.Toggle
+                            variant="success"
+                            id="dropdown-basic"
+                            className={style.dropdownToggle}
+                        >
+                            <p className={style.orderByTitle}>Ordenar Por:</p>
+                            {selectedItem}
                         </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">
-                                menor preço
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">
-                                maior preço
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">
-                                ordem alfabetica
-                            </Dropdown.Item>
+                        <Dropdown.Menu className={style.dropdownMenu}>
+                            {DropdownItems.map((value, index) => {
+                                return (
+                                    <Dropdown.Item
+                                        key={index}
+                                        href={`#/action-${index + 1}`}
+                                        onClick={() => handleSelect(value)}
+                                        className={style.dropdownItem}
+                                    >
+                                        {value}
+                                    </Dropdown.Item>
+                                );
+                            })}
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -70,6 +88,7 @@ export default function Products() {
                                 category={product.category}
                                 value={product.value}
                                 img={classifyTitle(product.title)}
+                                className={style.customProductCard}
                             />
                         );
                     })}

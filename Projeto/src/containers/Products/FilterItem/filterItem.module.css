@@ -1,8 +1,13 @@
+.container {
+    display: flex;
+    flex-shrink: 0;
+    gap: 8px;
+}
+
 .container label {
     color: var(--dark-gray-2);
     font-weight: 500;
     font-size: 14px;
-    line-height: 22px;
     font-family: Inter;
     letter-spacing: 0.25px;
     text-align: left;
@@ -16,8 +21,10 @@
 
 .container input {
     border-color: var(--dark-gray-3);
-    width: 22px;
-    height: 22px;
-    margin-right: 8px;
+    width: 22px !important;
+    height: 22px !important;
+
+    padding-inline: 0 !important;
+    padding-block: 0 !important;
     accent-color: var(--primary);
 }

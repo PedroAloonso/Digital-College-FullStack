@@ -1,9 +1,7 @@
 import style from "./Menu.module.css";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
 
 export default function Menu() {
-    const [currentPage, setCurrentPage] = useState(0);
     const menuItems = [
         { name: "Home", route: "" },
         { name: "Produtos", route: "products" },
@@ -17,11 +15,8 @@ export default function Menu() {
                     return (
                         <li key={index}>
                             <NavLink
-                                onClick={() => {
-                                    setCurrentPage(index);
-                                }}
-                                className={
-                                    currentPage === index ? style.selected : ""
+                                className={({ isActive }) =>
+                                    isActive ? style.selected : ""
                                 }
                                 to={`/${value.route}`}
                             >
