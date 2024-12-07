@@ -24,6 +24,7 @@ export default function App() {
                     }
                 >
                     <Route index element={<Home />} />
+                    #TODO Estudar o react route para usar e criar um produto
                     <Route path="products" element={<Products />} />
                     <Route path="categories" element={<Categories />} />
                     <Route path="my-orders" element={<MyOrders />} />

@@ -2,7 +2,7 @@ import style from "./productCard.module.css";
 import defaultImg from "/src/assets/img/products/tennis.png";
 import propTypes from "prop-types";
 
-import DiscountLabel from "../../Label/DiscountLabel";
+import DiscountLabel from "../Label/DiscountLabel";
 
 export default function ProductCard({
     discount,

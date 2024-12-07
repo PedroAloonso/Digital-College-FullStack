@@ -1,4 +1,4 @@
-import ProductCard from "../../components/TredingProducts/ProductCard/ProductCard";
+import ProductCard from "../../components/ProductCard/ProductCard";
 import FiltersMenu from "./FilterMenu/FiltersMenu";
 
 import { Dropdown } from "react-bootstrap";
@@ -32,7 +32,7 @@ export default function Products() {
             return tenis;
         }
 
-        return null; 
+        return null;
     };
 
     const [selectedItem, setSelectedItem] = useState(" ");
@@ -42,7 +42,13 @@ export default function Products() {
         setSelectedItem(item); // Atualiza o item selecionado
     };
 
-    const DropdownItems = ["Mais relevante", "Menos relevante", "Menor preço", "Maior preço", "Ordem alfabetica"]
+    const DropdownItems = [
+        "Mais relevante",
+        "Menos relevante",
+        "Menor preço",
+        "Maior preço",
+        "Ordem alfabetica",
+    ];
     return (
         <>
             <section className={style.topSection}>

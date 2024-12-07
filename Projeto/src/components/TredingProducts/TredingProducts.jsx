@@ -1,5 +1,5 @@
 import style from "./tredingProducts.module.css";
-import ProductCard from "./ProductCard/ProductCard";
+import ProductCard from "../ProductCard/ProductCard";
 
 export default function TredingProducts() {
     return (
