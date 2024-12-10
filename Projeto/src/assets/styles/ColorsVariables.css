@@ -19,7 +19,8 @@
     --white: rgba(255, 255, 255, 1);
 }
 
-/* 
+/* TODO: Fazer o modo escuro
+
 @media (prefers-color-scheme: light) {
   :root {
     Colors

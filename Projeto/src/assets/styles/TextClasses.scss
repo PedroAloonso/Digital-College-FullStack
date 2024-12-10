@@ -1,0 +1,153 @@
+@mixin title-large-h1 {
+    color: var(--dark-gray);
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 66px;
+    font-family: Inter;
+    letter-spacing: 0.9999998807907104px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+@mixin title-medium-h2 {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 50px;
+    font-family: Inter;
+    letter-spacing: 0.9999998807907104px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+@mixin title-small-h3 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+    font-family: Inter;
+    letter-spacing: 1px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+@mixin title-x-small-h4 {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    font-family: Inter;
+    letter-spacing: 2px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+@mixin text-large-p {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 38px;
+    font-family: Inter;
+    letter-spacing: 0.75px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+@mixin text-medium-p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 34px;
+    font-family: Inter;
+    letter-spacing: 0.75px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+@mixin text-small-p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    font-family: Inter;
+    letter-spacing: 0.75px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+@mixin text-x-small-p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: Inter;
+    letter-spacing: 0.25px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+@mixin text-tinny-p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    font-family: Inter;
+    letter-spacing: 0.5px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+@mixin text-large-bold-p {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38px;
+    font-family: Inter;
+    letter-spacing: 0.75px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+@mixin text-medium-bold-p {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 34px;
+    font-family: Inter;
+    letter-spacing: 0.75px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+@mixin text-small-bold-p {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: Inter;
+    letter-spacing: 0.75px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+@mixin text-x-small-bold-p {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: Inter;
+    letter-spacing: 0.75px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+@mixin text-tinny-bold-p {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 24px;
+    font-family: Inter;
+    letter-spacing: 0.75px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
