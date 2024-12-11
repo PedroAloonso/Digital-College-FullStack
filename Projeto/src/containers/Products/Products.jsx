@@ -65,11 +65,11 @@ export default function Products() {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu className={style.dropdownMenu}>
-                            {DropdownItems.map((value, index) => {
+                            {DropdownItems.map((value) => {
                                 return (
                                     <Dropdown.Item
-                                        key={index}
-                                        href={`#/action-${index + 1}`}
+                                        key={value}
+                                        href={`#/action-${value}`}
                                         onClick={() => handleSelect(value)}
                                         className={style.dropdownItem}
                                     >

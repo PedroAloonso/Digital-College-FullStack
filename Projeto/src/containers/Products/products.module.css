@@ -9,12 +9,12 @@
     background-color: #f9f8fe;
 }
 
-.bottomSection > div {
-    padding: 0;
+.bottomSection > div:last-child {
+    padding-left: 0.5em !important;
 }
 
 .filtersContainer {
-    padding-right: 1rem !important;
+    padding-right: 1em !important;
     width: 35%;
 }
 
@@ -26,9 +26,6 @@
     width: 100%;
 }
 
-.customProductCard {
-    width: 300px;
-}
 
 .customProductCard h2 {
     margin: 0;

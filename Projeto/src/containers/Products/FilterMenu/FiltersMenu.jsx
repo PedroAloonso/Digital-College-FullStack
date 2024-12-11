@@ -47,25 +47,23 @@ export default function FiltersMenu() {
             <div className={style.externalContainer}>
                 <h3 className={style.title}>Filtrar por</h3>
                 <div className={style.container}>
-                    {filters.map((value, filterGroupIndex) => {
+                    {filters.map((filterGroup) => {
                         return (
-                            <>
-                                <FilterGroup
-                                    title={value.title}
-                                    key={filterGroupIndex}
-                                >
-                                    {value.items.map((value, itemIndex) => {
-                                        return (
-                                            <FilterItem
-                                                key={itemIndex}
-                                                title={value.title}
-                                                name={value.name}
-                                                type={value.type}
-                                            ></FilterItem>
-                                        );
-                                    })}
-                                </FilterGroup>
-                            </>
+                            <FilterGroup
+                                title={filterGroup.title}
+                                key={filterGroup.title}
+                            >
+                                {filterGroup.items.map((item) => {
+                                    return (
+                                        <FilterItem
+                                            key={`${filterGroup.title}-${item.title}`}
+                                            title={item.title}
+                                            name={item.name}
+                                            type={item.type}
+                                        ></FilterItem>
+                                    );
+                                })}
+                            </FilterGroup>
                         );
                     })}
                 </div>
