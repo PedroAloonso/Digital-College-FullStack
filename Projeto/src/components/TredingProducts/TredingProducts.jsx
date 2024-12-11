@@ -1,4 +1,4 @@
-import style from "./tredingProducts.module.css";
+import style from "./tredingProducts.module.scss";
 import ProductCard from "../ProductCard/ProductCard";
 
 export default function TredingProducts() {
@@ -52,16 +52,7 @@ export default function TredingProducts() {
                         title={"K-Swiss V8 - Masculino"}
                         value={200}
                     ></ProductCard>
-                    <ProductCard
-                        category={"Tênis"}
-                        title={"K-Swiss V8 - Masculino"}
-                        value={200}
-                    ></ProductCard>
-                    <ProductCard
-                        category={"Tênis"}
-                        title={"K-Swiss V8 - Masculino"}
-                        value={200}
-                    ></ProductCard>
+
                 </div>
             </section>
         </>

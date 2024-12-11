@@ -1,4 +1,4 @@
-import style from "./featuredCollections.module.css";
+import style from "./featuredCollections.module.scss";
 import FeaturedCollectionsCard from "./FeaturedCollectionsCard/FeaturedCollectionsCard";
 import FeaturedItemCategory from "./FeaturedItemCategory/FeaturedItemCategory";
 
@@ -66,7 +66,7 @@ export default function FeaturedCollections() {
                 </div>
             </div>
             <div className={style.featuredCollectionsBotton}>
-                <h2>Coleções em destaque</h2>
+                <h1>Coleções em destaque</h1>
                 <div>
                     <FeaturedItemCategory text={"Camisetas"}>
                         {t_shirt_icon}

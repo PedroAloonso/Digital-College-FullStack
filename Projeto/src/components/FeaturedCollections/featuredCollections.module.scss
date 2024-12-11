@@ -1,10 +1,14 @@
+@use "../../assets/styles/TextClasses";
+
 .container {
-    padding-top: 2rem;
-    background-color: rgb(249, 248, 254);
     display: flex;
     flex-direction: column;
-
     z-index: 2;
+    background-color: rgb(249, 248, 254);
+    padding-top: 2rem;
+}
+.container h1 {
+    @include TextClasses.text-large-bold;
 }
 
 .featuredCollectionsTop {
@@ -15,29 +19,28 @@
 
 .featuredCollectionsTop > div {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-
+    align-items: center;
     gap: 12px;
 }
 
 .featuredCollectionsBotton {
-    padding: 6rem 0 0 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     gap: 3rem;
+    padding: 6rem 0 0 0;
 }
 .featuredCollectionsBotton > h2 {
-    font-family: Inter;
-    font-size: 24px;
     font-weight: 700;
+    font-size: 24px;
     line-height: 38px;
+    font-family: Inter;
     letter-spacing: 0.75px;
     text-align: left;
-    text-underline-position: from-font;
     text-decoration-skip-ink: none;
+    text-underline-position: from-font;
 }
 
 .featuredCollectionsBotton > div {

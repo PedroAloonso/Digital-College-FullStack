@@ -1,4 +1,4 @@
-@mixin title-large-h1 {
+@mixin title-large {
     color: var(--dark-gray);
     font-weight: 400;
     font-size: 64px;
@@ -10,7 +10,8 @@
     text-underline-position: from-font;
 }
 
-@mixin title-medium-h2 {
+@mixin title-medium {
+    color: var(--dark-gray);
     font-weight: 400;
     font-size: 48px;
     line-height: 50px;
@@ -21,7 +22,8 @@
     text-underline-position: from-font;
 }
 
-@mixin title-small-h3 {
+@mixin title-small {
+    color: var(--dark-gray);
     font-weight: 400;
     font-size: 32px;
     line-height: 36px;
@@ -32,7 +34,8 @@
     text-underline-position: from-font;
 }
 
-@mixin title-x-small-h4 {
+@mixin title-x-small {
+    color: var(--dark-gray);
     font-weight: 400;
     font-size: 28px;
     line-height: 36px;
@@ -43,7 +46,8 @@
     text-underline-position: from-font;
 }
 
-@mixin text-large-p {
+@mixin text-large {
+    color: var(--dark-gray);
     font-weight: 400;
     font-size: 24px;
     line-height: 38px;
@@ -54,7 +58,8 @@
     text-underline-position: from-font;
 }
 
-@mixin text-medium-p {
+@mixin text-medium {
+    color: var(--dark-gray);
     font-weight: 400;
     font-size: 18px;
     line-height: 34px;
@@ -65,7 +70,8 @@
     text-underline-position: from-font;
 }
 
-@mixin text-small-p {
+@mixin text-small {
+    color: var(--dark-gray);
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
@@ -76,7 +82,8 @@
     text-underline-position: from-font;
 }
 
-@mixin text-x-small-p {
+@mixin text-x-small {
+    color: var(--dark-gray);
     font-weight: 500;
     font-size: 14px;
     line-height: 22px;
@@ -87,7 +94,8 @@
     text-underline-position: from-font;
 }
 
-@mixin text-tinny-p {
+@mixin text-tinny {
+    color: var(--dark-gray);
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
@@ -98,7 +106,8 @@
     text-underline-position: from-font;
 }
 
-@mixin text-large-bold-p {
+@mixin text-large-bold {
+    color: var(--dark-gray);
     font-weight: 700;
     font-size: 24px;
     line-height: 38px;
@@ -108,7 +117,8 @@
     text-decoration-skip-ink: none;
     text-underline-position: from-font;
 }
-@mixin text-medium-bold-p {
+@mixin text-medium-bold {
+    color: var(--dark-gray);
     font-weight: 700;
     font-size: 18px;
     line-height: 34px;
@@ -119,7 +129,8 @@
     text-underline-position: from-font;
 }
 
-@mixin text-small-bold-p {
+@mixin text-small-bold {
+    color: var(--dark-gray);
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
@@ -130,7 +141,8 @@
     text-underline-position: from-font;
 }
 
-@mixin text-x-small-bold-p {
+@mixin text-x-small-bold {
+    color: var(--dark-gray);
     font-weight: 700;
     font-size: 14px;
     line-height: 22px;
@@ -141,7 +153,8 @@
     text-underline-position: from-font;
 }
 
-@mixin text-tinny-bold-p {
+@mixin text-tinny-bold {
+    color: var(--dark-gray);
     font-weight: 700;
     font-size: 12px;
     line-height: 24px;
