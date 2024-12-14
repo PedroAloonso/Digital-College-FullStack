@@ -10,6 +10,6 @@ export default function DiscountLabel({ children, className }) {
 }
 
 DiscountLabel.propTypes = {
-    children: propTypes.number,
+    children: propTypes.string,
     className: propTypes.string,
 };

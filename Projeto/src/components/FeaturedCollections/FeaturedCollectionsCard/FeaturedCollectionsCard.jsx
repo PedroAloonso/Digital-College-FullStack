@@ -41,7 +41,7 @@ export default function FeaturedCollectionsCard({
 FeaturedCollectionsCard.propTypes = {
     title: propTypes.string,
     image: propTypes.string,
-    imagePosition: propTypes.string,
+    imagePosition: propTypes.object,
     imageSize: propTypes.string,
     imageRotation: propTypes.string,
 };
