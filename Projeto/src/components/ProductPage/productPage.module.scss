@@ -105,7 +105,7 @@
 .externalInputContainer {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 18px;
 }
 
 .externalInputContainer > div {
@@ -186,13 +186,14 @@
     height: 48px;
 
     @include text-small-bold;
-    color: var(--light-gray-3);
-    text-transform: uppercase;
-
-    background-color: var(--warning);
-    padding: 20px;
+    outline: 0;
     border: 0;
     border-radius: 8px;
-    outline: 0;
+
+    background-color: var(--warning);
+    padding: 10px;
+    color: var(--light-gray-3);
     text-align: center;
+    text-transform: uppercase;
+    display: block;
 }
