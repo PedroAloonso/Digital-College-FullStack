@@ -11,11 +11,12 @@
 .slideContainer {
     display: flex;
     align-items: center;
+    height: 500px;
 }
 
 .info {
-    width: 100%;
     display: flex;
+    flex: 1.5;
 
     flex-direction: column;
     gap: 24px;
@@ -54,8 +55,8 @@
 }
 
 .imageContainer {
-    width: 100%;
     display: flex;
+    flex: 2;
     align-items: center;
     justify-content: center;
     max-height: min-content;
