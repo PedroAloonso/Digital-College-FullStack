@@ -30,7 +30,7 @@
 }
 
 .title {
-    @include title-large-bold;
+    @include title-medium-bold;
 
     &::first-letter {
         text-transform: uppercase;
@@ -42,7 +42,13 @@
     color: var(--dark-gray-3);
 }
 
-.ratingContainer:last-child div {
+.ratingContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ratingContainer:last-child > div {
     display: flex;
     align-items: center;
     gap: 10px;

@@ -1,6 +1,7 @@
 import style from "./productPage.module.scss";
 
 import { Navigate, useParams } from "react-router-dom";
+import Rating from "react-rating-stars-component";
 
 import products from "../../assets/data/products.json";
 import SliderWithPreview from "./SliderWithPreview/SliderWithPreview";
@@ -37,7 +38,15 @@ export default function ProductPage() {
                         >{`${product.category} | ${product.brand} | REF: ${product.id}`}</h4>
 
                         <div className={style.ratingContainer}>
-                            {/* TODO: fazer a barrinha de estrelas */}
+                            <Rating
+                                count={5} // Número de estrelas
+                                value={4.7} // Valor inicial
+                                size={35} // Tamanho das estrelas
+                                activeColor="#f6aa1c" // Cor das estrelas preenchidas
+                                isHalf={true} // Permite meia estrela
+                                edit={false}
+
+                            />
                             <div>
                                 <p className={style.rateBadge}>4.7</p>
                                 <span className={style.rateCount}>
@@ -72,10 +81,7 @@ export default function ProductPage() {
                         <h3 className={style.inputCategorie}>Tamanho</h3>
                         <div className={style.inputContainer}>
                             {sizes.map((size) => (
-                                <div
-                                    key={size}
-                                    className={style.inputItem}
-                                >
+                                <div key={size} className={style.inputItem}>
                                     <input
                                         type="radio"
                                         name="size"
@@ -91,16 +97,13 @@ export default function ProductPage() {
                         <h3 className={style.inputCategorie}>Cores</h3>
                         <div className={style.inputContainer}>
                             {colors.map((color) => (
-                                <div
-                                    key={color}
-                                    className={style.inputItem}
-                                >
+                                <div key={color} className={style.inputItem}>
                                     <input
                                         type="radio"
                                         name="color"
                                         value={color}
                                         className={style.colorInput}
-                                        style={{"--color": color }}
+                                        style={{ "--color": color }}
                                     />
                                 </div>
                             ))}
