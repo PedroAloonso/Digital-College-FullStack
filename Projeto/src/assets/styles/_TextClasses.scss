@@ -58,6 +58,18 @@
     text-underline-position: from-font;
 }
 
+@mixin title-small-bold {
+    color: var(--dark-gray);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 50px;
+    font-family: Inter;
+    letter-spacing: 1px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
 @mixin title-large-bold {
     color: var(--dark-gray);
     font-weight: 700;
@@ -141,6 +153,7 @@
     text-decoration-skip-ink: none;
     text-underline-position: from-font;
 }
+
 @mixin text-medium-bold {
     color: var(--dark-gray);
     font-weight: 700;
