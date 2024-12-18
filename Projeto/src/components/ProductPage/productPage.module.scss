@@ -1,9 +1,12 @@
 @use "../../assets/styles/TextClasses" as *;
 
+section {
+    background-color: var(--light-gray-3);
+}
+
 .externalContainer {
     display: flex;
     gap: 1em;
-    width: 100%;
 }
 
 .leftContainer {
@@ -23,183 +26,8 @@
 
 // Top
 
-.rigthTopContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
 
-.title {
-    @include title-medium-bold;
 
-    &::first-letter {
-        text-transform: uppercase;
-    }
-}
-
-.infos {
-    @include text-tinny;
-    color: var(--dark-gray-3);
-}
-
-.ratingContainer {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.ratingContainer:last-child > div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.rateBadge {
-    border-radius: 4px;
-    background-color: var(--warning);
-    padding: 6px 10px;
-    width: 63px;
-    height: 23px;
-    color: var(--white);
-
-    font-weight: 900;
-    font-size: 14px;
-    line-height: 24px;
-    font-family: Inter;
-    letter-spacing: 0.25px;
-    text-align: center;
-    text-decoration-skip-ink: none;
-    text-underline-position: from-font;
-}
-
-.rateCount {
-    @include text-x-small;
-    color: var(--light-gray);
-}
-
-// Middle
-
-.price {
-    @include title-small;
-    color: var(--dark-gray-2);
-
-    &::before {
-        content: "R$";
-        @include text-small;
-        color: var(--dark-gray-2);
-    }
-}
-
-.descriptionContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.descriptionTitle {
-    @include text-x-small-bold;
-    color: var(--light-gray);
-}
-
-.description {
-    @include text-x-small;
-    color: var(--dark-gray-2);
-}
 
 // Bottom
 
-.externalInputContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.externalInputContainer > div {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.inputCategorie {
-    @include text-x-small-bold;
-    color: var(--light-gray);
-}
-
-.inputContainer {
-    display: flex;
-    gap: 12px;
-}
-
-.inputItem {
-    position: relative;
-    height: 48px;
-}
-
-.sizeInput {
-    appearance: none;
-    transition: all 0.2s ease;
-    border: 1px solid var(--light-gray-2);
-    border-radius: 4px;
-    width: 48px;
-    height: 48px;
-
-    & + * {
-        @include text-small-bold;
-        display: flex;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-
-        justify-content: center;
-        align-items: center;
-        transform: translate(-50%, -50%); /* Centralização exata */
-
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        color: var(--dark-gray-2);
-        line-height: normal;
-    }
-
-    &:checked {
-        border: 0;
-        background-color: var(--primary);
-    }
-
-    &:checked + * {
-        color: var(--white);
-    }
-}
-
-.colorInput {
-    appearance: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-    border: 2px solid var(--white);
-    border-radius: 50%;
-    background-color: var(--color);
-    width: 40px;
-    height: 40px;
-
-    &:checked {
-        box-shadow: 0 0 0 2px var(--primary);
-    }
-}
-
-.externalInputContainer > button {
-    width: 220px;
-    height: 48px;
-
-    @include text-small-bold;
-    outline: 0;
-    border: 0;
-    border-radius: 8px;
-
-    background-color: var(--warning);
-    padding: 10px;
-    color: var(--light-gray-3);
-    text-align: center;
-    text-transform: uppercase;
-    display: block;
-}

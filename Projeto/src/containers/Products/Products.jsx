@@ -1,10 +1,10 @@
+import style from "./products.module.css";
+
 import ProductCard from "../../components/ProductCard/ProductCard";
 import FiltersMenu from "./FilterMenu/FiltersMenu";
 
 import { Dropdown } from "react-bootstrap";
 import { useState } from "react";
-
-import style from "./products.module.css";
 
 import products from "../../assets/data/products.json";
 import calça from "../../assets/img/products/calças.jpg";
@@ -12,6 +12,8 @@ import camisa from "../../assets/img/products/camiseta.jpg";
 import tenis from "../../assets/img/products/tennis.png";
 
 export default function Products() {
+    // TODO: Refatorar para que funcione com o react route e futuramente com o express
+
     const classifyTitle = (title) => {
         const firstWord = title.split(" ")[0].toLowerCase();
 

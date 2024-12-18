@@ -25,7 +25,7 @@ export default function FeaturedCollectionsCard({
     return (
         <div className={style.container}>
             <div className={style.infoContainer}>
-                <DiscountLabel>30</DiscountLabel>
+                <DiscountLabel>{30}</DiscountLabel>
                 <h2 className={style.title}>{title}</h2>
                 <SecondaryButton className={style.buyBtn}>
                     Comprar
@@ -42,6 +42,6 @@ FeaturedCollectionsCard.propTypes = {
     title: propTypes.string,
     image: propTypes.string,
     imagePosition: propTypes.object,
-    imageSize: propTypes.string,
+    imageSize: propTypes.object,
     imageRotation: propTypes.string,
 };

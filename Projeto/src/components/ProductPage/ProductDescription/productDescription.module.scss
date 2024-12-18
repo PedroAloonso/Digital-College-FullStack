@@ -1,0 +1,17 @@
+@use "../../../assets/styles/TextClasses" as *;
+
+.descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.descriptionTitle {
+    @include text-x-small-bold;
+    color: var(--light-gray);
+}
+
+.description {
+    @include text-x-small;
+    color: var(--dark-gray-2);
+}
