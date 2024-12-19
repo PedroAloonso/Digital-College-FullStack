@@ -26,7 +26,8 @@ export default function App() {
                     }
                 >
                     <Route index element={<Home />} />
-                    <Route path="products" element={<Outlet />}>
+                    <Route path="products" element={<Products />} />
+                    <Route path="product" element={<Outlet />}>
                         <Route index element={<Products />} />
                         <Route path=":category" element={<Outlet />}>
                             <Route index element={<ProductPage />} />
@@ -40,6 +41,7 @@ export default function App() {
                         </Route>
                         <Route path="*" element={<Products />} />
                     </Route>
+                    
                     <Route path="categories" element={<Categories />} />
                     <Route path="my-orders" element={<MyOrders />} />
                     <Route path="*" element={<Home />} />

@@ -1,3 +1,5 @@
+@use "../../assets/styles/TextClasses" as *;
+
 .topSection {
     display: flex;
     justify-content: space-between;
@@ -26,50 +28,68 @@
     width: 100%;
 }
 
-
 .customProductCard h2 {
     margin: 0;
     line-height: 24px;
 }
 
-
 /* Dropdown customizado */
 
 .orderByTitle {
-    font-weight: 700;
-    font-size: 16px;
-    font-family: Inter;
     margin: 0;
-
+    @include text-small-bold;
 }
 
-.dropdownToggle {
-    display: flex !important;
+.orderByTitle span {
+    margin: 0 1em;
+    @include text-small;
+    color: var(--dark-gray-2);
+}
+
+.orderByTitle span::after {
+    margin: 0 0 0 1em;
+    content: "▼";
+    color: var(--dark-gray-2);
+    font-size: 12px;
+}
+
+.dropdownTrigger {
+    display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--dark-gray-2) !important;
+    outline: none;
+    border: 1px solid var(--dark-gray-2);
     border-radius: 5px;
-    background-color: transparent !important;
-    padding: 10px !important;
-    width: fit-content;
-    height: 40px;
-    color: var(--dark-gray-2) !important;
+    background-color: transparent;
+    width: 330px;
+    height: 60px;
+    color: var(--dark-gray-2);
+    cursor: pointer;
 }
 
 .dropdownMenu {
+    outline: none;
     border: 1px solid var(--dark-gray-2) !important;
     border-radius: 5px;
     background-color: transparent;
-    width: 100%;
+    min-width: 330px;
+    list-style: none;
 }
 
 .dropdownItem {
+    outline: none;
+    background-color: var(--dark-gray-2);
     padding: 10px;
-    color: var(--dark-gray-2) !important;
+    color: var(--white);
     font-size: 16px;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+}
+.dropdownItem:hover {
+    background-color: var(--dark-gray);
 }
 
 .dropdownItem:active {
-    background-color: var(--dark-gray-2) !important;
-    color: var(--white) !important;
+    background-color: var(--dark-gray-2);
 }

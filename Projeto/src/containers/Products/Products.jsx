@@ -1,10 +1,15 @@
-import style from "./products.module.css";
+import style from "./products.module.scss";
 
 import ProductCard from "../../components/ProductCard/ProductCard";
 import FiltersMenu from "./FilterMenu/FiltersMenu";
 
-import { Dropdown } from "react-bootstrap";
 import { useState } from "react";
+import {
+    Dropdown,
+    DropdownTrigger,
+    DropdownMenu,
+    DropdownItem,
+} from "@nextui-org/dropdown";
 
 import products from "../../assets/data/products.json";
 import calça from "../../assets/img/products/calças.jpg";
@@ -40,9 +45,9 @@ export default function Products() {
     const [selectedItem, setSelectedItem] = useState(" ");
 
     // Função para atualizar o estado quando um item for selecionado
-    const handleSelect = (item) => {
-        setSelectedItem(item); // Atualiza o item selecionado
-    };
+    // const handleSelect = (item) => {
+    //     setSelectedItem(item); // Atualiza o item selecionado
+    // };
 
     const DropdownItems = [
         "Mais relevante",
@@ -57,29 +62,29 @@ export default function Products() {
                 <p>Resultados para “...”</p>
                 <div>
                     <Dropdown>
-                        <Dropdown.Toggle
-                            variant="success"
-                            id="dropdown-basic"
-                            className={style.dropdownToggle}
-                        >
-                            <p className={style.orderByTitle}>Ordenar Por:</p>
-                            {selectedItem}
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu className={style.dropdownMenu}>
-                            {DropdownItems.map((value) => {
+                        <DropdownTrigger className={style.dropdownTrigger}>
+                            <div>
+                                <p className={style.orderByTitle}>
+                                    Ordenar por:
+                                    <span>Mais relevantes</span>
+                                </p>
+                            </div>
+                        </DropdownTrigger>
+                        <DropdownMenu className={style.dropdownMenu}>
+                            <DropdownItem className={style.dropdownItem}>
+                                Mais relevantes
+                            </DropdownItem>
+                            {DropdownItems.map((item) => {
                                 return (
-                                    <Dropdown.Item
-                                        key={value}
-                                        href={`#/action-${value}`}
-                                        onClick={() => handleSelect(value)}
+                                    <DropdownItem
+                                        key={item}
                                         className={style.dropdownItem}
                                     >
-                                        {value}
-                                    </Dropdown.Item>
+                                        {item}
+                                    </DropdownItem>
                                 );
                             })}
-                        </Dropdown.Menu>
+                        </DropdownMenu>
                     </Dropdown>
                 </div>
             </section>
