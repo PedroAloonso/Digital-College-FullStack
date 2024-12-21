@@ -1,4 +1,4 @@
-import style from "./ProductInfo.module.scss";
+import style from "./productInfo.module.scss";
 
 import Rating from "react-rating-stars-component";
 

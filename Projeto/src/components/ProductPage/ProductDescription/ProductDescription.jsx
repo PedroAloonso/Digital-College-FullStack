@@ -1,4 +1,4 @@
-import style from "./ProductDescription.module.scss";
+import style from "./productDescription.module.scss";
 
 import PropTypes from "prop-types";
 
