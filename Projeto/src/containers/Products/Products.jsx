@@ -10,6 +10,7 @@ import {
     DropdownMenu,
     DropdownItem,
 } from "@nextui-org/dropdown";
+import { Link } from "react-router-dom";
 
 import products from "../../assets/data/products.json";
 import calça from "../../assets/img/products/calças.jpg";
@@ -71,9 +72,6 @@ export default function Products() {
                             </div>
                         </DropdownTrigger>
                         <DropdownMenu className={style.dropdownMenu}>
-                            <DropdownItem className={style.dropdownItem}>
-                                Mais relevantes
-                            </DropdownItem>
                             {DropdownItems.map((item) => {
                                 return (
                                     <DropdownItem
@@ -81,7 +79,7 @@ export default function Products() {
                                         className={style.dropdownItem}
                                         onPress={() => handleSelect(item)}
                                     >
-                                        {item}
+                                        <Link to={`/${item}`}>{item}</Link>
                                     </DropdownItem>
                                 );
                             })}

@@ -84,21 +84,34 @@
         font-size: 16px;
         list-style: none;
         text-align: center;
-    }
-    .dropdownItem:hover {
-        background-color: var(--white);
-        color: var(--primary);
-    }
 
-    .dropdownItem:active {
-        background-color: var(--white);
+        a {
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        &:hover {
+            background-color: var(--white);
+            color: var(--primary);
+
+            a {
+                color: var(--primary);
+            }
+        }
+
+        &:active {
+            background-color: var(--primary);
+        }
+
+        &:first-child {
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+
+        &:last-child {
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
     }
-    .dropdownItem:first-child {
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
-    }
-    .dropdownItem:last-child {
-        border-bottom-right-radius: 5px;
-        border-bottom-left-radius: 5px;
-    }
+    
 }
