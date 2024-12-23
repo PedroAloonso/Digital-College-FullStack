@@ -1,10 +1,6 @@
 import PropTypes from "prop-types";
-import style from "./filterGroup.module.css";
+import style from "./filterGroup.module.scss";
 
-FilterGroup.propTypes = {
-    title: PropTypes.string,
-    children: PropTypes.node,
-};
 export default function FilterGroup({ title, children }) {
     return (
         <div className={style.container}>
@@ -13,3 +9,8 @@ export default function FilterGroup({ title, children }) {
         </div>
     );
 }
+
+FilterGroup.propTypes = {
+    title: PropTypes.string,
+    children: PropTypes.node,
+};

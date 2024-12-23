@@ -1,4 +1,5 @@
-import style from "./filterItem.module.css"
+import PropTypes from "prop-types"
+import style from "./filterItem.module.scss"
 
 export default function FilterItem({title, name, type}) {
     return (
@@ -8,5 +9,11 @@ export default function FilterItem({title, name, type}) {
         </div>
     );
 }
+
+FilterItem.propTypes = {
+    name: PropTypes.string,
+    title: PropTypes.string,
+    type: PropTypes.string,
+};
 
 

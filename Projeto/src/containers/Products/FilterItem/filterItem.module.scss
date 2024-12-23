@@ -1,0 +1,25 @@
+@use "../../../assets/styles/TextClasses" as *;
+
+.container {
+    display: flex;
+    flex-shrink: 0;
+    gap: 8px;
+}
+
+.container label {
+    color: var(--dark-gray-2);
+    @include text-x-small;
+}
+
+.container label::first-letter {
+    text-transform: uppercase;
+}
+
+.container input {
+    border-color: var(--dark-gray-3);
+    padding-inline: 0;
+    padding-block: 0;
+    width: 22px;
+    height: 22px;
+    accent-color: var(--primary);
+}

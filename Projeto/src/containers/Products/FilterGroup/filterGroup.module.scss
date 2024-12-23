@@ -1,0 +1,19 @@
+@use "../../../assets/styles/TextClasses" as *;
+
+.title {
+    color: var(--dark-gray-2);
+    @include text-x-small-bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.itemsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
