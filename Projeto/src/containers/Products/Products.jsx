@@ -42,12 +42,12 @@ export default function Products() {
         return null;
     };
 
-    const [selectedItem, setSelectedItem] = useState(" ");
+    const [selectedItem, setSelectedItem] = useState("Mais relevante");
 
     // Função para atualizar o estado quando um item for selecionado
-    // const handleSelect = (item) => {
-    //     setSelectedItem(item); // Atualiza o item selecionado
-    // };
+    const handleSelect = (item) => {
+        setSelectedItem(item); // Atualiza o item selecionado
+    };
 
     const DropdownItems = [
         "Mais relevante",
@@ -66,7 +66,7 @@ export default function Products() {
                             <div>
                                 <p className={style.orderByTitle}>
                                     Ordenar por:
-                                    <span>Mais relevantes</span>
+                                    <span>{selectedItem}</span>
                                 </p>
                             </div>
                         </DropdownTrigger>
@@ -79,6 +79,7 @@ export default function Products() {
                                     <DropdownItem
                                         key={item}
                                         className={style.dropdownItem}
+                                        onPress={() => handleSelect(item)}
                                     >
                                         {item}
                                     </DropdownItem>
