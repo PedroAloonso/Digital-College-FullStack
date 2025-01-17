@@ -6,8 +6,8 @@ const User = sequelize.define(
     {
         id: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
             autoIncrement: true,
+            primaryKey: true
         },
         name: {
             type: DataTypes.STRING,
@@ -19,8 +19,7 @@ const User = sequelize.define(
             allowNull: false
         }
     },
-    { 
-        tableName: 'user',
+    {
         engine: 'MyISAM',
         timestamps: false
     });
