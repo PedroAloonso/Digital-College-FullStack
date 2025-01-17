@@ -8,7 +8,7 @@ const router = Router();
 router.post("/", async (req, res) => {
     const { name, email } = req.body;
     try {
-        const user = await prisma.user.create({
+        const user = await prisma.users.create({
             data: { name, email },
         });
         res.json(user);
@@ -19,14 +19,14 @@ router.post("/", async (req, res) => {
 
 // Listar todos os usuários
 router.get("/", async (req, res) => {
-    const users = await prisma.user.findMany();
+    const users = await prisma.users.findMany();
     res.json(users);
 });
 
 // Buscar um usuário por ID
 router.get("/:id", async (req, res) => {
     const { id } = req.params;
-    const user = await prisma.user.findUnique({
+    const user = await prisma.users.findUnique({
         where: { id: parseInt(id) },
     });
     if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
