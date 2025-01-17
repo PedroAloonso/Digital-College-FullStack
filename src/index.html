@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                height: 100vh;
+                background-color: #222555;
+                color: #eeefff;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste</h1>
+        <form action="/sequelize-users" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" />
+            <br /><br />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" />
+            <br /><br />
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div class="users-container"></div>
+        <script defer type="module">
+            const userContainer = document.querySelector(".users-container");
+
+            const getUsers = async () => {
+                try {
+                    const data = await fetch(
+                        "http://localhost:3000/sequelize-users/"
+                    );
+                    try {
+                        const usersData = await data.json();
+                        return usersData;
+                    } catch (error) {}
+                    //console.log(data.json())
+                } catch (error) {
+                    console.log(error);
+                }
+            };
+
+            const user = (user) => {
+                userContainer.innerHTML += `
+                    <div>
+                        <h3>${user.name}</h3>
+                        <h3>${user.email}</h3>
+                    </div>
+                `;
+            };
+
+            const users = await getUsers();
+            users.map(user);
+        </script>
+    </body>
+</html>
