@@ -10,16 +10,49 @@
                 padding: 0;
             }
             html {
+                font-family: Arial, Helvetica, sans-serif;
                 height: 100vh;
                 background-color: #222555;
                 color: #eeefff;
                 text-align: center;
             }
+
+            #send-btn {
+                padding: 1rem;
+                font-weight: bold;
+            }
+
+            .users-table {
+                margin: 1rem 0;
+            }
+
+            .users-table {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            table {
+                border: 2px solid white;
+                border-collapse: collapse;
+                margin-bottom: 1em;
+            }
+
+            tr,
+            td,
+            th {
+                padding: 12px 8px;
+                border: 2px solid white;
+            }
+
+            .trash {
+                cursor: pointer;
+            }
         </style>
     </head>
     <body>
         <h1>Teste</h1>
-        <form action="/sequelize-users" method="post">
+        <form>
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" />
             <br /><br />
@@ -28,12 +61,45 @@
             <input type="email" id="email" name="email" />
             <br /><br />
 
-            <button type="submit">Enviar</button>
+            <button id="send-btn" type="button">Enviar</button>
         </form>
 
-        <div class="users-container"></div>
+        <div class="users-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Id</th>
+                        <th scope="col" colspan="2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body"></tbody>
+            </table>
+        </div>
         <script defer type="module">
-            const userContainer = document.querySelector(".users-container");
+            const userContainer = document.querySelector(".table-body");
+            const sendUserButton = document.querySelector("#send-btn");
+
+            sendUserButton.addEventListener("click", async () => {
+                const form = document.querySelector("form");
+                const formData = new FormData(form);
+                const json = JSON.stringify(Object.fromEntries(formData));
+                await addUser(json);
+                window.location.reload();
+            });
+
+            const addUser = async (data) => {
+                try {
+                    await fetch("http://localhost:3000/sequelize-users/", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: data,
+                    });
+                } catch (error) {
+                    console.log("Erro no addUser:", error);
+                }
+            };
 
             const getUsers = async () => {
                 try {
@@ -50,12 +116,26 @@
                 }
             };
 
+            window.deleteUser = async (id) => {
+                try {
+                    await fetch(`http://localhost:3000/sequelize-users/${id}`, {
+                        method: "DELETE",
+                    });
+                    window.location.reload();
+                } catch (error) {
+                    console.log("Erro no deleteUser:", error);
+                }
+            };
+
             const user = (user) => {
                 userContainer.innerHTML += `
-                    <div>
-                        <h3>${user.name}</h3>
-                        <h3>${user.email}</h3>
-                    </div>
+                    <tr>
+                        <td>${user.name}</td>
+                        <td>${user.email}</td>
+                        <td>${user.id}</td>
+                        <td class="trash" onclick="deleteUser(${user.id})">🗑️</td>
+                        
+                    </tr>
                 `;
             };
 

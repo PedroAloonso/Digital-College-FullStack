@@ -1,8 +1,9 @@
 import { Router } from "express";
-import User from "../../sequelize/models.js";
+import models from "../../sequelize/models.js";
 
 const router = Router();
 
+const { User } = models;
 
 (async () => {
     try {
@@ -20,8 +21,7 @@ router.post("/", async (req, res) => {
     try {
         const user = await User.create({ name, email });
         console.log(user)
-        res.status(200)
-        //res.json(user);
+        res.status(200).json(user);
     } catch (error) {
         console.log(error)
         res.status(400);
@@ -42,4 +42,12 @@ router.get("/:id", async (req, res) => {
     res.json(user);
 });
 
+
+router.delete("/:id", async (req, res) => {
+    const { id } = req.params;
+    const user = await User.findByPk(id);
+    if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
+    await user.destroy();
+    res.json(user);
+});
 export default router;
