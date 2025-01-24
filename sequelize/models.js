@@ -61,6 +61,42 @@ const Product = sequelize.define(
     }
 )
 
+const ProductOrder = sequelize.define(
+    "ProductOrder", 
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            autoIncrement: true, 
+            primaryKey: true
+        },
+        productId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: Product.id
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: User.id
+        },
+        quantity: {
+            type: DataTypes.INTEGER,
+            allowNull: false, 
+        },
+        price: {
+            type: DataTypes.FLOAT,
+            allowNull: false,
+            primaryKey: true
+        },
+        status: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+
+    }
+)
+
 // Product          // ProductOrder  
 // id               // id               
 // name             // productId       
@@ -73,7 +109,7 @@ const Product = sequelize.define(
 // createdAt
 // updatedAt
 
-const models = { User: User, Product: Product };
+const models = { User: User, Product: Product, ProductOrder: ProductOrder };
 
 
 export default models;

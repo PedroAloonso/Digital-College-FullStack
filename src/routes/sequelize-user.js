@@ -5,14 +5,7 @@ const router = Router();
 
 const { User } = models;
 
-(async () => {
-    try {
-        await User.sync(); // Cria a tabela (se não existir)
-        console.log("Tabela Users sincronizada com sucesso!");
-    } catch (error) {
-        console.error("Erro ao sincronizar tabela:", error);
-    }
-})();
+
 
 // Criar um novo usuário
 router.post("/", async (req, res) => {

@@ -15,3 +15,25 @@ model Users {
     createdAt DateTime @default(now())
     updatedAt DateTime @default(now())
 }
+model Products {
+    id Int @id @default(autoincrement())
+    name String
+    description String 
+    price Float 
+    discount Float
+    quantity Int
+    quantitySold Int
+    photoURL String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now())
+}
+model ProductOrders {
+    id Int @id @default(autoincrement())
+    productId Int
+    userId Int 
+    quantity Int 
+    price Float
+    status String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now())
+}
