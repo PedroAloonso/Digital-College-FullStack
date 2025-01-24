@@ -9,31 +9,56 @@ datasource db {
 }
 
 model Users {
-    id Int @id @default(autoincrement())
-    name String
-    email String 
-    createdAt DateTime @default(now())
-    updatedAt DateTime @default(now())
+  id          Int            @id @default(autoincrement())
+  name        String
+  email       String         @unique
+  productOrders ProductOrders[]
+
+  // Timestamps opcionais
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
 }
+
+model ProductCategories {
+  id       Int       @id @default(autoincrement())
+  name     String
+  products Products[]
+}
+
+model ProductBrands {
+  id       Int       @id @default(autoincrement())
+  name     String
+  products Products[]
+}
+
 model Products {
-    id Int @id @default(autoincrement())
-    name String
-    description String 
-    price Float 
-    discount Float
-    quantity Int
-    quantitySold Int
-    photoURL String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @default(now())
+  id              Int             @id @default(autoincrement())
+  name            String
+  description     String?
+  price           Decimal         @db.Decimal(10, 2)
+  discount        Float           @default(0.0)
+  stock           Int
+  sold            Int             @default(0)
+  photoURL        String?
+
+  categoryId      Int
+  category        ProductCategories @relation(fields: [categoryId], references: [id])
+
+  brandId         Int
+  brand           ProductBrands    @relation(fields: [brandId], references: [id])
+
+  productOrders   ProductOrders[]
 }
+
 model ProductOrders {
-    id Int @id @default(autoincrement())
-    productId Int
-    userId Int 
-    quantity Int 
-    price Float
-    status String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @default(now())
+  id          Int      @id @default(autoincrement())
+  quantity    Int
+  price       Float
+  status      String
+
+  userId      Int
+  user        Users     @relation(fields: [userId], references: [id])
+
+  productId   Int
+  product     Products  @relation(fields: [productId], references: [id])
 }

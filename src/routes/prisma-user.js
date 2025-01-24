@@ -11,7 +11,7 @@ router.post("/", async (req, res) => {
         const user = await prisma.users.create({
             data: { name, email },
         });
-        res.json(user);
+        res.status(200).json(user);
     } catch (error) {
         res.status(400).json({ error: "Erro ao criar usuário" });
     }
@@ -31,6 +31,15 @@ router.get("/:id", async (req, res) => {
     });
     if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
     res.json(user);
+});
+
+router.delete("/:id", async (req, res) => {
+    const { id } = req.params;
+    const user = await prisma.users.delete({
+        where: { id: parseInt(id) },
+    });
+    if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
+    res.status(200).json(user);
 });
 
 export default router;

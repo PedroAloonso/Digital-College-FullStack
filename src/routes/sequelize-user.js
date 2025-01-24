@@ -13,7 +13,6 @@ router.post("/", async (req, res) => {
     console.log(req, "requisição")
     try {
         const user = await User.create({ name, email });
-        console.log(user)
         res.status(200).json(user);
     } catch (error) {
         console.log(error)
