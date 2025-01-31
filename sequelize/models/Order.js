@@ -16,13 +16,4 @@ const Order = sequelize.define(
     }
 );
 
-Order.belongsTo(User, {
-    foreignKey: {
-        name: "user_id"
-    },
-})
-User.hasMany(Order, {foreignKey: {
-    name: "user_id"
-}})
-
 export default Order

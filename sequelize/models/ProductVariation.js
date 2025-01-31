@@ -10,10 +10,6 @@ const ProductVariation = sequelize.define(
             autoIncrement: true,
             primaryKey: true
         },
-        sale_price: {
-            type: DataTypes.FLOAT,
-            allowNull: false
-        },
         price: {
             type: DataTypes.FLOAT,
             allowNull: false
@@ -33,18 +29,5 @@ const ProductVariation = sequelize.define(
     }
 );
 
-ProductVariation.belongsTo(Product, {
-    foreignKey: {
-        name: "product_id"
-    }
-})
-
-Product.hasMany(ProductVariation, {
-    foreignKey: {
-        name: "product_id"
-    }
-})
 
 export default ProductVariation
-
-// FK: Product.id - product_id
