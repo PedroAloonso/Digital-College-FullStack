@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors"
 import prismaUserRoutes from "./src/routes/prisma-user.js";
 import sequelizeUserRoutes from "./src/routes/sequelize-user.js";
+import syncTables from "./sequelize/models.js";
+
+syncTables();
 
 const app = express();
 app.use(cors())

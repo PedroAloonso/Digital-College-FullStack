@@ -1,11 +1,7 @@
 import { Router } from "express";
-import models from "../../sequelize/models.js";
+import User from "../../sequelize/models/User.js";
 
 const router = Router();
-
-const { User } = models;
-
-
 
 // Criar um novo usuário
 router.post("/", async (req, res) => {
