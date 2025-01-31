@@ -23,9 +23,6 @@ const ProductVariation = sequelize.define(
         size: {
             type: DataTypes.DATE
         }
-    },
-    {
-        engine: 'MyISAM'
     }
 );
 

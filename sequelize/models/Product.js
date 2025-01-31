@@ -12,6 +12,9 @@ const Product = sequelize.define(
         brand: {
             type: DataTypes.STRING,
         },
+        category: {
+            type: DataTypes.STRING,
+        },
         name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -23,9 +26,6 @@ const Product = sequelize.define(
             type: DataTypes.INTEGER,
             allowNull: false
         }
-    },
-    {
-        engine: 'MyISAM'
     }
 );
 

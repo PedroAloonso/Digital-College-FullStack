@@ -1,6 +1,8 @@
 import ItensOrder from "./models/ItensOrder.js";
 import Order from "./models/Order.js";
 import Product from "./models/Product.js";
+import Category from "./models/Category.js";
+import Brand from "./models/Brand.js";
 import ProductVariation from "./models/ProductVariation.js";
 import User from "./models/User.js";
 
@@ -12,6 +14,14 @@ export default function setupAssociations() {
     // 1 Pedido pode ter vários Itens de Pedido
     Order.hasMany(ItensOrder, { foreignKey: "order_id" });
     ItensOrder.belongsTo(Order, { foreignKey: "order_id" });
+
+    // 1 Categoria pode ter vários Produtos
+    Category.hasMany(Product, { foreignKey: "category_id" });
+    Product.belongsTo(Category, { foreignKey: "category_id" });
+
+    // 1 Marca pode ter vários Produtos
+    Brand.hasMany(Product, { foreignKey: "brand_id" });
+    Product.belongsTo(Brand, { foreignKey: "brand_id" });
 
     // 1 Produto pode ter várias Variações
     Product.hasMany(ProductVariation, { foreignKey: "product_id" });

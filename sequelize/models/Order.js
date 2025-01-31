@@ -1,6 +1,5 @@
 import sequelize from "../setup.js";
 import DataTypes from "sequelize"
-import User from "./User.js";
 
 const Order = sequelize.define(
     "Order",
@@ -10,9 +9,6 @@ const Order = sequelize.define(
             autoIncrement: true,
             primaryKey: true
         },
-    },
-    {
-        engine: 'MyISAM'
     }
 );
 
