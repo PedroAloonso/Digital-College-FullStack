@@ -1,7 +1,7 @@
 import style from "./products.module.scss";
 
 import ProductCard from "../../components/ProductCard/ProductCard";
-import FiltersMenu from "./FilterMenu/FiltersMenu";
+import ProductFilterPanel from "../../components/Filter/ProductFilterPanel/ProductFilterPanel";
 
 import { useState } from "react";
 import {
@@ -89,7 +89,7 @@ export default function Products() {
             </section>
             <section className={style.bottomSection}>
                 <div className={style.filtersContainer}>
-                    <FiltersMenu />
+                    <ProductFilterPanel />
                 </div>
                 <div className={style.productContainer}>
                     {products.map((product) => {

@@ -5,10 +5,10 @@ import { Navigate, useParams } from "react-router-dom";
 import products from "../../assets/data/products.json";
 
 import SliderWithPreview from "./SliderWithPreview/SliderWithPreview";
-import ProductInfo from "./ProductInfo/ProductInfo"; 
-import ProductDescription from "./ProductDescription/ProductDescription"; 
+import ProductInfo from "./ProductInfo/ProductInfo";
+import ProductDescription from "./ProductDescription/ProductDescription";
 import ProductInputs from "./ProductInputs/ProductInputs";
-import BreadCrumb from "../BreadCrumb/BreadCrumb";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
 const slugToName = (slug) => slug.replace(/-/g, " ").toLowerCase();
 
@@ -28,7 +28,7 @@ export default function ProductPage() {
         // #TODO: Componetizar os elementos
         <>
             <section>
-                <BreadCrumb />
+                <Breadcrumb />
                 <div className={style.externalContainer}>
                     <div className={style.leftContainer}>
                         <SliderWithPreview colors={colors} />

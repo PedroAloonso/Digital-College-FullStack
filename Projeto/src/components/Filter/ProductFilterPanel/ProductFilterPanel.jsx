@@ -1,8 +1,8 @@
-import style from "./filtersMenu.module.css";
+import style from "./productFilterPanel.module.css";
 import FilterGroup from "../FilterGroup/FilterGroup";
 import FilterItem from "../FilterItem/FilterItem";
 
-export default function FiltersMenu() {
+export default function ProductFilterPanel() {
     const filters = [
         {
             title: "Marca",

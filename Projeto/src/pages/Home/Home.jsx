@@ -1,6 +1,6 @@
 import MainSlider from "../../components/MainSlider/MainSlider";
 import FeaturedCollections from "../../components/FeaturedCollections/FeaturedCollections";
-import TredingProducts from "../../components/TredingProducts/TredingProducts";
+import TrendingProducts from "../../components/TrendingProducts/TrendingProducts";
 import SpecialOffers from "../../components/SpecialOffers/SpecialOffers";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
         <>
             <MainSlider />
             <FeaturedCollections />
-            <TredingProducts />
+            <TrendingProducts />
             <SpecialOffers />
         </>
     );

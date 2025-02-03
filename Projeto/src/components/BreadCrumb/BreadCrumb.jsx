@@ -1,8 +1,8 @@
-import style from "./breadCrumb.module.scss"
+import style from "./breadcrumb.module.scss";
 
 import { Link, useLocation } from "react-router-dom";
 
-export default function BreadCrumb() {
+export default function Breadcrumb() {
     const location = useLocation();
 
     // Quebra a URL em partes para montar a breadcrumb
