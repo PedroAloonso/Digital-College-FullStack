@@ -1,3 +1,1 @@
-[Indice](https://pedroaloonso.github.io/Digital-College-FullStack/index.html)
-
-Caso queira baixar somente uma pasta, acesse este [site](https://download-directory.github.io/) e cole o link da pasta que você quer baixar
+[Figma](https://www.figma.com/design/Tk1Wc4vTNMCZDWkIwAQTxC/DRIP-STORE---DIGITAL-COLLEGE?node-id=22-30)
