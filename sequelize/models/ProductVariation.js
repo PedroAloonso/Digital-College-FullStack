@@ -1,6 +1,5 @@
 import sequelize from "../setup.js";
 import DataTypes from "sequelize"
-import Product from "./Product.js";
 
 const ProductVariation = sequelize.define(
     "product_variation",
@@ -20,9 +19,9 @@ const ProductVariation = sequelize.define(
         color: {
             type: DataTypes.STRING,
         },
-        size: {
-            type: DataTypes.DATE
-        }
+        image: {
+            type: DataTypes.STRING,
+        },
     }
 );
 

@@ -1,20 +1,19 @@
 import sequelize from "../setup.js";
 import DataTypes from "sequelize"
 
-const ItensOrder = sequelize.define(
-    "Itens_Order",
+const ProductGender = sequelize.define(
+    "Product_Gender",
     {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        quantity: {
-            type: DataTypes.INTEGER,
+        gender: {
+            type: DataTypes.STRING,
             allowNull: false
         }
     }
-);
+)
 
-
-export default ItensOrder
+export default ProductGender
