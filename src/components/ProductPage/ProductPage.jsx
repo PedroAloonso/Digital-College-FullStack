@@ -14,10 +14,17 @@ const slugToName = (slug) => slug.replace(/-/g, " ").toLowerCase();
 
 export default function ProductPage() {
     const { title } = useParams();
+    var productTitle = ""
+    var productId = ""
 
-    const productTitle = slugToName(title);
-
-    const product = products.find((p) => p.title === productTitle);
+    if (title.includes("&")) {
+        productTitle = title.split("&")[0];
+        productId = title.split("&")[1];
+    } else {
+        productId = title 
+    }
+    
+    const product = products.find((p) => p.id == productId || p.title === productTitle );
 
     if (!product) {
         console.log("deu ruim");
