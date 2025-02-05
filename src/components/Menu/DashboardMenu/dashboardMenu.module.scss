@@ -1,0 +1,25 @@
+@use "../../../assets/styles/TextClasses";
+
+.container {
+    padding: 0 !important;
+
+    height: 100vh;
+    width: fit-content;
+
+    background-color: var(--tertiary);
+
+    @include TextClasses.text-medium;
+    color: var(--white);
+
+    & nav {
+        padding: 1.5rem 3rem;
+        padding-left: 1rem;
+        & ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            list-style-type: none;
+        }
+    }
+}
+

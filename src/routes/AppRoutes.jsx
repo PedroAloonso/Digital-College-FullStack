@@ -35,10 +35,10 @@ export default function AppRoutes() {
                     
                     <Route path="categories" element={<Categories />} />
                     <Route path="my-orders" element={<MyOrders />} />
-                    <Route path="dashboard" element={<Dashboard />} />
 
                     <Route path="*" element={<Home />} />
                 </Route>
+                <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
         </>
     );

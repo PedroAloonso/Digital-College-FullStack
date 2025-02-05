@@ -1,0 +1,8 @@
+@use "../../assets/styles/TextClasses";
+
+.container {
+    @include TextClasses.text-small;
+
+    display: flex;
+    background-color: var(--light-gray-3);
+}
