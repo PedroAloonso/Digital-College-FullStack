@@ -10,8 +10,6 @@ import ProductDescription from "./ProductDescription/ProductDescription";
 import ProductInputs from "./ProductInputs/ProductInputs";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
-const slugToName = (slug) => slug.replace(/-/g, " ").toLowerCase();
-
 export default function ProductPage() {
     const { title } = useParams();
     var productTitle = ""

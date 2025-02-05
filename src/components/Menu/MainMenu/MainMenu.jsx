@@ -1,7 +1,7 @@
-import style from "./Menu.module.css";
+import style from "./mainMenu.module.css";
 import { NavLink } from "react-router-dom";
 
-export default function Menu() {
+export default function MainMenu() {
     const menuItems = [
         { name: "Home", route: "" },
         { name: "Produtos", route: "products" },

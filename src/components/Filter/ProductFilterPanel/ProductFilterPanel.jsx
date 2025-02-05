@@ -4,6 +4,8 @@ import FilterItem from "../FilterItem/FilterItem";
 import { useState } from "react";
 
 export default function ProductFilterPanel() {
+    // TODO: Consertar isso Aqui AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
     const [brand, setBrand] = useState([]);
     const [category, setCategory] = useState([]);
     const [gender, setGender] = useState([]);
