@@ -13,9 +13,11 @@ import Breadcrumb from "../Breadcrumb/Breadcrumb";
 const slugToName = (slug) => slug.replace(/-/g, " ").toLowerCase();
 
 export default function ProductPage() {
-    const { category, brand, title } = useParams();
-    const productName = slugToName(category);
-    const product = products.find((p) => p.title === productName);
+    const { title } = useParams();
+
+    const productTitle = slugToName(title);
+
+    const product = products.find((p) => p.title === productTitle);
 
     if (!product) {
         console.log("deu ruim");
@@ -25,7 +27,6 @@ export default function ProductPage() {
     const sizes = [39, 40, 41, 42, 43];
     const colors = ["#6FEEFF", "#FF6969", "#5E5E5E", "#6D70B7"];
     return (
-        // #TODO: Componetizar os elementos
         <>
             <section>
                 <Breadcrumb />
@@ -36,8 +37,10 @@ export default function ProductPage() {
                     <div className={style.rigthContainer}>
                         {/* Rigth Top */}
                         <ProductInfo product={product} />
+
                         {/* Rigth Mid */}
                         <ProductDescription />
+
                         {/* Rigth Bot */}
                         <ProductInputs colors={colors} sizes={sizes} />
                     </div>

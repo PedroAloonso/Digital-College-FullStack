@@ -18,7 +18,6 @@ import camisa from "../../assets/img/products/camiseta.jpg";
 import tenis from "../../assets/img/products/tennis.png";
 
 export default function Products() {
-    // TODO: Refatorar para que funcione com o react route e futuramente com o express
 
     const classifyTitle = (title) => {
         const firstWord = title.split(" ")[0].toLowerCase();
@@ -60,7 +59,7 @@ export default function Products() {
     return (
         <>
             <section className={style.topSection}>
-                <p>Resultados para “...”</p>
+                <p></p>
                 <div>
                     <Dropdown>
                         <DropdownTrigger className={style.dropdownTrigger}>
