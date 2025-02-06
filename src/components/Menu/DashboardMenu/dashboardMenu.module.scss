@@ -19,7 +19,22 @@
             flex-direction: column;
             gap: 12px;
             list-style-type: none;
+
+            & li {
+
+                & a {
+                    color: var(--white);
+                    text-decoration: none;
+                }
+            }
         }
     }
 }
 
+.selected:after {
+    display: block;
+    content: " ";
+    width: 100%;
+    height: 2px;
+    background-color: var(--white);
+}
