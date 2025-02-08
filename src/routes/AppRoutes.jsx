@@ -32,13 +32,17 @@ export default function AppRoutes() {
                         </Route>
                         <Route path="*" element={<Products />} />
                     </Route>
-                    
+
                     <Route path="categories" element={<Categories />} />
                     <Route path="my-orders" element={<MyOrders />} />
 
                     <Route path="*" element={<Home />} />
                 </Route>
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/dashboard">
+                    <Route index element={<Dashboard />} />
+                    <Route path="products" element={<Dashboard />} />
+                    <Route path="client" element={<Dashboard />} />
+                </Route>
             </Routes>
         </>
     );

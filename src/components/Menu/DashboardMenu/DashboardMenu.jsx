@@ -20,6 +20,7 @@ export default function DashboardMenu() {
                                         isActive ? style.selected : ""
                                     }
                                     to={`/${value.route}`}
+                                    end
                                 >
                                     {value.title}
                                 </NavLink>

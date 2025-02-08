@@ -19,6 +19,7 @@ export default function MainMenu() {
                                     isActive ? style.selected : ""
                                 }
                                 to={`/${value.route}`}
+                                end
                             >
                                 {value.name}
                             </NavLink>
