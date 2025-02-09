@@ -4,5 +4,13 @@
     @include TextClasses.text-small;
 
     display: flex;
+    
     background-color: var(--light-gray-3);
+}
+
+.tablesContainer {
+    padding: 1em !important;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }

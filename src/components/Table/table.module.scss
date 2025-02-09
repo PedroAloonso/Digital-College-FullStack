@@ -1,0 +1,41 @@
+.table {
+    display: block;
+    border-spacing: 0;
+
+    padding: 0 !important;
+    height: fit-content;
+
+    color: var(--white);
+    text-align: center;
+
+    & caption {
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
+        background-color: var(--dark-gray);
+        padding: 8px;
+        color: var(--white);
+    }
+
+    & td,
+    th {
+        background-color: var(--tertiary);
+        padding: 12px;
+    }
+
+    & thead tr {
+        & th {
+            text-transform: capitalize;
+        }
+    }
+
+    tbody {
+        & tr:last-child {
+            & td:last-child {
+                border-bottom-right-radius: 12px;
+            }
+            & td:first-child {
+                border-bottom-left-radius: 12px;
+            }
+        }
+    }
+}

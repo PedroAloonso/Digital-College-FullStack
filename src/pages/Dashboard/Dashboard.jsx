@@ -1,13 +1,13 @@
 import style from "./dashboard.module.scss";
-import { Outlet } from "react-router-dom";
 
 import DashboardMenu from "../../components/Menu/DashboardMenu/DashboardMenu";
+import Table from "../../components/Table/Table";
 
 export default function Dashboard() {
     const handleSubmit = async (event) => {
         event.preventDefault(); // Evita o comportamento padrão do formulário
 
-        const form = document.querySelector("#form");
+        const form = event.target;
         const formData = new FormData(form);
 
         // Converte os dados do formulário para um objeto JSON
@@ -40,8 +40,21 @@ export default function Dashboard() {
     return (
         <div className={style.container}>
             <DashboardMenu />
-            <Outlet />
-            <form id="form" action="POST" onSubmit={handleSubmit}>
+
+            <div className={style.tablesContainer}>
+                <Table
+                    columns={["id", "name"]}
+                    data={[[1, "Genilto"], [2, "Diego"]]}
+                    tableName={"Users"}
+                />
+                <Table
+                    columns={["id", "name"]}
+                    data={[[1, "Genilto"], [2, "Diego"]]}
+                    tableName={"Users"}
+                />
+            </div>
+
+            {/* <form action="POST" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Nome: </label>
                     <input type="text" name="name" id="name" required />
@@ -59,7 +72,7 @@ export default function Dashboard() {
                     <input type="number" name="stock" id="stock" />
                 </div>
                 <button type="submit">Adicionar</button>
-            </form>
+            </form> */}
         </div>
     );
 }

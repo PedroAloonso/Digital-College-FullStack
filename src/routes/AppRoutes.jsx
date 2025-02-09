@@ -38,7 +38,7 @@ export default function AppRoutes() {
 
                     <Route path="*" element={<Home />} />
                 </Route>
-                <Route path="/dashboard">
+                <Route path="/dashboard" element={<Outlet />}>
                     <Route index element={<Dashboard />} />
                     <Route path="products" element={<Dashboard />} />
                     <Route path="client" element={<Dashboard />} />
