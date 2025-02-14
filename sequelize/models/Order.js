@@ -9,6 +9,12 @@ const Order = sequelize.define(
             autoIncrement: true,
             primaryKey: true
         },
+        status: {
+            type: DataTypes.STRING
+        },
+        total_price: {
+            type: DataTypes.FLOAT
+        }
     }
 );
 

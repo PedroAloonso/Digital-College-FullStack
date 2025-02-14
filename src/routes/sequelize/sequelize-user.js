@@ -1,5 +1,5 @@
 import { Router } from "express";
-import User from "../../sequelize/models/User.js";
+import User from "../../../sequelize/models/User.js";
 
 const router = Router();
 

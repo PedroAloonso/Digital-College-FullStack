@@ -13,6 +13,10 @@ const ProductVariation = sequelize.define(
             type: DataTypes.FLOAT,
             allowNull: false
         },
+        sale_price: {
+            type: DataTypes.FLOAT,
+            allowNull: false
+        },
         stock: {
             type: DataTypes.INTEGER,
         },

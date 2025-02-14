@@ -12,8 +12,12 @@ const ItensOrder = sequelize.define(
         quantity: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        unit_price: {
+            type: DataTypes.FLOAT
         }
-    }
+    },
+    { timestamps: false }
 );
 
 

@@ -9,12 +9,6 @@ const Product = sequelize.define(
             autoIncrement: true,
             primaryKey: true
         },
-        brand: {
-            type: DataTypes.STRING,
-        },
-        category: {
-            type: DataTypes.STRING,
-        },
         name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -24,7 +18,9 @@ const Product = sequelize.define(
         },
         stock: {
             type: DataTypes.INTEGER,
-            allowNull: false
+        },
+        price: {
+            type: DataTypes.FLOAT
         }
     }
 );

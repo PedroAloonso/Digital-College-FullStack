@@ -13,7 +13,8 @@ const ProductGender = sequelize.define(
             type: DataTypes.STRING,
             allowNull: false
         }
-    }
+    },
+    { timestamps: false }
 )
 
 export default ProductGender
