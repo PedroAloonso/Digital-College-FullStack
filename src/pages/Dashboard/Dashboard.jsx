@@ -44,12 +44,20 @@ export default function Dashboard() {
             <div className={style.tablesContainer}>
                 <Table
                     columns={["id", "name"]}
-                    data={[[1, "Genilto"], [2, "Diego"]]}
+                    data={[
+                        [1, "Genilto"],
+                        [2, "Diego"],
+                        [3, "Genilto"],
+                    ]}
                     tableName={"Users"}
                 />
                 <Table
                     columns={["id", "name"]}
-                    data={[[1, "Genilto"], [2, "Diego"]]}
+                    data={[
+                        [1, "Genilto"],
+                        [2, "Diego"],
+                        [3, "Genilto"],
+                    ]}
                     tableName={"Users"}
                 />
             </div>

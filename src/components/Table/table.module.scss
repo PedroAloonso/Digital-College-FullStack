@@ -1,5 +1,4 @@
 .table {
-    display: block;
     border-spacing: 0;
 
     padding: 0 !important;
@@ -16,9 +15,11 @@
         color: var(--white);
     }
 
-    & td,
-    th {
+    & th {
         background-color: var(--tertiary);
+    }
+
+    & td {
         padding: 12px;
     }
 
@@ -29,6 +30,15 @@
     }
 
     tbody {
+        & tr {
+            background: var(--tertiary);
+        }
+
+        & tr:nth-of-type(even) {
+            background: white;
+            color: var(--dark-gray);
+        }
+
         & tr:last-child {
             & td:last-child {
                 border-bottom-right-radius: 12px;
