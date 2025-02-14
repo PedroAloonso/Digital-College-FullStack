@@ -1,0 +1,1 @@
+[Database Structure in dbdiagram.io](https://dbdiagram.io/d/DC-fs39-67af52dc263d6cf9a03165a8)
