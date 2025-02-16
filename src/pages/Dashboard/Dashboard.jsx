@@ -1,11 +1,11 @@
 import style from "./dashboard.module.scss";
 
 import { useState, useEffect } from "react";
-import Table from "../../components/Table/Table";
+import Table from "./Table/Table"
 
 export default function Dashboard() {
     const [productList, setProductList] = useState([]);
-    const createProduct = () => {
+    const getProducts = () => {
         fetch("http://localhost:3000/sequelize-products")
             .then((response) => response.json())
             .then((response) => {
@@ -16,7 +16,6 @@ export default function Dashboard() {
     };
 
     const deleteProduct = (id) => {
-        console.log(id);
         fetch(`http://localhost:3000/sequelize-products/${id}`, {
             method: "DELETE",
         }).then((response) => response.json());
@@ -25,7 +24,7 @@ export default function Dashboard() {
     };
 
     useEffect(() => {
-        createProduct();
+        getProducts();
     }, []);
     return (
         <div className={style.container}>

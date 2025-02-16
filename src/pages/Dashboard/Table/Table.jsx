@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import style from "./table.module.scss";
 import { Link } from "react-router-dom";
 
@@ -48,4 +49,11 @@ export default function Table({ columns, data, tableName, HandleDelete }) {
             </tbody>
         </table>
     );
+}
+
+Table.propTypes = {
+  HandleDelete: PropTypes.func,
+  columns: PropTypes.array,
+  data: PropTypes.object,
+  tableName: PropTypes.string
 }

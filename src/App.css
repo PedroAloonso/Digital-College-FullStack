@@ -3,9 +3,6 @@
     margin: 0 auto;
 }
 
-#root > * > * {
-    padding: 2rem 4rem;
-}
 
 .flex {
     display: flex;
