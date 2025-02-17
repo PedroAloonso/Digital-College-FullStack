@@ -52,8 +52,8 @@ export default function Table({ columns, data, tableName, HandleDelete }) {
 }
 
 Table.propTypes = {
-  HandleDelete: PropTypes.func,
-  columns: PropTypes.array,
-  data: PropTypes.object,
-  tableName: PropTypes.string
-}
+    HandleDelete: PropTypes.func,
+    columns: PropTypes.array,
+    data: PropTypes.array,
+    tableName: PropTypes.string,
+};

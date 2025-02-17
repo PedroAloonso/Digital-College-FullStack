@@ -6,10 +6,11 @@
     display: flex;
     
     background-color: var(--light-gray-3);
+
+    width: 100%;
 }
 
 .tablesContainer {
-    padding: 1em !important;
     display: flex;
     flex-wrap: wrap;
     gap: 12px;

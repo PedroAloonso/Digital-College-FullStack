@@ -1,7 +1,15 @@
-.publicExternalContainer > * {
-    padding: 2rem 4rem;
+.publicExternalContainer {
+   height: 100vh; 
+   
+    & > * {
+        padding: 2rem 4rem;
+    }
 }
 
 .dashboardExternalContainer {
     display: flex;
+
+    & > * {
+        padding: 1.5em 2em;
+    }
 }
