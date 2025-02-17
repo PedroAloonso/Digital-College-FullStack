@@ -5,8 +5,8 @@ import Table from "./Table/Table"
 
 export default function Dashboard() {
     const [productList, setProductList] = useState([]);
-    const getProducts = () => {
-        fetch("http://localhost:3000/sequelize-products")
+    const getAllDataFromDB = (dataName) => {
+        fetch(`http://localhost:3000/sequelize-${dataName}`)
             .then((response) => response.json())
             .then((response) => {
                 console.log(response);
@@ -15,8 +15,8 @@ export default function Dashboard() {
             });
     };
 
-    const deleteProduct = (id) => {
-        fetch(`http://localhost:3000/sequelize-products/${id}`, {
+    const deleteDataById = (dataName, id) => {
+        fetch(`http://localhost:3000/sequelize-${dataName}/${id}`, {
             method: "DELETE",
         }).then((response) => response.json());
 
@@ -24,16 +24,16 @@ export default function Dashboard() {
     };
 
     useEffect(() => {
-        getProducts();
+        getAllDataFromDB("products");
     }, []);
     return (
         <div className={style.container}>
             <div className={style.tablesContainer}>
                 <Table
                     columns={["id", "name", "description", "stock"]}
-                    HandleDelete={deleteProduct}
+                    HandleDelete={deleteDataById}
                     data={productList}
-                    tableName={"Users"}
+                    tableTitle={"Products"}
                 />
             </div>
         </div>

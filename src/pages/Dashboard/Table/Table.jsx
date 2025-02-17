@@ -2,13 +2,13 @@ import PropTypes from "prop-types"
 import style from "./table.module.scss";
 import { Link } from "react-router-dom";
 
-export default function Table({ columns, data, tableName, HandleDelete }) {
+export default function Table({ columns, data, tableTitle, HandleDelete }) {
     // TODO: Implementar uma paginação nas tabelas, por enquanto usando o scroll
     // TODO: Adicionar o botão de adicionar que chama um modal
     return (
         <table className={style.table}>
             <caption>
-                {tableName}
+                {tableTitle}
                 <Link className={style.add} to={"/dashboard/create"}>
                     +
                 </Link>
@@ -37,7 +37,7 @@ export default function Table({ columns, data, tableName, HandleDelete }) {
                             <td>{element.stock}</td>
                             <td>
                                 <button
-                                    onClick={() => HandleDelete(element.id)}
+                                    onClick={() => HandleDelete("products", element.id)}
                                 >
                                     Delete
                                 </button>
@@ -55,5 +55,5 @@ Table.propTypes = {
     HandleDelete: PropTypes.func,
     columns: PropTypes.array,
     data: PropTypes.array,
-    tableName: PropTypes.string,
+    tableTitle: PropTypes.string,
 };
