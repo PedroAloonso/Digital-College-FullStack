@@ -1,7 +1,11 @@
 import style from "./dashboard.module.scss";
 
 import { useState, useEffect } from "react";
+
 import Table from "./Table/Table"
+import HightlightsCard from "./HightlightsCard/HightlightsCard";
+
+import MoneyIcon from "../../assets/img/dashboard/money.svg?react"
 
 export default function Dashboard() {
     const [productList, setProductList] = useState([]);
@@ -26,15 +30,18 @@ export default function Dashboard() {
     useEffect(() => {
         getAllDataFromDB("products");
     }, []);
+
+
     return (
-        <div className={style.container}>
-            <div className={style.tablesContainer}>
-                <Table
+        <div className={style.externalContainer}>
+            <div className={style.container}>
+                {/* <Table
                     columns={["id", "name", "description", "stock"]}
                     HandleDelete={deleteDataById}
                     data={productList}
                     tableTitle={"Products"}
-                />
+                /> */}
+                <HightlightsCard icon={MoneyIcon} title={"Renda mensal"} value={1232.30}/>
             </div>
         </div>
     );

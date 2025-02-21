@@ -4,7 +4,7 @@ import style from "./dashboardMenu.module.scss";
 export default function DashboardMenu() {
     const menuItems = [
         { title: "Dashboard", route: "dashboard" },
-        { title: "Produtos", route: "dashboard/products" },
+        { title: "Produtos", route: "dashboard/product" },
         { title: "Client", route: "dashboard/client" },
     ];
 

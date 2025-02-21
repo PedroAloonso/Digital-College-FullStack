@@ -1,6 +1,6 @@
 @use "../../assets/styles/TextClasses";
 
-.container {
+.externalContainer {
     @include TextClasses.text-small;
 
     display: flex;
@@ -10,7 +10,7 @@
     width: 100%;
 }
 
-.tablesContainer {
+.container {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
