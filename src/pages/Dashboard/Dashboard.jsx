@@ -16,7 +16,8 @@ export default function Dashboard() {
                 console.log(response);
                 console.log(Object.keys(response[0]));
                 setProductList(response);
-            });
+            })
+            .catch(error => console.log(error))
     };
 
     const deleteDataById = (dataName, id) => {
@@ -41,7 +42,7 @@ export default function Dashboard() {
                     data={productList}
                     tableTitle={"Products"}
                 /> */}
-                <HightlightsCard icon={MoneyIcon} title={"Renda mensal"} value={1232.30}/>
+                <HightlightsCard icon={<MoneyIcon fill="var(--white)" />} title={"Renda mensal"} value={1232.30}/>
             </div>
         </div>
     );

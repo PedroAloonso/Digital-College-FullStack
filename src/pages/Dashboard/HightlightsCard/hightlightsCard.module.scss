@@ -2,13 +2,20 @@
     display: flex;
     flex-direction: column;
     align-content: center;
-    border: 2px solid var(--primary);
+    justify-content: space-around;
     border-radius: 12px;
-    color: var(--white);
-    height: fit-content;
-
     background: var(--dark-gray);
-
     padding: 1em;
+    width: 300px;
+    height: 250px;
+    color: var(--white);
     text-align: center;
+
+    & .cardHead {
+
+        & > svg {
+            width: 96px;
+            height: auto;
+        }
+    }
 }

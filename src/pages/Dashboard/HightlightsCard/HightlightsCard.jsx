@@ -5,7 +5,7 @@ export default function HightlightsCard({title, icon, value}) {
     return (
         <div className={style.cardContainer}>
             <div className={style.cardHead}>
-                <img src={icon} alt="" />
+                {icon}
             </div>
             <div className={style.cardBody}>
                 <h2>{title}</h2>
