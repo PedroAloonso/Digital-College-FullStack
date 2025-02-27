@@ -10,7 +10,7 @@ import MyOrders from "../pages/MyOrders/MyOrders";
 import ProductPage from "../components/ProductPage/ProductPage";
 
 import Dashboard from "../pages/Dashboard/Dashboard";
-import CreateProduct from "../pages/Dashboard/CreateProduct/CreateProduct";
+import CreateProduct from "../components/dashboard/CreateProduct/CreateProduct";
 
 export default function AppRoutes() {
     return (

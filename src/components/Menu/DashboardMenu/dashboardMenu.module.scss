@@ -1,14 +1,14 @@
 @use "../../../assets/styles/TextClasses";
 
 .container {
-    background-color: var(--tertiary);
+    background-color: rgb(var(--tertiary));
     padding: 0 !important;
     width: fit-content;
 
     height: 100vh;
 
     @include TextClasses.text-medium;
-    color: var(--white);
+    color: rgb(var(--white));
 
     & nav {
         padding: 1.5rem 3rem;
@@ -21,7 +21,7 @@
 
             & li {
                 & a {
-                    color: var(--white);
+                    color: rgb(var(--white));
                     text-decoration: none;
                 }
             }

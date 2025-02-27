@@ -4,15 +4,14 @@
     align-content: center;
     justify-content: space-around;
     border-radius: 12px;
-    background: var(--dark-gray);
+    background: rgb(var(--dark-gray));
     padding: 1em;
     width: 300px;
     height: 250px;
-    color: var(--white);
+    color: rgb(var(--white));
     text-align: center;
 
     & .cardHead {
-
         & > svg {
             width: 96px;
             height: auto;

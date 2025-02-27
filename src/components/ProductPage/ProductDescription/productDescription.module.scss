@@ -8,10 +8,10 @@
 
 .descriptionTitle {
     @include text-x-small-bold;
-    color: var(--light-gray);
+    color: rgb(var(--light-gray));
 }
 
 .description {
     @include text-x-small;
-    color: var(--dark-gray-2);
+    color: rgb(var(--dark-gray-2));
 }

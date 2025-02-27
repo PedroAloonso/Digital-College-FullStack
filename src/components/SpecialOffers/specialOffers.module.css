@@ -23,42 +23,39 @@
 }
 
 .subTitle {
-    font-family: Inter;
-    font-size: 14px;
+    color: rgb(var(--primary));
     font-weight: 700;
+    font-size: 14px;
     line-height: 22px;
+    font-family: Inter;
     letter-spacing: 0.75px;
     text-align: left;
-    text-underline-position: from-font;
     text-decoration-skip-ink: none;
-
-    color: var(--primary);
+    text-underline-position: from-font;
 }
 
 .title {
-    font-family: Inter;
-    font-size: 48px;
+    color: rgb(var(--dark-gray-2));
     font-weight: 700;
+    font-size: 48px;
     line-height: 50px;
+    font-family: Inter;
     letter-spacing: 0.9999998807907104px;
     text-align: left;
-    text-underline-position: from-font;
     text-decoration-skip-ink: none;
-
-    color: var(--dark-gray-2);
+    text-underline-position: from-font;
 }
 
 .about {
-    font-family: Inter;
-    font-size: 16px;
+    color: rgb(var(--dark-gray-2));
     font-weight: 400;
+    font-size: 16px;
     line-height: 28px;
+    font-family: Inter;
     letter-spacing: 0.75px;
     text-align: left;
-    text-underline-position: from-font;
     text-decoration-skip-ink: none;
-
-    color: var(--dark-gray-2);
+    text-underline-position: from-font;
 }
 
 .btnOffers {

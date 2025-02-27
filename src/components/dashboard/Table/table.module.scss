@@ -1,26 +1,26 @@
 .table {
-    border-spacing: 0;
-
-    overflow: hidden;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
+    border-spacing: 0;
 
     padding: 0 !important;
     height: fit-content;
 
-    color: var(--white);
+    overflow: hidden;
+
+    color: rgb(var(--white));
     text-align: center;
 
     & caption {
         border-top-right-radius: 12px;
         border-top-left-radius: 12px;
-        background-color: var(--dark-gray);
+        background-color: rgb(var(--dark-gray));
         padding: 8px;
-        color: var(--white);
+        color: rgb(var(--white));
     }
 
     & th {
-        background-color: var(--tertiary);
+        background-color: rgb(var(--tertiary));
     }
 
     & td {
@@ -35,12 +35,12 @@
 
     tbody {
         & tr {
-            background: var(--tertiary);
+            background: rgb(var(--tertiary));
         }
 
         & tr:nth-of-type(even) {
-            background: white;
-            color: var(--dark-gray);
+            background: rgb(var(--white));
+            color: rgb(var(--dark-gray));
         }
     }
 }

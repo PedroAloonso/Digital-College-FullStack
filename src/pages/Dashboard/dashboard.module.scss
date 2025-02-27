@@ -4,8 +4,8 @@
     @include TextClasses.text-small;
 
     display: flex;
-    
-    background-color: var(--light-gray-3);
+
+    background-color: rgb(var(--light-gray-3));
 
     width: 100%;
 }

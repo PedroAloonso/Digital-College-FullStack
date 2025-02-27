@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import style from "./table.module.scss";
 import { Link } from "react-router-dom";
 
@@ -37,7 +37,9 @@ export default function Table({ columns, data, tableTitle, HandleDelete }) {
                             <td>{element.stock}</td>
                             <td>
                                 <button
-                                    onClick={() => HandleDelete("products", element.id)}
+                                    onClick={() =>
+                                        HandleDelete("products", element.id)
+                                    }
                                 >
                                     Delete
                                 </button>

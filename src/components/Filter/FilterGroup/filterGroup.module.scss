@@ -1,7 +1,7 @@
 @use "../../../assets/styles/TextClasses" as *;
 
 .title {
-    color: var(--dark-gray-2);
+    color: rgb(var(--dark-gray-2));
     @include text-x-small-bold;
 }
 

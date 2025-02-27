@@ -1,6 +1,5 @@
 @use "../../../assets/styles/TextClasses" as *;
 
-
 .container {
     display: flex;
     flex-direction: column;
@@ -15,7 +14,7 @@
 
 .inputCategorie {
     @include text-x-small-bold;
-    color: var(--light-gray);
+    color: rgb(var(--light-gray));
 }
 
 .inputContainer {
@@ -50,17 +49,17 @@
         width: 100%;
         height: 100%;
         pointer-events: none;
-        color: var(--dark-gray-2);
+        color: rgb(var(--dark-gray-2));
         line-height: normal;
     }
 
     &:checked {
         border: 0;
-        background-color: var(--primary);
+        background-color: rgb(var(--primary));
     }
 
     &:checked + * {
-        color: var(--white);
+        color: rgb(var(--white));
     }
 }
 
@@ -71,7 +70,7 @@
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
     border: 2px solid var(--white);
     border-radius: 50%;
-    background-color: var(--color);
+    background-color: rgb(var(--color));
     width: 40px;
     height: 40px;
 
@@ -85,14 +84,14 @@
     height: 48px;
 
     @include text-small-bold;
+    display: block;
     outline: 0;
     border: 0;
     border-radius: 8px;
 
-    background-color: var(--warning);
+    background-color: rgb(var(--warning));
     padding: 10px;
-    color: var(--light-gray-3);
+    color: rgb(var(--light-gray-3));
     text-align: center;
     text-transform: uppercase;
-    display: block;
 }

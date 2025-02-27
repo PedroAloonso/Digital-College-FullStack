@@ -1,31 +1,31 @@
 .externalContainer {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 8px;
 }
 
 .externalContainer > h3 {
-    font-family: Inter;
-    font-size: 14px;
+    color: rgb(var(--dark-gray-2));
     font-weight: 700;
+    font-size: 14px;
     line-height: 22px;
+    font-family: Inter;
     letter-spacing: 0.75px;
     text-align: center;
-    text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    color: var(--dark-gray-2);
+    text-underline-position: from-font;
 }
 
 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 150px;
+    background-color: rgb(var(--white));
     width: 104px;
     height: 104px;
-    background-color: var(--white);
-    border-radius: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .container > img {

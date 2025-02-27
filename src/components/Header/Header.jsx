@@ -1,8 +1,11 @@
 import style from "./header.module.css";
+
 import Logo from "/src/assets/img/header/logo.png";
+
 import InputSearchHeader from "./inputSearchHeader/InputSearchHeader";
 import SignInAndOutBtnHeader from "./SignInAndOutBtnHeader/SignInAndOutBtnHeader";
 import MainMenu from "../menu/MainMenu/MainMenu";
+
 import propTypes from "prop-types";
 
 export default function Header() {

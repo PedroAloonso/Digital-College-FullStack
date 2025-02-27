@@ -1,4 +1,4 @@
-import style from "./createProduct.module.scss"
+import style from "./createProduct.module.scss";
 
 export default function CreateProduct() {
     const handleSubmit = async (event) => {
@@ -33,28 +33,32 @@ export default function CreateProduct() {
             console.error("Erro no addUser:", error);
         }
     };
-    
+
     return (
         <>
-            <form action="POST" onSubmit={handleSubmit} className={style.formContainer}>
-                    <div>
-                        <label htmlFor="name">Nome: </label>
-                        <input type="text" name="name" id="name" required />
-                    </div>
-                    <div>
-                        <label htmlFor="brand">Marca: </label>
-                        <input type="text" name="brand" id="brand" required />
-                    </div>
-                    <div>
-                        <label htmlFor="description">Descrição: </label>
-                        <input type="text" name="description" id="description" />
-                    </div>
-                    <div>
-                        <label htmlFor="stock">Stock: </label>
-                        <input type="number" name="stock" id="stock" />
-                    </div>
-                    <button type="submit">Adicionar</button>
+            <form
+                action="POST"
+                onSubmit={handleSubmit}
+                className={style.formContainer}
+            >
+                <div>
+                    <label htmlFor="name">Nome: </label>
+                    <input type="text" name="name" id="name" required />
+                </div>
+                <div>
+                    <label htmlFor="brand">Marca: </label>
+                    <input type="text" name="brand" id="brand" required />
+                </div>
+                <div>
+                    <label htmlFor="description">Descrição: </label>
+                    <input type="text" name="description" id="description" />
+                </div>
+                <div>
+                    <label htmlFor="stock">Stock: </label>
+                    <input type="number" name="stock" id="stock" />
+                </div>
+                <button type="submit">Adicionar</button>
             </form>
         </>
-    )
+    );
 }

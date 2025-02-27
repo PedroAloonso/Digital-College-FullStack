@@ -1,6 +1,6 @@
 .container {
-    background-color: var(--light-gray-3);
     display: flex;
+    background-color: rgb(var(--light-gray-3));
     padding: 4rem 4rem;
 }
 
@@ -23,30 +23,29 @@
 }
 
 .info h3 {
-    color: var(--warning);
+    color: rgb(var(--warning));
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
 }
 
 .info h1 {
-    font-family: Inter;
-    font-size: 64px;
     font-weight: 800;
+    font-size: 64px;
     line-height: 66px;
+    font-family: Inter;
     letter-spacing: 0.9999998807907104px;
     text-align: left;
 }
 
 .info p {
-    font-family: Inter;
-    font-size: 18px;
+    color: rgb(var(--dark-gray-2));
     font-weight: 400;
+    font-size: 18px;
     line-height: 34px;
+    font-family: Inter;
     letter-spacing: 0.75px;
     text-align: left;
-
-    color: var(--dark-gray-2);
 }
 
 .offersBtn {
@@ -57,24 +56,24 @@
 .imageContainer {
     display: flex;
     flex: 2;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     max-height: min-content;
     max-height: 350px;
 }
 
 .imageContainer > img {
-    max-width: min-content;
     position: relative;
-    max-width: 600px;
 
     transform: rotate(-20deg);
+    max-width: min-content;
+    max-width: 600px;
 }
 
 .ornament {
     position: absolute;
-    width: 100px;
+    top: 10%;
 
     right: 0.5%;
-    top: 10%;
+    width: 100px;
 }

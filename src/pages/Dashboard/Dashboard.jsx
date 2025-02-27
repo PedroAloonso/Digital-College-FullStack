@@ -2,10 +2,10 @@ import style from "./dashboard.module.scss";
 
 import { useState, useEffect } from "react";
 
-import Table from "./Table/Table"
-import HightlightsCard from "./HightlightsCard/HightlightsCard";
+import Table from "../../components/dashboard/Table/Table";
+import HightlightsCard from "../../components/dashboard/HightlightsCard/HightlightsCard";
 
-import MoneyIcon from "../../assets/img/dashboard/money.svg?react"
+import MoneyIcon from "../../assets/img/dashboard/money.svg?react";
 
 export default function Dashboard() {
     const [productList, setProductList] = useState([]);
@@ -17,7 +17,7 @@ export default function Dashboard() {
                 console.log(Object.keys(response[0]));
                 setProductList(response);
             })
-            .catch(error => console.log(error))
+            .catch((error) => console.log(error));
     };
 
     const deleteDataById = (dataName, id) => {
@@ -32,7 +32,6 @@ export default function Dashboard() {
         getAllDataFromDB("products");
     }, []);
 
-
     return (
         <div className={style.externalContainer}>
             <div className={style.container}>
@@ -42,7 +41,11 @@ export default function Dashboard() {
                     data={productList}
                     tableTitle={"Products"}
                 /> */}
-                <HightlightsCard icon={<MoneyIcon fill="var(--white)" />} title={"Renda mensal"} value={1232.30}/>
+                <HightlightsCard
+                    icon={<MoneyIcon fill="var(--white)" />}
+                    title={"Renda mensal"}
+                    value={1232.3}
+                />
             </div>
         </div>
     );

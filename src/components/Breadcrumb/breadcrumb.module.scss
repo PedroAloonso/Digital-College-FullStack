@@ -13,13 +13,13 @@
             &:not(:last-child)::after {
                 margin: 0 8px;
                 content: " / ";
-                color: var(--light-gray);
+                color: rgb(var(--light-gray));
             }
 
             a {
                 text-decoration: none;
                 @include text-x-small;
-                color: var(--dark-gray-2);
+                color: rgb(var(--dark-gray-2));
 
                 text-transform: capitalize;
 
@@ -30,7 +30,7 @@
 
             span {
                 @include text-x-small-bold;
-                color: var(--dark-gray-2);
+                color: rgb(var(--dark-gray-2));
             }
         }
     }

@@ -1,22 +1,22 @@
 :root {
     /* Colors */
-    --primary: rgba(201, 32, 113, 1);
-    --secondary: rgba(181, 182, 242, 1);
-    --tertiary: rgba(153, 25, 86, 1);
-    --error: rgba(238, 66, 102, 1);
-    --success: rgba(82, 202, 118, 1);
-    --warning: rgba(246, 170, 28, 1);
-    --primary-g: background: linear-gradient(180deg, #c92071 0%, #edabca 100%);
+    --primary: 201, 32, 113;
+    --secondary: 181, 182, 242;
+    --tertiary: 153, 25, 86;
+    --error: 238, 66, 102;
+    --success: 82, 202, 118;
+    --warning: 246, 170, 28;
+    --primary-g: background: linear-gradient (180deg, #c92071 0%, #edabca 100%);
     --secondary-g: background: linear-gradient(180deg, #b5b6f2 0%, #efefff 100%);
 
     /* Grayscale */
-    --dark-gray: rgba(31, 31, 31, 1);
-    --dark-gray-2: rgba(71, 71, 71, 1);
-    --dark-gray-3: rgba(102, 102, 102, 1);
-    --light-gray: rgba(143, 143, 143, 1);
-    --light-gray-2: rgba(204, 204, 204, 1);
-    --light-gray-3: rgba(245, 245, 245, 1);
-    --white: rgba(255, 255, 255, 1);
+    --dark-gray: 31, 31, 31;
+    --dark-gray-2: 71, 71, 71;
+    --dark-gray-3: 102, 102, 102;
+    --light-gray: 143, 143, 143;
+    --light-gray-2: 204, 204, 204;
+    --light-gray-3: 245, 245, 245;
+    --white: 255, 255, 255;
 }
 
 /* TODO: Fazer o modo escuro
@@ -24,22 +24,22 @@
 @media (prefers-color-scheme: light) {
   :root {
     Colors
-    --primary:rgba(201, 32, 113, 1);
-    --secondary:rgba(181, 182, 242, 1);
-    --tertiary:rgba(153, 25, 86, 1);
-    --error:rgba(238, 66, 102, 1);
-    --success:rgba(82, 202, 118, 1);
-    --warning:rgba(246, 170, 28, 1);
+    --primary: 201, 32, 113 ;
+    --secondary: 181, 182, 242 ;
+    --tertiary: 153, 25, 86 ;
+    --error: 238, 66, 102 ;
+    --success: 82, 202, 118 ;
+    --warning: 246, 170, 28 ;
     --primary-g: background: linear-gradient(180deg, #C92071 0%, #EDABCA 100%);
     --secondary-g:background: linear-gradient(180deg, #B5B6F2 0%, #EFEFFF 100%);
 
     Grayscale
-    --dark-gray:rgba(31, 31, 31, 1);
-    --dark-gray-2:rgba(71, 71, 71, 1);
-    --dark-gray-3:rgba(102, 102, 102, 1);
-    --light-gray:rgba(143, 143, 143, 1);
-    --light-gray-2:rgba(204, 204, 204, 1);
-    --light-gray-3:rgba(245, 245, 245, 1);
-    --white:rgba(255, 255, 255, 1); 
+    --dark-gray: 31, 31, 31 ;
+    --dark-gray-2: 71, 71, 71 ;
+    --dark-gray-3: 102, 102, 102 ;
+    --light-gray: 143, 143, 143 ;
+    --light-gray-2: 204, 204, 204 ;
+    --light-gray-3: 245, 245, 245 ;
+    --white: 255, 255, 255 ; 
   }
 } */
