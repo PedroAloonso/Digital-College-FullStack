@@ -11,6 +11,7 @@ import ProductPage from "../components/ProductPage/ProductPage";
 
 import Dashboard from "../pages/Dashboard/Dashboard";
 import CreateProduct from "../components/dashboard/CreateProduct/CreateProduct";
+import ProductDashboard from "../components/dashboard/ProductDashboard/ProductDashboard";
 
 export default function AppRoutes() {
     return (
@@ -34,7 +35,7 @@ export default function AppRoutes() {
                 </Route>
                 <Route path="/dashboard" element={<DashboardLayout />}>
                     <Route index element={<Dashboard />} />
-                    <Route path="product" element={<Dashboard />} />
+                    <Route path="product" element={<ProductDashboard />} />
                     <Route path="create" element={<CreateProduct />} />
                     <Route path="client" element={<Dashboard />} />
                 </Route>

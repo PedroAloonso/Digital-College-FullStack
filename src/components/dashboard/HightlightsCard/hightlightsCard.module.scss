@@ -1,20 +1,45 @@
+@use "../../../assets/styles/TextClasses";
+
 .cardContainer {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: space-around;
+    box-sizing: border-box;
     border-radius: 12px;
     background: rgb(var(--dark-gray));
     padding: 1em;
-    width: 300px;
-    height: 250px;
+    width: 17.5em;
+    height: 200px;
     color: rgb(var(--white));
     text-align: center;
 
-    & .cardHead {
-        & > svg {
-            width: 96px;
-            height: auto;
+    & .cardTop {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 8px;
+
+        & h1 {
+            @include TextClasses.title-small;
+            color: rgb(var(--white));
+            text-align: center;
+        }
+    }
+
+    & .cardBotton {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+
+        & .comparationContainer {
+            display: flex;
+            flex-direction: column;
+
+            & > h4 {
+                font-weight: normal;
+                font-size: 0.8rem;
+            }
         }
     }
 }
