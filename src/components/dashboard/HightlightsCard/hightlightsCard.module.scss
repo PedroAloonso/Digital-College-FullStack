@@ -5,12 +5,16 @@
     flex-direction: column;
     align-content: center;
     justify-content: space-around;
+
     box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
     border-radius: 12px;
     background: rgb(var(--dark-gray));
     padding: 1em;
     width: 17em;
     height: 200px;
+
     color: rgb(var(--white));
     text-align: center;
 
