@@ -4,16 +4,11 @@
     @include TextClasses.text-small;
 
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
 
     background-color: rgb(var(--light-gray-3));
 
-    width: 100%;
-}
-
-.cardsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 12px;
     width: 100%;
 }

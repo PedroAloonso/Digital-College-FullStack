@@ -1,0 +1,16 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.chartCard {
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: white;
+    padding: 15px;
+    width: 500px;
+    text-align: center;
+}
