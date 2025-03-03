@@ -45,7 +45,7 @@
     }
 
     & td {
-        padding: 12px;
+        padding: 6px;
     }
 
     & thead {
@@ -61,40 +61,29 @@
         & tr {
             background: rgba(var(--tertiary), 0.9);
             color: rgba(var(--white), 0.9);
-
-            .deleteBtn {
-                background-color: rgb(var(--tertiary));
-
-                &:hover {
-                    border-color: rgba(var(--tertiary), 1);
-                    background-color: rgba(var(--white), 0.9);
-                    color: rgba(var(--dark-gray), 0.9);
-                }
-            }
         }
 
         & tr:nth-of-type(even) {
             background: rgba(var(--light-gray-2), 1);
             color: rgba(var(--dark-gray), 0.9);
-
-            .deleteBtn {
-                border: 2px solid rgba(var(--tertiary), 0.8);
-                background-color: rgb(var(--white));
-
-                &:hover {
-                    border-color: rgba(var(--dark-gray), 0.9);
-                    background-color: rgb(var(--tertiary));
-                    color: rgba(var(--white), 0.9);
-                }
-            }
         }
     }
 }
 
 .deleteBtn {
     all: unset;
+    transition: 150ms;
     cursor: pointer;
-    border: 2px solid rgb(var(--white));
     border-radius: 8px;
-    padding: 4px;
+    background-color: rgb(var(--dark-gray));
+    padding: 5px;
+    color: rgba(var(--white), 0.9);
+
+    &:hover {
+        background-color: rgb(var(--dark-gray-2));
+    }
+
+    &:focus {
+        background-color: rgb(var(--dark-gray-3));
+    }
 }
