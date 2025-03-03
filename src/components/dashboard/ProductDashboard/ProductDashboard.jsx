@@ -15,9 +15,13 @@ export default function ProductDashboard() {
     };
 
     const deleteDataById = (dataName, id) => {
-        fetch(`http://localhost:3000/sequelize-${dataName}/${id}`, {
-            method: "DELETE",
-        }).then((response) => response.json());
+        axios
+            .delete(`http://localhost:3000/sequelize-${dataName}/${id}`)
+            .then((response) => {
+                console.log(response.data);
+                alert(`Elemento ${JSON.stringify(response.data)} foi excluido`);
+            })
+            .catch((error) => console.log(error));
 
         setProductList(productList.filter((element) => element.id != id));
     };
