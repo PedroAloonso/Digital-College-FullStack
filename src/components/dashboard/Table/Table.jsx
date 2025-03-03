@@ -40,6 +40,7 @@ export default function Table({ columns, data, tableTitle, HandleDelete }) {
                                     onClick={() =>
                                         HandleDelete("products", element.id)
                                     }
+                                    className={style.deleteBtn}
                                 >
                                     Delete
                                 </button>

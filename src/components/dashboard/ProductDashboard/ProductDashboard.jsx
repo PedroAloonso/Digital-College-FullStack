@@ -3,17 +3,14 @@ import style from "./productDashboard.module.scss";
 import Table from "../Table/Table";
 
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function ProductDashboard() {
     const [productList, setProductList] = useState([]);
-    const getAllDataFromDB = (dataName) => {
-        fetch(`http://localhost:3000/sequelize-${dataName}`)
-            .then((response) => response.json())
-            .then((response) => {
-                console.log(response);
-                console.log(Object.keys(response[0]));
-                setProductList(response);
-            })
+    const getProductsFromDB = (dataName) => {
+        axios
+            .get(`http://localhost:3000/sequelize-${dataName}`)
+            .then((response) => setProductList(response.data))
             .catch((error) => console.log(error));
     };
 
@@ -26,7 +23,7 @@ export default function ProductDashboard() {
     };
 
     useEffect(() => {
-        getAllDataFromDB("products");
+        getProductsFromDB("products");
     }, []);
     return (
         <div className={style.externalContainer}>
