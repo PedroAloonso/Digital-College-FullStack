@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
 import style from "./table.module.scss";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export default function Table({ columns, data, tableTitle, HandleDelete }) {
@@ -28,17 +28,25 @@ export default function Table({ columns, data, tableTitle, HandleDelete }) {
                 </tr>
             </thead>
             <tbody>
-                {data.map((element, index) => {
+                {data.map((dataColumn, index) => {
                     return (
                         <tr key={index}>
-                            <td>{element.id}</td>
-                            <td>{element.name}</td>
-                            <td>{element.description}</td>
-                            <td>{element.stock}</td>
+                            {columns.map((columnName, index) => {
+                                return (
+                                    <td key={index}>
+                                        {columnName === "updatedAt" ||
+                                        columnName === "createdAt"
+                                            ? new Date(
+                                                  dataColumn[columnName],
+                                              ).toLocaleDateString("pt-BR")
+                                            : dataColumn[columnName]}
+                                    </td>
+                                );
+                            })}
                             <td>
                                 <button
                                     onClick={() =>
-                                        HandleDelete("products", element.id)
+                                        HandleDelete("products", dataColumn.id)
                                     }
                                     className={style.deleteBtn}
                                 >
