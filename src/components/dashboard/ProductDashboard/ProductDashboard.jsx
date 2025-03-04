@@ -7,18 +7,34 @@ import axios from "axios";
 
 export default function ProductDashboard() {
     const [productList, setProductList] = useState([]);
-    const getProductsFromDB = (dataName) => {
+    const [tableColumns, setTableColumns] = useState([]);
+
+    const createProduct = (data) => {
         axios
-            .get(`http://localhost:3000/sequelize-${dataName}`)
-            .then((response) => setProductList(response.data))
+            .post("http://localhost:3000/sequelize-products/", {
+                name: "sla cara",
+                describe: "alguma coisa",
+                price: 1,
+            })
+            .then((response) => console.log(`Produto ${response.data} criado`))
+            .catch((error) => console.error("Erro no addUser:", error));
+    };
+
+    const getProductsFromDB = (dataType) => {
+        axios
+            .get(`http://localhost:3000/sequelize-${dataType}`)
+            .then((response) => {
+                setTableColumns(Object.keys(response.data.columnNames));
+                setProductList(response.data.product);
+            })
             .catch((error) => console.log(error));
     };
 
-    const deleteDataById = (dataName, id) => {
+    const deleteProductById = (dataType, id) => {
+        // TODO: Mudar para que só deletar quando marcar sim num pop-up
         axios
-            .delete(`http://localhost:3000/sequelize-${dataName}/${id}`)
+            .delete(`http://localhost:3000/sequelize-${dataType}/${id}`)
             .then((response) => {
-                console.log(response.data);
                 alert(`Elemento ${JSON.stringify(response.data)} foi excluido`);
             })
             .catch((error) => console.log(error));
@@ -26,14 +42,32 @@ export default function ProductDashboard() {
         setProductList(productList.filter((element) => element.id != id));
     };
 
+    const editProductById = (dataType, id, data) => {
+        // TODO: Mudar para que só enviar quando marcar sim num pop-up
+        axios
+            .put(`http://localhost:3000/sequelize-${dataType}/${id}`, {
+                name: "sla",
+                stock: 10,
+                describe: "adasdsadas",
+                price: 123,
+            })
+            .then((response) => {
+                console.log(response.data);
+                // alert(`Elemento ${JSON.stringify(response.data)} foi excluido`);
+            });
+    };
+
     useEffect(() => {
         getProductsFromDB("products");
+        editProductById("products", 11);
     }, []);
+
     return (
         <div className={style.externalContainer}>
             <Table
-                columns={["id", "name", "description", "stock"]}
-                HandleDelete={deleteDataById}
+                columns={tableColumns}
+                handleDelete={deleteProductById}
+                handleEdit={editProductById}
                 data={productList}
                 tableTitle={"Products"}
             />

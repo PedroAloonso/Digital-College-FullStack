@@ -2,7 +2,7 @@ import style from "./table.module.scss";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-export default function Table({ columns, data, tableTitle, HandleDelete }) {
+export default function Table({ columns, data, tableTitle, handleDelete }) {
     // TODO: Implementar uma paginação nas tabelas, por enquanto usando o scroll
     // TODO: Adicionar o botão de adicionar que chama um modal
     return (
@@ -46,7 +46,7 @@ export default function Table({ columns, data, tableTitle, HandleDelete }) {
                             <td>
                                 <button
                                     onClick={() =>
-                                        HandleDelete("products", dataColumn.id)
+                                        handleDelete("products", dataColumn.id)
                                     }
                                     className={style.deleteBtn}
                                 >
@@ -63,7 +63,8 @@ export default function Table({ columns, data, tableTitle, HandleDelete }) {
 }
 
 Table.propTypes = {
-    HandleDelete: PropTypes.func,
+    handleDelete: PropTypes.func,
+    handleEdit: PropTypes.func,
     columns: PropTypes.array,
     data: PropTypes.array,
     tableTitle: PropTypes.string,
