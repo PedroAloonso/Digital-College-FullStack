@@ -20,9 +20,9 @@ export default function ProductDashboard() {
             .catch((error) => console.error("Erro no addUser:", error));
     };
 
-    const getProductsFromDB = (dataType) => {
+    const getProductsFromDB = () => {
         axios
-            .get(`http://localhost:3000/sequelize-${dataType}`)
+            .get(`http://localhost:3000/sequelize-products`)
             .then((response) => {
                 setTableColumns(Object.keys(response.data.columnNames));
                 setProductList(response.data.product);
@@ -30,10 +30,10 @@ export default function ProductDashboard() {
             .catch((error) => console.log(error));
     };
 
-    const deleteProductById = (dataType, id) => {
+    const deleteProductById = (id) => {
         // TODO: Mudar para que só deletar quando marcar sim num pop-up
         axios
-            .delete(`http://localhost:3000/sequelize-${dataType}/${id}`)
+            .delete(`http://localhost:3000/sequelize-products/${id}`)
             .then((response) => {
                 alert(`Elemento ${JSON.stringify(response.data)} foi excluido`);
             })
@@ -42,10 +42,10 @@ export default function ProductDashboard() {
         setProductList(productList.filter((element) => element.id != id));
     };
 
-    const editProductById = (dataType, id, data) => {
+    const editProductById = (id, data) => {
         // TODO: Mudar para que só enviar quando marcar sim num pop-up
         axios
-            .put(`http://localhost:3000/sequelize-${dataType}/${id}`, {
+            .put(`http://localhost:3000/sequelize-products/${id}`, {
                 name: "sla",
                 stock: 10,
                 describe: "adasdsadas",
