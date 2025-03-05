@@ -11,11 +11,7 @@ export default function ProductDashboard() {
 
     const createProduct = (data) => {
         axios
-            .post("http://localhost:3000/sequelize-products/", {
-                name: "sla cara",
-                describe: "alguma coisa",
-                price: 1,
-            })
+            .post("http://localhost:3000/sequelize-products/", data)
             .then((response) => console.log(`Produto ${response.data} criado`))
             .catch((error) => console.error("Erro no addUser:", error));
     };
@@ -24,7 +20,7 @@ export default function ProductDashboard() {
         axios
             .get(`http://localhost:3000/sequelize-products`)
             .then((response) => {
-                setTableColumns(Object.keys(response.data.columnNames));
+                setTableColumns(response.data.columnNames);
                 setProductList(response.data.product);
             })
             .catch((error) => console.log(error));
@@ -45,27 +41,19 @@ export default function ProductDashboard() {
     const editProductById = (id, data) => {
         // TODO: Mudar para que só enviar quando marcar sim num pop-up
         axios
-            .put(`http://localhost:3000/sequelize-products/${id}`, {
-                name: "sla",
-                stock: 10,
-                describe: "adasdsadas",
-                price: 123,
-            })
-            .then((response) => {
-                console.log(response.data);
-                // alert(`Elemento ${JSON.stringify(response.data)} foi excluido`);
-            });
+            .put(`http://localhost:3000/sequelize-products/${id}`, data)
+            .then((response) => console.log(response.data))
+            .catch((error) => console.log(error));
     };
 
     useEffect(() => {
-        getProductsFromDB("products");
-        editProductById("products", 11);
+        getProductsFromDB();
     }, []);
 
     return (
         <div className={style.externalContainer}>
             <Table
-                columns={tableColumns}
+                columnsInfo={tableColumns}
                 handleDelete={deleteProductById}
                 handleEdit={editProductById}
                 data={productList}
