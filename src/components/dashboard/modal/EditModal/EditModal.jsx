@@ -1,14 +1,17 @@
 import style from "./editModal.module.scss";
 
+import dateFormatter from "../../../../utils/ptBrDateFormatter";
+
 import PropTypes from "prop-types";
 import { useState } from "react";
 import ReactModal from "react-modal";
 
 export default function EditModal({
     ElementData,
-    handleToggleModal,
-    modalIsOpen,
     inputInfos,
+    handleToggleModal,
+    handleEdit,
+    modalIsOpen,
 }) {
     const [formData, setFormData] = useState(ElementData);
 
@@ -23,7 +26,7 @@ export default function EditModal({
             case "FLOAT":
                 return "number";
             case "DATE":
-                return "date";
+                return "text";
             case "BOOLEAN":
                 return "checkbox";
             default:
@@ -34,14 +37,17 @@ export default function EditModal({
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));
+        setFormData((prevData) => ({
+            ...prevData,
+            ["updatedAt"]: new Date().toISOString(),
+        }));
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         handleToggleModal();
-        console.log("Dados do formulário:", formData);
+        handleEdit(ElementData["id"], formData);
     };
-    console.log(ElementData);
 
     return (
         <ReactModal
@@ -58,9 +64,14 @@ export default function EditModal({
                         return (
                             <div key={index}>
                                 <label htmlFor={key}>{key}: </label>
-
-                                {key == "id" ? (
+                                {/* Coloca um span caso seja um id,createdAt ou um updatedAt */}
+                                {key === "id" ? (
                                     <span>{formData[key]}</span>
+                                ) : key === "updatedAt" ||
+                                  key === "createdAt" ? (
+                                    <span>
+                                        {dateFormatter(ElementData[key])}
+                                    </span>
                                 ) : (
                                     <input
                                         type={sequelizeToHtmlInputType(
@@ -70,13 +81,12 @@ export default function EditModal({
                                         )}
                                         name={key}
                                         id={key}
-                                        value={
-                                            formData[key] == null
+                                        placeholder={
+                                            ElementData[key] == null
                                                 ? ""
-                                                : formData[key]
+                                                : ElementData[key]
                                         }
                                         onChange={handleChange}
-                                        disabled={key == "id" ? true : false}
                                     />
                                 )}
                             </div>
@@ -102,6 +112,7 @@ EditModal.propTypes = {
         createdAt: PropTypes.any,
     }),
     handleToggleModal: PropTypes.func,
+    handleEdit: PropTypes.func,
     modalIsOpen: PropTypes.any,
     title: PropTypes.any,
     inputInfos: PropTypes.array,

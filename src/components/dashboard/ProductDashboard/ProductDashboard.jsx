@@ -40,9 +40,16 @@ export default function ProductDashboard() {
 
     const editProductById = (id, data) => {
         // TODO: Mudar para que só enviar quando marcar sim num pop-up
+
         axios
             .put(`http://localhost:3000/sequelize-products/${id}`, data)
-            .then((response) => console.log(response.data))
+            .then((response) => {
+                setProductList((prevList) =>
+                    prevList.map((product) =>
+                        product.id === id ? { ...product, ...data } : product,
+                    ),
+                );
+            })
             .catch((error) => console.log(error));
     };
 

@@ -12,7 +12,7 @@ export default function CreateProduct() {
 
         await addProduct(json);
 
-        form.reset(); // Limpa os inputs do formulário
+        form.reset();
     };
 
     const addProduct = async (data) => {

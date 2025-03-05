@@ -1,12 +1,20 @@
 import style from "./table.module.scss";
 
-import EditModal from "../modal/EditModal";
+import EditModal from "../modal/EditModal/EditModal";
+
+import dateFormatter from "../../../utils/ptBrDateFormatter";
 
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function Table({ columnsInfo, data, tableTitle, handleDelete }) {
+export default function Table({
+    columnsInfo,
+    data,
+    tableTitle,
+    handleDelete,
+    handleEdit,
+}) {
     // TODO: Implementar uma paginação nas tabelas, por enquanto usando o scroll
 
     const [modalIsOpen1, setModalIsOpen] = useState(false);
@@ -45,9 +53,9 @@ export default function Table({ columnsInfo, data, tableTitle, handleDelete }) {
                                     <td key={index}>
                                         {column.name === "updatedAt" ||
                                         column.name === "createdAt"
-                                            ? new Date(
+                                            ? dateFormatter(
                                                   dataColumn[column.name],
-                                              ).toLocaleDateString("pt-BR")
+                                              )
                                             : dataColumn[column.name]}
                                     </td>
                                 );
@@ -69,6 +77,7 @@ export default function Table({ columnsInfo, data, tableTitle, handleDelete }) {
                                     handleToggleModal={handleToggleModal1}
                                     ElementData={dataColumn}
                                     inputInfos={columnsInfo}
+                                    handleEdit={handleEdit}
                                 />
                             </td>
                         </tr>
