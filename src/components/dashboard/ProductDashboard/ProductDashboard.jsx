@@ -27,30 +27,42 @@ export default function ProductDashboard() {
     };
 
     const deleteProductById = (id) => {
-        // TODO: Mudar para que só deletar quando marcar sim num pop-up
-        axios
-            .delete(`http://localhost:3000/sequelize-products/${id}`)
-            .then((response) => {
-                alert(`Elemento ${JSON.stringify(response.data)} foi excluido`);
-            })
-            .catch((error) => console.log(error));
+        const isConfirmed = window.confirm("Tem certeza que deseja deletar?");
+        if (isConfirmed) {
+            axios
+                .delete(`http://localhost:3000/sequelize-products/${id}`)
+                .then((response) => {
+                    alert(
+                        `Elemento ${JSON.stringify(response.data)} foi excluido`,
+                    );
+                })
+                .catch((error) => console.log(error));
 
-        setProductList(productList.filter((element) => element.id != id));
+            setProductList(productList.filter((element) => element.id != id));
+        }
     };
 
     const editProductById = (id, data) => {
-        // TODO: Mudar para que só enviar quando marcar sim num pop-up
+        // TODO:  adicionar o que foi mudado no pop up
 
-        axios
-            .put(`http://localhost:3000/sequelize-products/${id}`, data)
-            .then((response) => {
-                setProductList((prevList) =>
-                    prevList.map((product) =>
-                        product.id === id ? { ...product, ...data } : product,
-                    ),
-                );
-            })
-            .catch((error) => console.log(error));
+        const isConfirmed = window.confirm("Tem certeza que deseja editar?");
+        if (isConfirmed) {
+            axios
+                .put(`http://localhost:3000/sequelize-products/${id}`, data)
+                .then((response) => {
+                    alert(
+                        `Elemento ${JSON.stringify(response.data)} foi editado`,
+                    );
+                    setProductList((prevList) =>
+                        prevList.map((product) =>
+                            product.id === id
+                                ? { ...product, ...data }
+                                : product,
+                        ),
+                    );
+                })
+                .catch((error) => console.log(error));
+        }
     };
 
     useEffect(() => {

@@ -17,8 +17,11 @@ export default function Table({
 }) {
     // TODO: Implementar uma paginação nas tabelas, por enquanto usando o scroll
 
-    const [modalIsOpen1, setModalIsOpen] = useState(false);
-    const handleToggleModal1 = () => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [selectedData, setSelectedData] = useState(null);
+
+    const handleToggleModal = (data) => {
+        setSelectedData(data);
         setModalIsOpen((prevValue) => !prevValue);
     };
 
@@ -69,16 +72,23 @@ export default function Table({
                                 </button>
                             </td>
                             <td>
-                                <button onClick={handleToggleModal1}>
+                                <button
+                                    onClick={() =>
+                                        handleToggleModal(dataColumn)
+                                    }
+                                    className={style.editBtn}
+                                >
                                     Edit
                                 </button>
-                                <EditModal
-                                    modalIsOpen={modalIsOpen1}
-                                    handleToggleModal={handleToggleModal1}
-                                    ElementData={dataColumn}
-                                    inputInfos={columnsInfo}
-                                    handleEdit={handleEdit}
-                                />
+                                {modalIsOpen && selectedData === dataColumn && (
+                                    <EditModal
+                                        modalIsOpen={modalIsOpen}
+                                        handleToggleModal={handleToggleModal}
+                                        ElementData={dataColumn}
+                                        inputInfos={columnsInfo}
+                                        handleEdit={handleEdit}
+                                    />
+                                )}
                             </td>
                         </tr>
                     );

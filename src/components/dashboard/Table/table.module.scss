@@ -61,13 +61,11 @@
 
     tbody {
         & tr {
-            background: rgba(var(--tertiary), 0.9);
-            color: rgba(var(--white), 0.9);
+            background: rgba(var(--dark-gray), 0.9);
         }
 
         & tr:nth-of-type(even) {
-            background: rgba(var(--light-gray-2), 1);
-            color: rgba(var(--dark-gray), 0.9);
+            background: rgba(var(--dark-gray), 0.8);
         }
     }
 }
@@ -82,10 +80,31 @@
     color: rgba(var(--white), 0.9);
 
     &:hover {
-        background-color: rgb(var(--dark-gray-2));
+        background-color: rgb(var(--light-gray-2));
+        color: rgb(var(--dark-gray));
     }
 
     &:focus {
-        background-color: rgb(var(--dark-gray-3));
+        background-color: rgb(var(--light-gray-3));
+        color: rgb(var(--dark-gray));
+    }
+}
+.editBtn {
+    all: unset;
+    transition: 150ms;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: rgb(var(--dark-gray));
+    padding: 5px;
+    color: rgba(var(--white), 0.9);
+
+    &:hover {
+        background-color: rgb(var(--light-gray-2));
+        color: rgb(var(--dark-gray));
+    }
+
+    &:focus {
+        background-color: rgb(var(--light-gray-3));
+        color: rgb(var(--dark-gray));
     }
 }

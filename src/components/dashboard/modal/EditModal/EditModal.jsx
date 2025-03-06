@@ -5,6 +5,9 @@ import dateFormatter from "../../../../utils/ptBrDateFormatter";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import ReactModal from "react-modal";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 export default function EditModal({
     ElementData,
@@ -55,45 +58,43 @@ export default function EditModal({
             contentLabel={`Edit ${formData.name}`}
             shouldCloseOnEsc={true}
             shouldCloseOnOverlayClick={true}
-            ariaHideApp={false}
+            ariaHideApp={true}
+            onRequestClose={handleToggleModal}
+            className={style.content}
+            overlayClassName={style.overlay}
         >
-            <h3>Editar</h3>
+            <h3>Editar {ElementData.name}</h3>
             <form action="post" onSubmit={handleSubmit}>
-                <div>
-                    {Object.keys(formData).map((key, index) => {
-                        return (
-                            <div key={index}>
-                                <label htmlFor={key}>{key}: </label>
-                                {/* Coloca um span caso seja um id,createdAt ou um updatedAt */}
-                                {key === "id" ? (
-                                    <span>{formData[key]}</span>
-                                ) : key === "updatedAt" ||
-                                  key === "createdAt" ? (
-                                    <span>
-                                        {dateFormatter(ElementData[key])}
-                                    </span>
-                                ) : (
-                                    <input
-                                        type={sequelizeToHtmlInputType(
-                                            inputInfos.find(
-                                                (info) => info.name === key,
-                                            )?.type || "STRING",
-                                        )}
-                                        name={key}
-                                        id={key}
-                                        placeholder={
-                                            ElementData[key] == null
-                                                ? ""
-                                                : ElementData[key]
-                                        }
-                                        onChange={handleChange}
-                                    />
-                                )}
-                            </div>
-                        );
-                    })}
-                    <button type="submit">Finish</button>
-                </div>
+                {Object.keys(formData).map((key, index) => {
+                    return (
+                        <div key={index}>
+                            <label htmlFor={key}>{key}: </label>
+                            {/* Coloca um span caso seja um id,createdAt ou um updatedAt */}
+                            {key === "id" ? (
+                                <span>{formData[key]}</span>
+                            ) : key === "updatedAt" || key === "createdAt" ? (
+                                <span>{dateFormatter(ElementData[key])}</span>
+                            ) : (
+                                <input
+                                    type={sequelizeToHtmlInputType(
+                                        inputInfos.find(
+                                            (info) => info.name === key,
+                                        )?.type || "STRING",
+                                    )}
+                                    name={key}
+                                    id={key}
+                                    placeholder={
+                                        ElementData[key] == null
+                                            ? ""
+                                            : ElementData[key]
+                                    }
+                                    onChange={handleChange}
+                                />
+                            )}
+                        </div>
+                    );
+                })}
+                <button type="submit">Finish</button>
             </form>
         </ReactModal>
     );
