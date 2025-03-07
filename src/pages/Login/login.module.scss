@@ -1,0 +1,55 @@
+@use "../../assets/styles/TextClasses";
+
+.container {
+    display: flex;
+    background: linear-gradient(to bottom, #b5b6f2, #efefff);
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    background-color: rgb(var(--white));
+    padding: 1em 2em;
+    max-width: 583px;
+
+    & h1 {
+        @include TextClasses.title-small-bold;
+        color: rgb(var(--dark-gray));
+    }
+
+    & h4 {
+        @include TextClasses.text-small;
+        color: rgb(var(--dark-gray-2));
+    }
+
+    & form {
+        & > div {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        & label {
+            @include TextClasses.text-tinny;
+            color: rgb(var(--dark-gray-2));
+        }
+
+        & input {
+            width: 523px;
+            height: 60px;
+            @include TextClasses.text-small;
+            color: rgb(var(--dark-gray));
+
+            &::placeholder {
+                color: rgb(var(--dark-gray-3));
+            }
+        }
+
+        & a {
+            @include TextClasses.text-x-small;
+            color: rgb(var(--dark-gray-2));
+        }
+    }
+}

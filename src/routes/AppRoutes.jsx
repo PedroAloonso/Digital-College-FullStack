@@ -4,6 +4,8 @@ import PublicLayout from "../components/layouts/PublicLayout";
 import DashboardLayout from "../components/layouts/DashboardLayout";
 
 import Home from "../pages/Home/Home";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 import Products from "../pages/Products/Products";
 import Categories from "../pages/Categories/Categories";
 import MyOrders from "../pages/MyOrders/MyOrders";
@@ -29,6 +31,8 @@ export default function AppRoutes() {
 
                     <Route path="categories" element={<Categories />} />
                     <Route path="my-orders" element={<MyOrders />} />
+                    <Route path="login" element={<Login />} />
+                    <Route path="register" element={<Register />} />
 
                     <Route path="*" element={<Home />} />
                 </Route>
