@@ -37,12 +37,17 @@
 
         & input {
             width: 200px;
+
+            &:disabled {
+                color: rgb(var(--dark-gray));
+            }
         }
 
         & button {
             @include TextClasses.text-medium;
             transition: background-color 200ms;
             margin: 0 auto;
+            margin-top: 12px;
             border: 0;
             border-radius: 8px;
             background-color: rgb(var(--white));

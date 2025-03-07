@@ -12,8 +12,11 @@ export default function ProductDashboard() {
     const createProduct = (data) => {
         axios
             .post("http://localhost:3000/sequelize-products/", data)
-            .then((response) => console.log(`Produto ${response.data} criado`))
-            .catch((error) => console.error("Erro no addUser:", error));
+            .then((response) => {
+                console.log(`Produto ${response.data} criado`);
+                setProductList((prevList) => [...prevList, data]);
+            })
+            .catch((error) => console.error("Erro no product:", error));
     };
 
     const getProductsFromDB = () => {
@@ -75,6 +78,7 @@ export default function ProductDashboard() {
                 columnsInfo={tableColumns}
                 handleDelete={deleteProductById}
                 handleEdit={editProductById}
+                handleCreate={createProduct}
                 data={productList}
                 tableTitle={"Products"}
             />

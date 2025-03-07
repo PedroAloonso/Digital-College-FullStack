@@ -1,11 +1,11 @@
 import style from "./table.module.scss";
 
 import EditModal from "../modal/EditModal/EditModal";
+import CreateModal from "../modal/CreateModal/CreateModal";
 
 import dateFormatter from "../../../utils/ptBrDateFormatter";
 
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function Table({
@@ -13,25 +13,43 @@ export default function Table({
     data,
     tableTitle,
     handleDelete,
+    handleCreate,
     handleEdit,
 }) {
     // TODO: Implementar uma paginação nas tabelas, por enquanto usando o scroll
 
-    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [editModalIsOpen, setEditModalIsOpen] = useState(false);
+    const [createModalIsOpen, setCreateModalIsOpen] = useState(false);
     const [selectedData, setSelectedData] = useState(null);
 
-    const handleToggleModal = (data) => {
+    const handleToggleEditModal = (data) => {
         setSelectedData(data);
-        setModalIsOpen((prevValue) => !prevValue);
+        setEditModalIsOpen((prevValue) => !prevValue);
+    };
+
+    const handleToggleCreateModal = () => {
+        setCreateModalIsOpen((prevValue) => !prevValue);
+        console.log(createModalIsOpen);
     };
 
     return (
         <table className={style.table}>
             <caption>
                 {tableTitle}
-                <Link className={style.add} to={"/dashboard/create"}>
+                <button
+                    className={style.add}
+                    onClick={() => handleToggleCreateModal()}
+                >
                     +
-                </Link>
+                </button>
+                {createModalIsOpen && (
+                    <CreateModal
+                        handleCreate={handleCreate}
+                        handleToggleModal={handleToggleCreateModal}
+                        modalIsOpen={createModalIsOpen}
+                        inputInfos={columnsInfo}
+                    />
+                )}
             </caption>
             <thead>
                 <tr>
@@ -74,21 +92,24 @@ export default function Table({
                             <td>
                                 <button
                                     onClick={() =>
-                                        handleToggleModal(dataColumn)
+                                        handleToggleEditModal(dataColumn)
                                     }
                                     className={style.editBtn}
                                 >
                                     Edit
                                 </button>
-                                {modalIsOpen && selectedData === dataColumn && (
-                                    <EditModal
-                                        modalIsOpen={modalIsOpen}
-                                        handleToggleModal={handleToggleModal}
-                                        ElementData={dataColumn}
-                                        inputInfos={columnsInfo}
-                                        handleEdit={handleEdit}
-                                    />
-                                )}
+                                {editModalIsOpen &&
+                                    selectedData === dataColumn && (
+                                        <EditModal
+                                            modalIsOpen={editModalIsOpen}
+                                            handleToggleModal={
+                                                handleToggleEditModal
+                                            }
+                                            ElementData={dataColumn}
+                                            inputInfos={columnsInfo}
+                                            handleEdit={handleEdit}
+                                        />
+                                    )}
                             </td>
                         </tr>
                     );
@@ -100,6 +121,7 @@ export default function Table({
 
 Table.propTypes = {
     handleDelete: PropTypes.func,
+    handleCreate: PropTypes.func,
     handleEdit: PropTypes.func,
     columnsInfo: PropTypes.array,
     data: PropTypes.array,
