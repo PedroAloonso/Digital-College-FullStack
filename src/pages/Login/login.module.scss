@@ -3,16 +3,20 @@
 .container {
     display: flex;
     background: linear-gradient(to bottom, #b5b6f2, #efefff);
+    padding-top: 4em;
+    padding-bottom: 10em;
 }
 
 .loginContainer {
     display: flex;
     flex-direction: column;
+
+    gap: 16px;
     box-sizing: border-box;
+    border-radius: 4px;
 
     background-color: rgb(var(--white));
-    padding: 1em 2em;
-    max-width: 583px;
+    padding: 2em 2em;
 
     & h1 {
         @include TextClasses.title-small-bold;
@@ -25,31 +29,62 @@
     }
 
     & form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
         & > div {
             display: flex;
             flex-direction: column;
             gap: 12px;
-        }
 
-        & label {
-            @include TextClasses.text-tinny;
-            color: rgb(var(--dark-gray-2));
-        }
+            & div {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
 
-        & input {
-            width: 523px;
-            height: 60px;
-            @include TextClasses.text-small;
-            color: rgb(var(--dark-gray));
+                & label {
+                    @include TextClasses.text-tinny-bold;
+                    color: rgb(var(--dark-gray-2));
+                }
 
-            &::placeholder {
-                color: rgb(var(--dark-gray-3));
+                & input {
+                    width: 523px;
+                    height: 60px;
+                    @include TextClasses.text-small;
+                    border: 0;
+                    border-radius: 8px;
+                    background-color: #f8f8f8;
+                    padding: 0 12px;
+                    color: rgb(var(--dark-gray));
+
+                    &::placeholder {
+                        color: rgb(var(--dark-gray-3));
+                    }
+                }
             }
         }
 
         & a {
             @include TextClasses.text-x-small;
             color: rgb(var(--dark-gray-2));
+        }
+
+        & button {
+            height: 48px;
+        }
+    }
+}
+
+.loginWithLinks {
+    @include TextClasses.text-small;
+    color: rgb(var(--dark-gray-3));
+
+    text-align: center;
+
+    & span {
+        & img {
+            margin: 0 8px;
         }
     }
 }

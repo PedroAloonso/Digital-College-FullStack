@@ -1,6 +1,8 @@
 import style from "./productFilterPanel.module.css";
+
 import FilterGroup from "../FilterGroup/FilterGroup";
 import FilterItem from "../FilterItem/FilterItem";
+
 import { useState } from "react";
 
 export default function ProductFilterPanel() {
@@ -20,8 +22,7 @@ export default function ProductFilterPanel() {
             setBrand(brand.filter((item) => item !== value));
             console.log(brand);
         }
-        
-    }
+    };
 
     const brands = [
         { title: "adidas", name: "marca", type: "checkbox" },
@@ -48,7 +49,6 @@ export default function ProductFilterPanel() {
         { title: "usado", name: "estado", type: "radio" },
         { title: "novo", name: "estado", type: "radio" },
     ];
-
 
     return (
         <>

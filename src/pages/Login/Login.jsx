@@ -1,5 +1,10 @@
 import style from "./login.module.scss";
 
+import GmailIcon from "../../assets/img/links/gmailIcon.png";
+import FacebookIcon from "../../assets/img/links/facebookIcon.png";
+
+import PrimaryButton from "../../components/Buttons/PrimaryButton";
+
 export default function Login() {
     // TODO: Fazer uma rota nova com um novo Layout
     return (
@@ -28,18 +33,17 @@ export default function Login() {
                             />
                         </div>
                     </div>
-
                     <a href="">Esqueci minha senha</a>
-                    <button>Acessar Conta</button>
+                    <PrimaryButton>Acessar Conta</PrimaryButton>
                 </form>
-                <div>
+                <div className={style.loginWithLinks}>
                     <p>
                         Ou faça login com
                         <span>
-                            <img src="" alt="Google" />
+                            <img src={GmailIcon} alt="Google" />
                         </span>
                         <span>
-                            <img src="" alt="Facebook" />
+                            <img src={FacebookIcon} alt="Facebook" />
                         </span>
                     </p>
                 </div>

@@ -1,5 +1,5 @@
-import PropTypes from "prop-types"
-import style from "./filterItem.module.scss"
+import style from "./filterItem.module.scss";
+import PropTypes from "prop-types";
 
 export default function FilterItem({ title, name, type, handle }) {
     return (
@@ -21,5 +21,3 @@ FilterItem.propTypes = {
     type: PropTypes.string,
     handle: PropTypes.func,
 };
-
-

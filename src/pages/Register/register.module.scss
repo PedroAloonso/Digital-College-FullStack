@@ -1,0 +1,90 @@
+@use "../../assets/styles/TextClasses";
+
+.container {
+    display: flex;
+    background: linear-gradient(to bottom, #b5b6f2, #efefff);
+    padding-top: 4em;
+    padding-bottom: 10em;
+}
+
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    background-color: rgb(var(--white));
+    padding: 2em 2em;
+
+    & h1 {
+        @include TextClasses.title-small-bold;
+        color: rgb(var(--dark-gray));
+    }
+
+    & h4 {
+        @include TextClasses.text-small;
+        color: rgb(var(--dark-gray-2));
+    }
+
+    & form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            & div {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                & label {
+                    @include TextClasses.text-tinny-bold;
+                    color: rgb(var(--dark-gray-2));
+                }
+
+                & input {
+                    width: 523px;
+                    height: 60px;
+                    @include TextClasses.text-small;
+                    border: 0;
+                    border-radius: 8px;
+                    background-color: #f8f8f8;
+                    padding: 0 12px;
+                    color: rgb(var(--dark-gray));
+
+                    &::placeholder {
+                        color: rgb(var(--dark-gray-3));
+                    }
+                }
+            }
+        }
+
+        & a {
+            @include TextClasses.text-x-small;
+            color: rgb(var(--dark-gray-2));
+        }
+
+        & button {
+            height: 48px;
+        }
+    }
+}
+
+.loginWithLinks {
+    @include TextClasses.text-small;
+    color: rgb(var(--dark-gray-3));
+
+    text-align: center;
+
+    & span {
+        & img {
+            margin: 0 8px;
+        }
+    }
+}

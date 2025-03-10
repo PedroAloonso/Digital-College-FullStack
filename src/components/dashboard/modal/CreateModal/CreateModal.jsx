@@ -19,14 +19,10 @@ export default function CreateModal({
 
     const handleChange = (event) => {
         const { name, value } = event.target;
-        console.log(event);
         setFormData((prevData) => ({ ...prevData, [name]: value }));
         setFormData((prevData) => ({
             ...prevData,
             ["createdAt"]: new Date().toISOString(),
-        }));
-        setFormData((prevData) => ({
-            ...prevData,
             ["updatedAt"]: new Date().toISOString(),
         }));
     };
