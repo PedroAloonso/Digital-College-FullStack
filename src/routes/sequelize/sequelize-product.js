@@ -5,9 +5,9 @@ const router = Router();
 
 // Criar um novo produto
 router.post("/", async (req, res) => {
-    const { name, brand, description, stock } = req.body;
+    const { name, brand, description, stock } = req.body; // TODO: fazer com que pegue somente os valores das colunas que existam
     try {
-        const product = await Product.create({ name, brand, description, stock });
+        const product = await Product.create({ ...req.body });
         res.status(200).json(product);
     } catch (error) {
         console.log(error)
