@@ -1,12 +1,17 @@
 import style from "./registerForm.module.scss";
 
-import { useState } from "react";
-import axios from "axios";
-
 import PrimaryButton from "../../Buttons/PrimaryButton";
 
+import { useState } from "react";
+import axios from "axios";
+import { useLocation } from "react-router-dom";
+
+// TODO: Componetizar
+
 export default function RegisterForm() {
-    const [formData, setFormData] = useState({});
+    const location = useLocation();
+    const email = location.state;
+    const [formData, setFormData] = useState(email ? { ...email } : {});
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -20,13 +25,13 @@ export default function RegisterForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:3000/sequelize-products", formData);
+        axios.post("http://localhost:3000/sequelize-user", formData);
     };
 
     return (
         <section className={style.container}>
             <h1>Criar Conta</h1>
-            <form action="" method="post" onSubmit={handleSubmit}>
+            <form action="" onSubmit={handleSubmit}>
                 <div className={style.formGroupContainer}>
                     <div className={style.formGroup}>
                         <h3>Informações Pessoais</h3>
@@ -48,7 +53,7 @@ export default function RegisterForm() {
                                     name="cpf"
                                     placeholder="Insira seu CPF"
                                     required
-                                    onChange={() => handleChange}
+                                    onChange={handleChange}
                                 />
                             </div>
                             <div className={style.formGroupInput}>
@@ -58,7 +63,8 @@ export default function RegisterForm() {
                                     name="email"
                                     placeholder="Insira seu email"
                                     required
-                                    onChange={() => handleChange}
+                                    onChange={handleChange}
+                                    value={formData.email ? formData.email : ""}
                                 />
                             </div>
                             <div className={style.formGroupInput}>
@@ -67,7 +73,7 @@ export default function RegisterForm() {
                                     type="text"
                                     name="phone"
                                     placeholder="Insira seu celular"
-                                    onChange={() => handleChange}
+                                    onChange={handleChange}
                                 />
                             </div>
                         </div>
@@ -82,7 +88,7 @@ export default function RegisterForm() {
                                     name="address"
                                     placeholder="Insira seu endereço"
                                     required
-                                    onChange={() => handleChange}
+                                    onChange={handleChange}
                                 />
                             </div>
                             <div className={style.formGroupInput}>
@@ -92,7 +98,7 @@ export default function RegisterForm() {
                                     name="neighborhood"
                                     placeholder="Insira seu Bairro"
                                     required
-                                    onChange={() => handleChange}
+                                    onChange={handleChange}
                                 />
                             </div>
                             <div className={style.formGroupInput}>
@@ -102,7 +108,7 @@ export default function RegisterForm() {
                                     name="city"
                                     placeholder="Insira sua cidade"
                                     required
-                                    onChange={() => handleChange}
+                                    onChange={handleChange}
                                 />
                             </div>
                             <div className={style.formGroupInput}>
@@ -112,7 +118,7 @@ export default function RegisterForm() {
                                     name="cep"
                                     placeholder="Insira seu CEP"
                                     required
-                                    onChange={() => handleChange}
+                                    onChange={handleChange}
                                 />
                             </div>
                             <div className={style.formGroupInput}>
@@ -123,14 +129,18 @@ export default function RegisterForm() {
                                     type="text"
                                     name="complement"
                                     placeholder="Insira complemento"
-                                    onChange={() => handleChange}
+                                    onChange={handleChange}
                                 />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className={style.getNews}>
-                    <input type="checkbox" name="getnews" />
+                    <input
+                        type="checkbox"
+                        name="getnews"
+                        onChange={handleChange}
+                    />
                     <label htmlFor="getnews">
                         Quero receber por email ofertas e novidades das lojas da
                         Digital Store. A frequência de envios pode variar de

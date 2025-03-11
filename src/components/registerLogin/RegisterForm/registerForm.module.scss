@@ -67,6 +67,7 @@
     }
 
     & input {
+        @include TextClasses.text-small;
         box-sizing: border-box;
         border: 0;
 

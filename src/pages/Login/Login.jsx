@@ -6,13 +6,12 @@ import FacebookIcon from "../../assets/img/links/facebookIcon.png";
 import PrimaryButton from "../../components/Buttons/PrimaryButton";
 
 export default function Login() {
-    // TODO: Fazer uma rota nova com um novo Layout
     return (
         <section className={style.container}>
             <div className={style.loginContainer}>
                 <h1>Acesse a conta</h1>
                 <h4>
-                    Novo cliente? Então registre-se <a href="">aqui</a>.
+                    Novo cliente? Então registre-se <a href="register">aqui</a>.
                 </h4>
                 <form action="" method="post">
                     <div>

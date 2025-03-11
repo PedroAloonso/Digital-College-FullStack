@@ -6,7 +6,7 @@ export default function SignInAndOutBtnHeader() {
     return (
         <div className={style.storeLinks}>
             <div className={style.signupLinks}>
-                <a href="" className={style.signup}>
+                <a href="register" className={style.signup}>
                     Cadastre-se
                 </a>
                 <PrimaryButton className={style.btnLogin}>Entrar</PrimaryButton>
