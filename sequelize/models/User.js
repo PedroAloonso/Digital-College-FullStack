@@ -18,14 +18,31 @@ const User = sequelize.define(
             allowNull: false
         },
         phone: {
+            type: DataTypes.CHAR,
+        },
+        cpf: {
+            type: DataTypes.CHAR(11),
+        },
+        address: {
             type: DataTypes.STRING,
         },
-        birthdate: {
-            type: DataTypes.DATE
+        neighborhood: {
+            type: DataTypes.CHAR,
+        },
+        city: {
+            type: DataTypes.STRING,
+        },
+        cep: {
+            type: DataTypes.CHAR,
+        },
+        complement: {
+            type: DataTypes.STRING,
+        },
+        getNews: {
+            type: DataTypes.BOOLEAN,
         }
-    }
+    }, { updatedAt: "last_access"}
 );
-
 
 export default User
 
