@@ -9,7 +9,11 @@ export default function SignInAndOutBtnHeader() {
                 <a href="register" className={style.signup}>
                     Cadastre-se
                 </a>
-                <PrimaryButton className={style.btnLogin}>Entrar</PrimaryButton>
+                <a href="login">
+                    <PrimaryButton className={style.btnLogin}>
+                        Entrar
+                    </PrimaryButton>
+                </a>
             </div>
             <div href="" className={style.cart}>
                 <img src={Cart} alt="" className={style.cartIcon} />
