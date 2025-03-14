@@ -1,31 +1,46 @@
 import style from "./registerForm.module.scss";
 
 import PrimaryButton from "../../Buttons/PrimaryButton";
+import PersonalInfo from "./PersonalInfo/PersonalInfo";
 
 import { useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import DeliveryInfo from "./DeliveryInfo/DeliveryInfo";
 
 // TODO: Componetizar
 
 export default function RegisterForm() {
     const location = useLocation();
-    const email = location.state;
-    const [formData, setFormData] = useState(email ? { ...email } : {});
+    const email = location.state?.email || "";
+    const [formData, setFormData] = useState({
+        email: email,
+        name: "",
+        cpf: "",
+        phone: "",
+        address: "",
+        neighborhood: "",
+        city: "",
+        cep: "",
+        complement: "",
+        getnews: false,
+    });
 
     const handleChange = (event) => {
-        const { name, value } = event.target;
+        const { name, value, type, checked } = event.target;
+        console.log(name, value, type, checked);
         setFormData((prevData) => ({
             ...prevData,
-            [name]: value,
+            [name]: type === "checkbox" ? checked : value,
             ["createdAt"]: new Date().toISOString(),
-            ["updatedAt"]: new Date().toISOString(),
+            ["lastAccess"]: new Date().toISOString(),
         }));
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:3000/sequelize-user", formData);
+        console.log(formData);
+        axios.post("http://localhost:3000/sequelize-users", formData);
     };
 
     return (
@@ -33,107 +48,14 @@ export default function RegisterForm() {
             <h1>Criar Conta</h1>
             <form action="" onSubmit={handleSubmit}>
                 <div className={style.formGroupContainer}>
-                    <div className={style.formGroup}>
-                        <h3>Informações Pessoais</h3>
-                        <div className={style.formGroupInputContainer}>
-                            <div className={style.formGroupInput}>
-                                <label htmlFor="name">Nome Completo * </label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Insira seu nome"
-                                    required
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className={style.formGroupInput}>
-                                <label htmlFor="cpf">CPF *</label>
-                                <input
-                                    type="text"
-                                    name="cpf"
-                                    placeholder="Insira seu CPF"
-                                    required
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className={style.formGroupInput}>
-                                <label htmlFor="email">E-mail *</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Insira seu email"
-                                    required
-                                    onChange={handleChange}
-                                    value={formData.email ? formData.email : ""}
-                                />
-                            </div>
-                            <div className={style.formGroupInput}>
-                                <label htmlFor="phone">Celular *</label>
-                                <input
-                                    type="text"
-                                    name="phone"
-                                    placeholder="Insira seu celular"
-                                    onChange={handleChange}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.formGroup}>
-                        <h3>Informações de Entrega</h3>
-                        <div>
-                            <div className={style.formGroupInput}>
-                                <label htmlFor="address">Endereço *</label>
-                                <input
-                                    type="text"
-                                    name="address"
-                                    placeholder="Insira seu endereço"
-                                    required
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className={style.formGroupInput}>
-                                <label htmlFor="neighborhood">Bairro *</label>
-                                <input
-                                    type="text"
-                                    name="neighborhood"
-                                    placeholder="Insira seu Bairro"
-                                    required
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className={style.formGroupInput}>
-                                <label htmlFor="city">Cidade *</label>
-                                <input
-                                    type="text"
-                                    name="city"
-                                    placeholder="Insira sua cidade"
-                                    required
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className={style.formGroupInput}>
-                                <label htmlFor="cep">CEP *</label>
-                                <input
-                                    type="text"
-                                    name="cep"
-                                    placeholder="Insira seu CEP"
-                                    required
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className={style.formGroupInput}>
-                                <label htmlFor="complement">
-                                    Complemento *
-                                </label>
-                                <input
-                                    type="text"
-                                    name="complement"
-                                    placeholder="Insira complemento"
-                                    onChange={handleChange}
-                                />
-                            </div>
-                        </div>
-                    </div>
+                    <PersonalInfo
+                        formData={formData}
+                        handleChange={handleChange}
+                    />
+                    <DeliveryInfo
+                        formData={formData}
+                        handleChange={handleChange}
+                    />
                 </div>
                 <div className={style.getNews}>
                     <input
