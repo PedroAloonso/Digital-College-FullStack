@@ -8,8 +8,6 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 import DeliveryInfo from "./DeliveryInfo/DeliveryInfo";
 
-// TODO: Componetizar
-
 export default function RegisterForm() {
     const location = useLocation();
     const email = location.state?.email || "";
@@ -28,7 +26,6 @@ export default function RegisterForm() {
 
     const handleChange = (event) => {
         const { name, value, type, checked } = event.target;
-        console.log(name, value, type, checked);
         setFormData((prevData) => ({
             ...prevData,
             [name]: type === "checkbox" ? checked : value,
@@ -39,7 +36,6 @@ export default function RegisterForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(formData);
         axios.post("http://localhost:3000/sequelize-users", formData);
     };
 

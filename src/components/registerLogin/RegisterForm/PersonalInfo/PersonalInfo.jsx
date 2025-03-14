@@ -2,6 +2,26 @@ import PropTypes from "prop-types";
 import style from "./personalInfo.module.scss";
 
 export default function PersonalInfo({ formData, handleChange }) {
+    const formatPhoneNumber = (value) => {
+        if (!value) return value;
+        const phoneNumber = value.replace(/[^\d]/g, "");
+        const phoneNumberLength = phoneNumber.length;
+        console.log(value, phoneNumber, phoneNumberLength);
+        if (phoneNumberLength < 3) return phoneNumber;
+        if (phoneNumberLength < 8) {
+            return `(${phoneNumber.slice(0, 2)}) ${phoneNumber.slice(2)}`;
+        }
+        if (phoneNumberLength < 12)
+            return `(${phoneNumber.slice(0, 2)}) ${phoneNumber.slice(2, 7)} - ${phoneNumber.slice(7)}`;
+        return `(${phoneNumber.slice(0, 2)}) ${phoneNumber.slice(2, 7)} - ${phoneNumber.slice(7, 11)}`;
+    };
+
+    const handlePhoneChange = (event) => {
+        const { name, value } = event.target;
+        const formattedValue = formatPhoneNumber(value);
+        handleChange({ target: { name, value: formattedValue } });
+    };
+
     return (
         <div className={style.formGroup}>
             <h3>Informações Pessoais</h3>
@@ -45,7 +65,7 @@ export default function PersonalInfo({ formData, handleChange }) {
                         type="text"
                         name="phone"
                         placeholder="Insira seu celular"
-                        onChange={handleChange}
+                        onChange={handlePhoneChange}
                         value={formData.phone}
                     />
                 </div>
