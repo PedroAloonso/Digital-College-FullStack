@@ -1,5 +1,5 @@
 import sequelize from "../setup.js";
-import DataTypes from "sequelize"
+import DataTypes from "sequelize";
 
 const User = sequelize.define(
     "User",
@@ -7,21 +7,32 @@ const User = sequelize.define(
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
-            primaryKey: true
+            primaryKey: true,
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         email: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+        },
+        role: {
+            type: DataTypes.ENUM("user", "admin"),
+            allowNull: false,
+            defaultValue: "user"
         },
         phone: {
             type: DataTypes.CHAR,
         },
         cpf: {
             type: DataTypes.CHAR(11),
+            allowNull: false,
+            unique: true,
         },
         address: {
             type: DataTypes.STRING,
@@ -40,9 +51,17 @@ const User = sequelize.define(
         },
         getNews: {
             type: DataTypes.BOOLEAN,
-        }
-    }, { updatedAt: "last_access"}
+        },
+    },
+    { updatedAt: "lastAccess" }
 );
 
-export default User
+User.create({
+    name: "ADM",
+    password: "123456",
+    email: "adm@adm.com",
+    role: "admin",
+    cpf: "11111111111",
+}).catch((err) => console.log("Ja existe conta ADM"));
 
+export default User;
