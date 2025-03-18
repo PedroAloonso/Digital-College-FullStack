@@ -3,7 +3,7 @@ import cors from "cors"
 import prismaUserRoutes from "./src/routes/prisma-user.js";
 import sequelizeUserRoutes from "./src/routes/sequelize/sequelize-user.js";
 import sequelizeProductRoutes from "./src/routes/sequelize/sequelize-product.js";
-import syncTables from "./sequelize/models.js";
+import syncTables from "./sequelize/modelSync.js";
 
 syncTables();
 
