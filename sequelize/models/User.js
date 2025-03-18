@@ -63,5 +63,11 @@ User.create({
     role: "admin",
     cpf: "11111111111",
 }).catch((err) => console.log("Ja existe conta ADM"));
+User.create({
+    name: "Pão",
+    password: "123456",
+    email: "user@adm.com",
+    cpf: "11111111112",
+}).catch((err) => console.log("Ja existe conta Pão"));
 
 export default User;

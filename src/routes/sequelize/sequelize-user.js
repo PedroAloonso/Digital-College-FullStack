@@ -5,18 +5,27 @@ import jwt from "jsonwebtoken";
 
 const router = Router();
 
+const jwtSecret = "chave_secreta";
+
 // Validar token
 const authMiddleware = (request, response, next) => {
     try {
-        const jwtToken = request.headers;
-        console.log("Auth: ", jwtToken);
-        if (!jwtToken) {
+        const jwtToken = request.headers.authorization?.replace("Bearer ", "");
+        if (!jwtToken ) {
             return response.json("Unauthorized", 403);
         }
-        jwt.verify(jwtToken, secretKey);
+
+        const authInfo = jwt.verify(jwtToken, jwtSecret);
+        if (!authInfo) {
+            return response.json("Unauthorized", 403);
+        }
+        if (authInfo.role !== "admin") {
+            return response.json("Unauthorized", 403);
+        }
+
         next();
     } catch (error) {
-        return response.json(`Unauthorized. Error: ${error.message}`, 401);
+        return response.status(401).json(`Unauthorized. Error: ${error.message}`);
     }
 };
 
@@ -47,7 +56,7 @@ router.post("/login", async (req, res) => {
                 name: user.name,
                 role: user.role,
             },
-            "chave_secreta",
+            jwtSecret,
             { expiresIn: "1h" }
         );
         res.json({ token, role: user.role });
