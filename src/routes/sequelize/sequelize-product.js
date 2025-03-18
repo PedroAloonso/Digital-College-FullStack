@@ -23,7 +23,7 @@ router.get("/", async (req, res) => {
     }))
 
     const product = await Product.findAll();
-    res.status(200).json({columnNames,product});
+    res.status(200).json({ columnNames, product });
 });
 
 // Buscar um produto por ID
