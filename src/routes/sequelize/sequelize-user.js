@@ -1,4 +1,5 @@
 import User from "../../../sequelize/models/User.js";
+import authMiddleware from "../../../middlewares/authToken.js";
 
 import { Router } from "express";
 import jwt from "jsonwebtoken";
@@ -6,28 +7,6 @@ import jwt from "jsonwebtoken";
 const router = Router();
 
 const jwtSecret = "chave_secreta";
-
-// Validar token
-const authMiddleware = (request, response, next) => {
-    try {
-        const jwtToken = request.headers.authorization?.replace("Bearer ", "");
-        if (!jwtToken ) {
-            return response.json("Unauthorized", 403);
-        }
-
-        const authInfo = jwt.verify(jwtToken, jwtSecret);
-        if (!authInfo) {
-            return response.json("Unauthorized", 403);
-        }
-        if (authInfo.role !== "admin") {
-            return response.json("Unauthorized", 403);
-        }
-
-        next();
-    } catch (error) {
-        return response.status(401).json(`Unauthorized. Error: ${error.message}`);
-    }
-};
 
 // Login de usuário
 router.post("/login", async (req, res) => {
@@ -50,16 +29,31 @@ router.post("/login", async (req, res) => {
                 .status(401)
                 .json({ message: "Usuário ou senha inválidos!" });
 
-        const token = jwt.sign(
-            {
-                id: user.id,
-                name: user.name,
-                role: user.role,
-            },
-            jwtSecret,
-            { expiresIn: "1h" }
-        );
-        res.json({ token, role: user.role });
+
+        if (user.role === "admin") {
+            const token = jwt.sign(
+                {
+                    id: user.id,
+                    name: user.name,
+                    role: user.role,
+                },
+                jwtSecretAdmin,
+                { expiresIn: "1h" }
+            );
+            return res.json({ token, role: user.role });
+
+        } else {
+            const token = jwt.sign(
+                {
+                    id: user.id,
+                    name: user.name,
+                    role: user.role,
+                },
+                jwtSecret,
+                { expiresIn: "1h" }
+            );
+            return res.json({ token, role: user.role });
+        }
     } catch {
         res.status(500).json({ message: "Erro no servidor!", error });
     }
