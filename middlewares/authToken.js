@@ -1,9 +1,13 @@
 import jwt from "jsonwebtoken";
 
+
+const jwtSecret = "chave_secreta";
+
 /**
- * Middleware para validar o token de autenticação
- *  */  
+ * Middleware para validar o token de autenticação 
+ */  
 const authMiddleware = (request, response, next) => {
+    console.log(request.headers);
     try {
         const jwtToken = request.headers.authorization?.replace("Bearer ", "");
         if (!jwtToken) {

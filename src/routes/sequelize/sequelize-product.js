@@ -1,5 +1,7 @@
-import { Router } from "express";
 import Product from "../../../sequelize/models/Product.js";
+import authMiddleware from "../../../middlewares/authToken.js";
+
+import { Router } from "express";
 
 const router = Router();
 
@@ -16,7 +18,7 @@ router.post("/", async (req, res) => {
 });
 
 // Listar todos os produtos
-router.get("/", async (req, res) => {
+router.get("/", authMiddleware, async (req, res) => {
     const columnNames = Object.entries(Product.getAttributes()).map(([columnName, detais]) => ({
         name: columnName,
         type: detais.type.key

@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors"
+
 import prismaUserRoutes from "./src/routes/prisma-user.js";
 import sequelizeUserRoutes from "./src/routes/sequelize/sequelize-user.js";
 import sequelizeProductRoutes from "./src/routes/sequelize/sequelize-product.js";
