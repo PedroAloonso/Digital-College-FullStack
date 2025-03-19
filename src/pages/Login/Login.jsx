@@ -5,7 +5,33 @@ import FacebookIcon from "../../assets/img/links/facebookIcon.png";
 
 import PrimaryButton from "../../components/Buttons/PrimaryButton";
 
+import { useState } from "react";
+import axios from "axios";
+
 export default function Login() {
+    const [formData, setFormData] = useState({ email: "", password: "" });
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const response = await axios.post(
+                "http://localhost:3000/sequelize-users/login",
+                formData,
+            );
+            const { token } = response.data;
+            localStorage.setItem("token", token);
+            setFormData({ email: "", password: "" });
+        } catch (error) {
+            alert(error.response.data.message + error);
+            localStorage.setItem("token", "");
+        }
+    };
+
     return (
         <section className={style.container}>
             <div className={style.loginContainer}>
@@ -13,22 +39,26 @@ export default function Login() {
                 <h4>
                     Novo cliente? Então registre-se <a href="register">aqui</a>.
                 </h4>
-                <form action="" method="post">
+                <form action="" method="post" onSubmit={handleSubmit}>
                     <div>
                         <div>
                             <label htmlFor="email">Login *</label>
                             <input
                                 type="text"
                                 name="email"
-                                placeholder="Insira seu login ou email"
+                                placeholder="Insira seu email"
+                                value={formData.email}
+                                onChange={handleChange}
                             />
                         </div>
                         <div>
                             <label htmlFor="password">Senha *</label>
                             <input
-                                type="text"
+                                type="password"
                                 name="password"
                                 placeholder="Insira sua senha"
+                                value={formData.password}
+                                onChange={handleChange}
                             />
                         </div>
                     </div>
