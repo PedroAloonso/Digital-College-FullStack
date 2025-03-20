@@ -43,6 +43,7 @@ export default function PersonalInfo({ formData, handleChange }) {
                         type="text"
                         name="cpf"
                         placeholder="Insira seu CPF"
+                        max={11}
                         required
                         onChange={handleChange}
                         value={formData.cpf}

@@ -27,7 +27,7 @@ export default function Login() {
             localStorage.setItem("token", token);
             setFormData({ email: "", password: "" });
         } catch (error) {
-            alert(error.response.data.message + error);
+            alert(error);
             localStorage.setItem("token", "");
         }
     };

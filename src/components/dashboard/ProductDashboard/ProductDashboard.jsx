@@ -35,7 +35,7 @@ export default function ProductDashboard() {
             setTableColumns(response.data.columnNames);
             setProductList(response.data.product);
         } catch (error) {
-            // TODO: perguntar
+            // TODO: perguntar pq ta aparecendo 2 vezes
             const userConfirmed = window.confirm(
                 `${error.response.data}\nDeseja ser redirecionado para a página de login?`,
             );

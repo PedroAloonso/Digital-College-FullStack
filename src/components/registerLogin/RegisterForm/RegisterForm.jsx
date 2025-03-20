@@ -36,7 +36,7 @@ export default function RegisterForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:3000/sequelize-users", formData);
+        axios.post("http://localhost:3000/sequelize-users/register", formData);
     };
 
     return (
