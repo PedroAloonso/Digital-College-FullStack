@@ -3,9 +3,11 @@ import authMiddleware from "../../../middlewares/authToken.js";
 
 import { Router } from "express";
 import jwt from "jsonwebtoken";
+import bycrypt from "bcrypt";
 
 const router = Router();
 
+const saltRounds = 10;
 const jwtSecret = "chave_secreta";
 
 // Login de usuário
@@ -23,7 +25,7 @@ router.post("/login", async (req, res) => {
                 .status(401)
                 .json({ message: "Usuário ou senha inválidos!" });
 
-        const senhaCorreta = user.password === password;
+        const senhaCorreta = bycrypt.compareSync(password, user.password);
         if (!senhaCorreta)
             return res
                 .status(401)
@@ -37,8 +39,8 @@ router.post("/login", async (req, res) => {
                     name: user.name,
                     role: user.role,
                 },
-                jwtSecretAdmin,
-                { expiresIn: "1h" }
+                jwtSecret,
+                { expiresIn: "4h" }
             );
             return res.json({ token, role: user.role });
 
@@ -55,22 +57,29 @@ router.post("/login", async (req, res) => {
             return res.json({ token, role: user.role });
         }
     } catch (error) {
+        console.log(error)
         res.status(500).json({ message: "Erro no servidor!", error });
     }
 });
 
 // Criar um novo usuário
 router.post("/register", async (req, res) => {
-    const { name, email } = req.body;
-    console.log(req, "requisição");
+    const { email, password } = req.body;
     try {
-        const user = await User.create({ ...req.body });
-        res.status(200).json(user);
+        const userExists = await User.findOne({ where: { email } });
+        if (userExists)
+            return res.status(400).json({ error: "Usuário já cadastrado" });
+
+        const hashedPassword = bycrypt.hashSync(password, saltRounds);
+        const user = await User.create({ ...req.body, password: hashedPassword });
+
+        res.status(200).json("Usuário criado com sucesso!");
     } catch (error) {
         console.log(error);
-        res.status(400);
+        res.status(400).json({ message: "Erro no servidor!", error });
     }
 });
+
 
 // Listar todos os usuários
 router.get("/", authMiddleware, async (req, res) => {

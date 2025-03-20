@@ -1,5 +1,7 @@
 import sequelize from "../setup.js";
+
 import DataTypes from "sequelize";
+import bycrypt from "bcrypt";
 
 const User = sequelize.define(
     "User",
@@ -58,14 +60,14 @@ const User = sequelize.define(
 
 User.create({
     name: "ADM",
-    password: "123456",
+    password: `${bycrypt.hashSync("123456", 10)}`,
     email: "adm@adm.com",
     role: "admin",
     cpf: "11111111111",
 }).catch((err) => console.log("Ja existe conta ADM"));
 User.create({
     name: "Pão",
-    password: "123456",
+    password: `${bycrypt.hashSync("123456", 10)}`,
     email: "user@adm.com",
     cpf: "11111111112",
 }).catch((err) => console.log("Ja existe conta Pão"));
